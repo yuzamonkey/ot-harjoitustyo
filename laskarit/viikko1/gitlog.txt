@@ -1,0 +1,113 @@
+commit 70af867233ca9dc2df21aa65c21d2c273b6bb619
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:42:24 2021 +0200
+
+    remove file 1, rename file2 to file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3225087f0d38e4a2d0538e24fc32d665c6eb416a
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:39:40 2021 +0200
+
+    practice
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3cc96ad36440e99e5b44f442bfa05e74d5b431a8
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:14:35 2021 +0200
+
+    make changes to eka and kolmas
+
+ eka.txt    | 7 ++++---
+ kolmas.txt | 6 +++++-
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 8bb3307c93a5a6f94ec7c626214a5f575e4b6f60
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:11:42 2021 +0200
+
+    change tiedosto to eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 354d1e1c99f47f99f0c7e8dbf316c19e76f5f673
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:11:01 2021 +0200
+
+    delete toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 74fb3122c612d599a844f5d36864f18ef44dfaed
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:07:44 2021 +0200
+
+    even more lorem
+
+ tiedosto.txt | 100 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 100 insertions(+)
+
+commit 2b4932e377c01590c933c077f301d48e47f612b8
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 10:06:55 2021 +0200
+
+    add lots of text to tiedosto.txt
+
+ tiedosto.txt | 102 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 101 insertions(+), 1 deletion(-)
+
+commit 9f097f6452a8f8ab899115472999504c8cbdf28a
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 09:59:54 2021 +0200
+
+    make dir and file stuff
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ee75b3da9046395e9ddd24f8e00065bb36da6ae3
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 09:59:02 2021 +0200
+
+    modify toinen ja kolmas
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 3c8b13f65323216460e2698d8e37ec8d1fc89cda
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 09:58:17 2021 +0200
+
+    add kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 31430e6dcb59be373068d0e29403a899b3c14e1c
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 09:54:06 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 22c232836c663d9109534725ee57dc0c6eb69926
+Author: Jusa Mankki <jusamankki@gmail.com>
+Date:   Sat Mar 20 09:52:07 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
