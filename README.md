@@ -3,8 +3,8 @@
 ## Tehtävät
 
 ### Viikko 1
-[gitlog.txt] (https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-[komentorivi.txt] (https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+[gitlog.txt](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
 *This text will be italic*
 _This will also be italic_
