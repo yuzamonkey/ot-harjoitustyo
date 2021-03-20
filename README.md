@@ -1,6 +1,10 @@
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
+# Ohjelmistotekniikka, harjoitustyö
+
+## Tehtävät
+
+### Viikko 1
+https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt gitlog.txt
+https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt komentorivi.txt
 
 *This text will be italic*
 _This will also be italic_
