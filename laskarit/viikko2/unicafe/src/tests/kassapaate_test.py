@@ -45,6 +45,26 @@ class TestKassapaate(unittest.TestCase):
     change = self.kassapaate.syo_maukkaasti_kateisella(99)
     self.assertEqual(change, 99)
 
+# osta kortilla edullinen
+  def test_buy_edullinen_with_card_returns_true(self):
+    return_value = self.kassapaate.syo_edullisesti_kortilla(self.card)
+    self.assertEqual(return_value, True)
+# osta kortilla maukas
+  def test_buy_maukas_with_card_returns_true(self):
+    return_value = self.kassapaate.syo_maukkaasti_kortilla(self.card)
+    self.assertEqual(return_value, True)
+# osta kortilla edullinen liian vähällä rahalla
+  def test_buy_edullinen_with_card_returns_false_if_not_enough_money(self):
+    self.kassapaate.syo_maukkaasti_kortilla(self.card)
+    return_value = self.kassapaate.syo_edullisesti_kortilla(self.card)
+    self.assertEqual(return_value, False)
+# osta kortilla maukas liian vähällä rahalla
+  def test_buy_maukas_with_card_returns_false_if_not_enough_money(self):
+    self.kassapaate.syo_maukkaasti_kortilla(self.card)
+    return_value = self.kassapaate.syo_maukkaasti_kortilla(self.card)
+    self.assertEqual(return_value, False)
+
+
   #edullisten määrä kasvaa, kun ostetaan käteisellä
   def test_edulliset_increases_after_cash_purchase(self):
     self.kassapaate.syo_edullisesti_kateisella(500)
@@ -61,7 +81,13 @@ class TestKassapaate(unittest.TestCase):
   def test_maukkaat_increases_after_card_purchase(self):
     self.kassapaate.syo_maukkaasti_kortilla(self.card)
     self.assertEqual(self.kassapaate.maukkaat, 1)
-  #maukkaiden määrä kasvaa, kun ostetaan käteisellä
 
   #lataa rahaa kortille
+  def test_put_money_on_card(self):
+    self.kassapaate.lataa_rahaa_kortille(self.card, 100)
+    self.assertEqual(self.kassapaate.kassassa_rahaa, 100_100)
+
   #lataa negatiivista rahaa ei muuta rahamäärää
+  def test_put_negative_money_on_card(self):
+    self.kassapaate.lataa_rahaa_kortille(self.card, -100)
+    self.assertEqual(self.kassapaate.kassassa_rahaa, 100_000)
