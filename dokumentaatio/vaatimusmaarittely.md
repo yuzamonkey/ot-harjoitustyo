@@ -2,6 +2,8 @@
 ### Sovelluksen tarkoitus
   Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Käyttäjä voi valita sävel- ja tahtilajin. Graafista käyttöliittymää ohjataan hiirellä raahaamalla elementtejä
 ### Käyttöliittymäluonnos
+![luonnos käyttöliittymästä](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/GUI_sketch.jpeg?raw=true)
+
 ### Perusversion toiminnallisuudet
   - Käyttäjä voi lisätä, muokata ja poistaa nuottejam vaihtaa sävellajeja
   - Ohjelma pystyy soittamaan käyttäjän kirjoittaman viisun
