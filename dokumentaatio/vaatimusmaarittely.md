@@ -5,7 +5,7 @@
 ![luonnos käyttöliittymästä](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/GUI_sketch.jpeg?raw=true)
 
 ### Perusversion toiminnallisuudet
-  - Käyttäjä voi lisätä, muokata ja poistaa nuottejam vaihtaa sävellajeja
+  - Käyttäjä voi lisätä, muokata ja poistaa nuotteja, sekä vaihtaa sävellajin ja tahdinosoituksen
   - Ohjelma pystyy soittamaan käyttäjän kirjoittaman viisun
 ### Jatkokehitysideoita
   - Ohjelma pystyy lukemaan ja exporttamaan .xml-muotoisia tiedostoja
