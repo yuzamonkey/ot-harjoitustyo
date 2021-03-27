@@ -1,6 +1,9 @@
 # Ohjelmistotekniikka, harjoitustyö K2021
 
+## Harjoitustyö
 [Harjoitustyön vaatimusmäärittely](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+
+[Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
 
 ## Tehtävät
 ### Viikko 1

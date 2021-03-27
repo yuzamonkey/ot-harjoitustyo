@@ -1,0 +1,7 @@
+# Työaikakirjanpito
+
+| päivä | aika | kuvaus  |
+| :----:|:-----| :-----|
+| 17.3. | 3    | Tutustumista tkinter materiaaliin, projektin ideointia ja GUIn epämääräistä piirtelyä |
+| 27.3. | 3    | Harjoitustyön suunnittelua, vaatimusmäärittelyn laatiminen |
+| yht   | 6   | | 
