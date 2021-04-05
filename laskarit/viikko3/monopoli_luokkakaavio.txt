@@ -1,0 +1,16 @@
+[Monopoli]1-40[Ruutu | toiminto()]
+[Monopoli]1->2[Noppa]
+[Monopoli]1-2...8[Pelaaja | (int) rahaa]->1[Pelinappula]
+[Pelaaja | (int) rahaa]-[Katu | (int) tilaaRakentaa: 4 ]
+
+[Monopoli]->1[Aloitusruutu]
+[Monopoli]->1[Vankila]
+
+[Ruutu | toiminto()]^1[Aloitusruutu]
+[Ruutu | toiminto()]^1[Vankila]
+[Ruutu | toiminto()]^*[Sattuma ja yhteismaa]->*[Kortti | toiminto()]
+[Ruutu | toiminto()]^*[Asemat ja laitokset]
+[Ruutu | toiminto()]^*[Katu | (int) tilaaRakentaa: 4; (string) nimi ]->*[Rakennus | (int) vieTilaa]
+[Rakennus | (int) vieTilaa]^[Hotelli | (int) vieTilaa: 4]
+[Rakennus | (int) vieTilaa]^[Talo | (int) vieTilaa: 1]
+
