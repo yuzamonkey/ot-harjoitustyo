@@ -1,0 +1,17 @@
+title Bensatankki ja moottori
+
+main->+kone: Machine()
+kone->tankki: FuelTank()
+kone->tankki: fill(40)
+kone->moottori: Engine(tankki)
+kone-->-main: 
+
+main->+kone: drive()
+kone->moottori: start()
+moottori->tankki: consume(5)
+kone->moottori: is_running()
+moottori-->kone: true
+kone->moottori: use_energy()
+moottori->tankki:consume(10)
+kone-->-main:
+
