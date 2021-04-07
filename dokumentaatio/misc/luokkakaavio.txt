@@ -1,0 +1,10 @@
+[Score]1->1[Staff]
+[Staff]1->*[Bar]
+[Bar]->1[Clef]
+[Bar]->1[KeySignature]
+[Bar]->1[TimeSignature]
+[Bar]->*[Notation]
+[Notation]^[Note]
+[Notation]^[Rest]
+
+[Playback]1->1[Score]
