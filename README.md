@@ -1,5 +1,7 @@
 # Ohjelmistotekniikka, harjoitustyö K2021
 
+Ohjelmaa testattu virtuaalityöasemassa 7.4. onnistuneesti
+
 ## Harjoitustyö
 [Harjoitustyön vaatimusmäärittely](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
