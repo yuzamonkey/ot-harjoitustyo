@@ -6,7 +6,7 @@ def main():
   root.title("Nuotinnussofta")
   root.geometry("1000x500")
   ui = UI(root)
-  ui.start()
+  ui.show()
   root.mainloop()
 
 if __name__ == '__main__':
