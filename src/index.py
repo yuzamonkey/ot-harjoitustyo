@@ -1,12 +1,13 @@
-from tkinter import Tk
+import tkinter as tk
 from ui.ui import UI
 
 def main():
-  window = Tk()
-  window.title('Nuotinnussofta')
-  ui = UI(window)
+  root = tk.Tk()
+  root.title("Nuotinnussofta")
+  root.geometry("1000x500")
+  ui = UI(root)
   ui.start()
-  window.mainloop()
+  root.mainloop()
 
 if __name__ == '__main__':
   main()
