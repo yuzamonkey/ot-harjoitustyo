@@ -6,8 +6,14 @@ def start(ctx):
 
 @task
 def test(ctx):
-	print("Run tests here")
+  print("Run tests here")
+  ctx.run("pytest src")
 
 @task
 def coverage_report(ctx):
-	print("Make coverage report")
+  print("Make coverage report")
+  ctx.run("coverage html")
+
+@task
+def coverage(ctx):
+    ctx.run("coverage run --branch -m pytest src")
