@@ -6,6 +6,6 @@
 | 27.3. | 4    | Harjoitustyön suunnittelua: vaatimusmäärittelyn laatiminen, koodin rakenteen suunnittelua |
 | 31.3. | 1    | Luokkien attribuuttien ja suhteiden suunnittelua |
 | 7.4.  | 1.5   | Koodin rakenteen suunnittelua, testausta virtuaalityöasemassa |
-| 10.4. | 1030-    | Luokkien attribuuttien ja suhteiden suunnittelua |
+| 10.4. | 1030-1130 1230-    | Luokkien attribuuttien ja suhteiden suunnittelua |
 | yht   | 9.5   | | 
 

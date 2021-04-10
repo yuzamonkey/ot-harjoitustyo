@@ -18,3 +18,7 @@ def coverage_report(ctx):
   print("Make coverage report")
   ctx.run("coverage html")
 
+@task
+def lint(ctx):
+  ctx.run("pylint src")
+  

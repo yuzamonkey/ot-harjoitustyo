@@ -1,5 +1,12 @@
 ## Arkkitehtuurikuvaus
 
+Sovellus noudattaa kolmikerrosarkkitehtuuria:
+- Käyttöliittymä (UI)
+- Sovelluslogiikka (Services)
+- Tiedon talletus (Repositories)
+
+Pakkaus Entities sisältää sovelluksen käyttämiä tietokohteita
+
 ### Sovelluslogiikka
 Alustava luokkakaavio perustoiminnallisuuksia varten:
 
