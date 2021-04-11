@@ -1,4 +1,8 @@
 ui_background = '#ececec'
-options_view_background = '#bfbfbf'
 navigation_background = '#00263e'
-winered = '#9f4347'
+options_view_background = '#bfbfbf'
+
+light_gray = '#ececec'
+gray = '#bfbfbf'
+dark_gray = '#7e7e7e'
+dark_blue = '#00263e'

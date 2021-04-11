@@ -1,6 +1,5 @@
 import tkinter as tk
-from utils.colors import navigation_background
-from utils.colors import options_view_background
+from ui.startup_options import StartupOptions
 
 class Workspace:
   def __init__(self, parent_frame):
@@ -10,6 +9,8 @@ class Workspace:
     self._show_workspace()
 
   def _show_workspace(self):
-    workspace_label = tk.Label(master=self._frame, text='Workspace')
-    workspace_label.grid(row=0, column=0)
+    # workspace_label = tk.Label(master=self._frame, text='Workspace')
+    # workspace_label.grid(row=0, column=0)
+    startup_options = StartupOptions(self._frame)
+    startup_options.show()
 

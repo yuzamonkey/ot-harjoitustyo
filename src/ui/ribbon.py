@@ -18,7 +18,7 @@ class Ribbon:
 
     # options
     options_frame = tk.Frame(master=self._frame, height=50, bg=options_view_background)
-    options_label = tk.Label(master=options_frame, text="options")
+    options_label = tk.Label(master=options_frame, text="Options")
 
     navigation_frame.grid(row=0, column=0, sticky='new')
     options_frame.grid(row=1, column=0, sticky='esw')

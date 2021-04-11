@@ -25,4 +25,5 @@ class UI:
     workspace_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
     workspace = Workspace(workspace_frame)
     workspace.show()
+    
 
