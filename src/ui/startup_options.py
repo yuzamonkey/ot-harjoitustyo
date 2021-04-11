@@ -14,6 +14,9 @@ class StartupOptions:
   def _handle_create_new_file(self):
     file_service.create_new_file()
 
+  def _handle_open_existing_file(self):
+    file_service.open_existing_file()
+
   def _show_startup_options(self):
     startup_options_frame = tk.Frame(master=self._frame, width=500, height=250, bg=gray, highlightbackground=dark_gray, highlightthickness=1)
     startup_options_frame.grid(row=1, column=1)
@@ -23,7 +26,7 @@ class StartupOptions:
     startup_options_frame.rowconfigure([0], weight=1)
 
     new_file_button = tk.Button(master=startup_options_frame, text='New file', command=self._handle_create_new_file)
-    existing_file_button = tk.Button(master=startup_options_frame, text='Open existing file')
+    existing_file_button = tk.Button(master=startup_options_frame, text='Open existing file', command=self._handle_open_existing_file)
     
     new_file_button.grid(row=0, column=0)
     existing_file_button.grid(row=0, column=1)

@@ -1,16 +1,10 @@
-# Ohjelmistotekniikka, harjoitustyö K2021
+# Nuotinkirjoitusohjelma
 
-Ohjelmaa testattu virtuaalityöasemassa 7.4. onnistuneesti
+Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Projekti on harjoitustyö HY:n kevään 2021 kurssille Ohjelmistotekniikka.
 
-## Harjoitustyö
+Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
+
+## Dokumentaatio
 [Harjoitustyön vaatimusmäärittely](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
-
-## Tehtävät
-### Viikko 1
-[gitlog.txt](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
-
-Tähän jokin _muutos_
