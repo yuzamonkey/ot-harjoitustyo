@@ -1,0 +1,2 @@
+class Clef:
+  pass

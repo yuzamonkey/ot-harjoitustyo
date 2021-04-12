@@ -7,6 +7,7 @@
 | 31.3. | 1    | Luokkien attribuuttien ja suhteiden suunnittelua |
 | 7.4.  | 1.5  | Koodin rakenteen suunnittelua, testausta virtuaalityöasemassa |
 | 10.4. | 6.5  | Rakenteen lisäystä repoon, Tkinter sandboxaamista ja alustusta|
-| 11.4. | 2.5 | Ui toiminnallisuutta, luokkia, rakenteita, testaus virtuaalityöasemassa |
+| 11.4. | 2.5  | Ui toiminnallisuutta, luokkia, rakenteita, testaus virtuaalityöasemassa |
+| 12.4. | 0830- | |
 | yht   | 18.5   | | 
 

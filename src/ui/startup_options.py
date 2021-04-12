@@ -26,7 +26,7 @@ class StartupOptions:
     startup_options_frame.rowconfigure([0], weight=1)
 
     new_file_button = tk.Button(master=startup_options_frame, text='New file', command=self._handle_create_new_file)
-    existing_file_button = tk.Button(master=startup_options_frame, text='Open existing file', command=self._handle_open_existing_file)
+    existing_file_button = tk.Button(master=startup_options_frame, text='Open existing file (no functionality yet)', command=self._handle_open_existing_file)
     
     new_file_button.grid(row=0, column=0)
     existing_file_button.grid(row=0, column=1)

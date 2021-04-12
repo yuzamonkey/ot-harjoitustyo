@@ -5,7 +5,7 @@ Sovellus noudattaa kolmikerrosarkkitehtuuria:
 - Sovelluslogiikka (Services)
 - Tiedon talletus (Repositories)
 
-Pakkaus Entities sisältää sovelluksen käyttämiä tietokohteita
+Pakkaus Entities sisältää sovelluksen käyttämiä luokkia. Pakkaus Utils sisältää mm. vakioita ja värejä, joita voi hyödyntää muissa pakkauksissa.
 
 ### Sovelluslogiikka
 Alustava luokkakaavio perustoiminnallisuuksia varten:

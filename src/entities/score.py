@@ -13,4 +13,7 @@ class Score:
     if score:
       self._staff = score.staff
     else:
-      self._score = Staff([])
+      self._score = Staff()
+    
+  def __str__(self):
+    return 'toString method for class Score'
