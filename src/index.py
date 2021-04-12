@@ -4,7 +4,7 @@ from ui.ui import UI
 def main():
   root = tk.Tk()
   root.title("Nuotinnussofta")
-  root.geometry("1000x500")
+  root.geometry("1000x600")
   root.minsize(600, 400)
   ui = UI(root)
   ui.show()

@@ -10,3 +10,4 @@ class TestFileService(unittest.TestCase):
 
   def test_new_score_name_equals_untitled(self):
     self.assertEqual(self.new_score.get_name(), 'Untitled')
+    

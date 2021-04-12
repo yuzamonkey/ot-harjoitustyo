@@ -4,6 +4,7 @@
   Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Käyttäjä voi valita sävel- ja tahtilajin. Graafista käyttöliittymää ohjataan hiirellä raahaamalla elementtejä
 
 ### Suunnitellut perustoiminnallisuudet
+  - Uuden tiedoston luonti tai tallennetun tiedoston avaus aloitusnäkymästä
   - Käyttäjä voi lisätä ja poistaa nuotteja. Oletusasetuksina avaimena on g-avain, sävellajina c-duuri/a-molli ja tahtilajina 4/4
   - Ohjelma pystyy soittamaan käyttäjän kirjoittaman viisun 
   - Kirjoitetun mestariteoksen pystyy tallentamaan tiedostoon ja tiedostoja voi avata editoitavaksi

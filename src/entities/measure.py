@@ -1,9 +1,8 @@
 from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
-from entities.notation import Notation
 
-class Bar:
+class Measure:
   def __init__(self):
     self._clef = Clef('G')
     self._key_signature = KeySignature('C')
@@ -26,4 +25,4 @@ class Bar:
     pass
 
   def __str__(self):
-    return 'ToString method for class Bar'
+    return 'ToString method for class Measure'

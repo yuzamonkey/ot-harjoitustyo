@@ -1,6 +1,5 @@
 import tkinter as tk
-from utils.colors import navigation_background
-from utils.colors import options_view_background
+from utils.colors import DARK_BLUE, GRAY
 
 class Ribbon:
   def __init__(self, parent_frame):
@@ -13,17 +12,16 @@ class Ribbon:
 
   def _show_ribbon(self):
     # navigation bar
-    navigation_frame = tk.Frame(master=self._frame, height=50, bg=navigation_background)
+    navigation_frame = tk.Frame(master=self._frame, height=50, bg=DARK_BLUE)
     navigation_label = tk.Label(master=navigation_frame, text="Navigation bar")
 
     # options
-    options_frame = tk.Frame(master=self._frame, height=50, bg=options_view_background)
+    options_frame = tk.Frame(master=self._frame, height=50, bg=GRAY)
     options_label = tk.Label(master=options_frame, text="Options")
 
     navigation_frame.grid(row=0, column=0, sticky='new')
     options_frame.grid(row=1, column=0, sticky='esw')
     navigation_frame.grid_propagate(False)
     options_frame.grid_propagate(False)
-    
     navigation_label.grid(row=0, column=0)
     options_label.grid(row=0, column=0)

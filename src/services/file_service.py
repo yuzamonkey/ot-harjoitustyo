@@ -2,8 +2,6 @@ from entities.score import Score
 
 class FileService:
   """Class for handling score creation, saving, imports and exports"""
-  def __init__(self):
-    self
 
   def create_new_score(self):
     """Creates and returns a new score

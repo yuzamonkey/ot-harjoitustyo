@@ -14,6 +14,7 @@ class Score:
 
   def set_score(self, score):
     pass
-    
+
   def __str__(self):
     return f'Score title: {self._title}'
+    

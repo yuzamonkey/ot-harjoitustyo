@@ -1,5 +1,5 @@
 import tkinter as tk
-from utils.colors import ui_background
+from utils.colors import LIGHT_GRAY
 from ui.ribbon import Ribbon
 from ui.workspace import Workspace
 
@@ -13,17 +13,13 @@ class UI:
 
   def _show_layout(self):
     self._frame.pack(fill=tk.BOTH, expand=True)
-    
     # Ribbon
     ribbon_frame = tk.Frame(master=self._frame)
     ribbon_frame.pack(fill=tk.X, side=tk.TOP)
     ribbon = Ribbon(ribbon_frame)
     ribbon.show()
-    
     # Workspace
-    workspace_frame = tk.Frame(master=self._frame, bg=ui_background)
+    workspace_frame = tk.Frame(master=self._frame, bg=LIGHT_GRAY)
     workspace_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
     workspace = Workspace(workspace_frame)
     workspace.show()
-    
-

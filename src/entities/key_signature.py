@@ -7,3 +7,4 @@ class KeySignature:
 
   def __str__(self):
     return f'Key signature: {self._key_signature}'
+    
