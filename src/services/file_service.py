@@ -1,18 +1,18 @@
 from entities.score import Score
 
 class FileService:
-  """Class for handling file creation, saving, imports and exports"""
+  """Class for handling score creation, saving, imports and exports"""
   def __init__(self):
     self
 
-  def create_new_file(self):
-    """Creates and returns a new file"""
-    print("Create new file")
-    file = Score()
-    return file
+  def create_new_score(self):
+    """Creates and returns a new score"""
+    print("Create new score")
+    new_score = Score('Untitled')
+    return new_score
 
-  def open_existing_file(self):
-    """Opens existing file to edit"""
-    print("Open existing file")
+  def open_existing_score(self):
+    """Opens existing score to edit"""
+    print("Open existing score")
 
 file_service = FileService()
