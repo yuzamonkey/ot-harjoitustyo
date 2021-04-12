@@ -12,5 +12,5 @@ class ScoreView:
     self._frame.destroy()
 
   def _show_score_view(self):
-    label = tk.Label(master=self._frame, text=f'show score here: {str(self._score_to_edit)}')
+    label = tk.Label(master=self._frame, text=f'ScoreView: {str(self._score_to_edit)}')
     label.grid(row=1, column=1)
