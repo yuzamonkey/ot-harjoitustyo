@@ -1,7 +1,7 @@
 # Nuotinkirjoitusohjelma 
 ## Vaatimusmäärittely
 ### Sovelluksen tarkoitus
-  Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Käyttäjä voi valita sävel- ja tahtilajin. Graafista käyttöliittymää ohjataan hiirellä raahaamalla elementtejä
+  Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Käyttäjä voi valita sävel- ja tahtilajin. Graafista käyttöliittymää ohjataan syöttämällä arvoja tekstikenttiin tai, kurssin aikataulun salliessa, hiirellä raahaamalla elementtejä
 
 ### Suunnitellut perustoiminnallisuudet
   - Uuden tiedoston luonti tai tallennetun tiedoston avaus aloitusnäkymästä
