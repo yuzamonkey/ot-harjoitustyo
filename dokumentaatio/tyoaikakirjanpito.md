@@ -9,6 +9,6 @@
 | 10.4. | 6.5  | Rakenteen lisäystä repoon, Tkinter sandboxaamista ja alustusta|
 | 11.4. | 2.5  | Ui toiminnallisuutta, luokkia, rakenteita, testaus virtuaalityöasemassa |
 | 12.4. | 3 | Luokkien lisäystä, toiminnallisuus lisätä uusi tiedosto aloitusnäkymästä, testejä |
-| 13.4. | 0830- |  |
-| yht   | 21.5   | | 
+| 13.4. | 2 | Luokkien attribuutteja, tkinter freimien parantelua |
+| yht   | 23.5   | | 
 

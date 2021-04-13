@@ -11,6 +11,6 @@ class Staff:
   def __str__(self):
     to_string = ""
     for measure in self._measures:
-      to_string += f'{str(measure)} | \n'
+      to_string += f'{str(measure)} \n'
     return to_string
     

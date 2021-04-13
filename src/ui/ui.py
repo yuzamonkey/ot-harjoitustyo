@@ -1,5 +1,4 @@
 import tkinter as tk
-from utils.colors import LIGHT_GRAY
 from ui.ribbon import Ribbon
 from ui.workspace import Workspace
 
@@ -19,7 +18,7 @@ class UI:
     ribbon = Ribbon(ribbon_frame)
     ribbon.show()
     # Workspace
-    workspace_frame = tk.Frame(master=self._frame, bg=LIGHT_GRAY)
+    workspace_frame = tk.Frame(master=self._frame)
     workspace_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
     workspace = Workspace(workspace_frame)
     workspace.show()

@@ -10,7 +10,7 @@ class Measure:
     self._clef = Clef('G')
     self._key_signature = KeySignature('C')
     self._time_signature = TimeSignature('44')
-    self._notations = [Note(), Note(), Rest(), Note()]
+    self._notations = [Note(), Rest()]
 
   def set_clef(self, clef):
     self._clef = Clef(clef)
@@ -29,12 +29,12 @@ class Measure:
 
   def __str__(self):
     to_string = f"""
-      Clef: {self._clef}
-      Key signature: {self._key_signature}
-      Time signature: {self._time_signature}
+      {self._clef}
+      {self._key_signature}
+      {self._time_signature}
     """
     notations_to_string = 'Notations: [ '
     for notation in self._notations:
-      notations_to_string += f'{str(notation)}, '
+      notations_to_string += f'{str(notation)}'
     notations_to_string += " ]"
-    return to_string + notations_to_string
+    return f'Measure: {to_string} {notations_to_string} \n______________'
