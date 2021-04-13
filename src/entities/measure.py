@@ -2,15 +2,15 @@ from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
 #from entities.notation import Notation
-#from entities.note import Note
-#from entities.rest import Rest
+from entities.note import Note
+from entities.rest import Rest
 
 class Measure:
   def __init__(self):
     self._clef = Clef('G')
     self._key_signature = KeySignature('C')
     self._time_signature = TimeSignature('44')
-    self._notations = []
+    self._notations = [Note(), Note(), Rest(), Note()]
 
   def set_clef(self, clef):
     self._clef = Clef(clef)
@@ -33,8 +33,8 @@ class Measure:
       Key signature: {self._key_signature}
       Time signature: {self._time_signature}
     """
-    n = 'Notations: [ '
+    notations_to_string = 'Notations: [ '
     for notation in self._notations:
-      n += f'{str(notation)}, '
-    n += " ]"
-    return to_string + n
+      notations_to_string += f'{str(notation)}, '
+    notations_to_string += " ]"
+    return to_string + notations_to_string
