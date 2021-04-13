@@ -1,6 +1,9 @@
 from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
+#from entities.notation import Notation
+#from entities.note import Note
+#from entities.rest import Rest
 
 class Measure:
   def __init__(self):
@@ -29,6 +32,9 @@ class Measure:
       Clef: {self._clef}
       Key signature: {self._key_signature}
       Time signature: {self._time_signature}
-      Notations: {self._notations}
     """
-    return to_string
+    n = 'Notations: [ '
+    for notation in self._notations:
+      n += f'{str(notation)}, '
+    n += " ]"
+    return to_string + n
