@@ -9,5 +9,5 @@ class TestFileService(unittest.TestCase):
     self.assertNotEqual(self.new_score, None)
 
   def test_new_score_name_equals_untitled(self):
-    self.assertEqual(self.new_score.get_name(), 'Untitled')
+    self.assertEqual(self.new_score.get_title(), 'Untitled')
     

@@ -25,4 +25,10 @@ class Measure:
     pass
 
   def __str__(self):
-    return 'ToString method for class Measure'
+    to_string = f"""
+      Clef: {self._clef}
+      Key signature: {self._key_signature}
+      Time signature: {self._time_signature}
+      Notations: {self._notations}
+    """
+    return to_string

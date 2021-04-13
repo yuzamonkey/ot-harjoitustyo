@@ -9,5 +9,8 @@ class Staff:
     self._measures.append(Measure())
 
   def __str__(self):
-    return 'toString method for class Staff'
+    to_string = ""
+    for measure in self._measures:
+      to_string += f'{str(measure)} | '
+    return to_string
     
