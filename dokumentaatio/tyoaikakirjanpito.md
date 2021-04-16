@@ -10,5 +10,6 @@
 | 11.4. | 2.5  | Ui toiminnallisuutta, luokkia, rakenteita, testaus virtuaalityöasemassa |
 | 12.4. | 3 | Luokkien lisäystä, toiminnallisuus lisätä uusi tiedosto aloitusnäkymästä, testejä |
 | 13.4. | 2 | Luokkien attribuutteja, tkinter freimien parantelua |
+| 16.4. | 1115- | Scoren muokkaamisen logiikkaa |
 | yht   | 23.5   | | 
 
