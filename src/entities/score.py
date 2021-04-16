@@ -6,11 +6,15 @@ class Score:
     self._title = title
     self._staff = Staff()
 
+
   def get_title(self):
     return self._title
 
   def set_title(self, title):
     self._title = title
+
+  def get_staff(self):
+    return self._staff
 
   def set_score(self, score):
     pass

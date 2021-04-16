@@ -6,5 +6,5 @@ class TimeSignature:
     return self._time_signature
 
   def __str__(self):
-    return f'Time signature: {self._time_signature}'
+    return self._time_signature
     

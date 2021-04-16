@@ -6,5 +6,5 @@ class KeySignature:
     return self._key_signature
 
   def __str__(self):
-    return f'Key signature: {self._key_signature}'
+    return self._key_signature
     

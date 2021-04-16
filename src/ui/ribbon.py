@@ -24,23 +24,22 @@ class Ribbon:
     if self._selected_options_frame:
       self._selected_options_frame.destroy()
     self._selected_options_frame = tk.Frame(master=self._options_frame)
-    self._selected_options_frame.grid(row=0, column=0)
-    self._selected_options_frame.grid_propagate(False)
+    self._selected_options_frame.grid()
 
   def _show_note_input(self):
     self._set_selected_options_frame()
     label = tk.Label(master=self._selected_options_frame, text="note input")
-    label.pack()
+    label.grid(row=0, column=0)
 
   def _show_signatures(self):
     self._set_selected_options_frame()
     label = tk.Label(master=self._selected_options_frame, text="signatures")
-    label.pack()
+    label.grid(row=0, column=0)
 
   def _show_tools(self):
     self._set_selected_options_frame()
     label = tk.Label(master=self._selected_options_frame, text="tools")
-    label.pack()
+    label.grid(row=0, column=0)
 
   def _show_ribbon(self):
     note_input_button = tk.Button(

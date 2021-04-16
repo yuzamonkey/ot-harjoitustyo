@@ -6,5 +6,5 @@ class Clef:
     return self._clef
 
   def __str__(self):
-    return f'Clef: {self._clef}'
+    return self._clef
     
