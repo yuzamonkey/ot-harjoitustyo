@@ -8,7 +8,7 @@ class Staff:
       Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2]),
       Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2]),
       Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2])
-      ]
+    ]
 
   def get_measures(self):
     return self._measures
@@ -17,9 +17,9 @@ class Staff:
     last_index = len(self._measures)-1
     self._measures.append(
       Measure(
-        self._measures[last_index].get_clef(),
-        self._measures[last_index].get_key_signature(),
-        self._measures[last_index].get_time_signature(),
+        str(self._measures[last_index].get_clef()),
+        str(self._measures[last_index].get_key_signature()),
+        str(self._measures[last_index].get_time_signature()),
       )
     )
 
