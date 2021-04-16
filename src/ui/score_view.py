@@ -18,7 +18,6 @@ class ScoreView:
 
   def _show_score_view(self):
     score_title = tk.Label(master=self._frame, text=self._score.get_title())
-    #score_title.pack()
     score_title.grid(row=0, column=1)
     score = tk.Label(master=self._frame, text=str(self._score))
     score.grid(row=1, column=1)
