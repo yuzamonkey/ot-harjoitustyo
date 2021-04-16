@@ -15,7 +15,7 @@ class UI:
 
     self._ribbon_frame = tk.Frame(master=self._frame)
     self._scoreview_frame = tk.Frame(master=self._frame)
-    self._ribbon = Ribbon(self._ribbon_frame, self._add_measure)
+    self._ribbon = Ribbon(self._ribbon_frame, self._add_measure, self._add_note, self._add_rest)
     self._score_view = ScoreView(self._scoreview_frame, self._score)
 
   def show(self):
@@ -32,6 +32,14 @@ class UI:
 
   def _add_measure(self):
     self._score.get_staff().add_measure()
+    self._update_score_view()
+
+  def _add_note(self, measure_index, pitch, length):
+    self._score.get_staff()._add_note(measure_index, length, pitch)
+    self._update_score_view()
+  
+  def _add_rest(self, measure_index,length):
+    self._score.get_staff()._add_rest(measure_index, length)
     self._update_score_view()
 
   def _show_startup_options(self):

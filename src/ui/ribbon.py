@@ -2,7 +2,7 @@ import tkinter as tk
 from utils.colors import DARK_BLUE, GRAY
 
 class Ribbon:
-  def __init__(self, parent_frame, add_measure):
+  def __init__(self, parent_frame, add_measure, add_note, add_rest):
     self._frame = parent_frame
     self._frame.columnconfigure(0, weight=1)
     self._frame.rowconfigure([0,1], weight=1)
@@ -18,12 +18,21 @@ class Ribbon:
     self._show_note_input()
 
     self._add_measure = add_measure
+    self._add_note = add_note
+    self._add_rest = add_rest
 
   def show(self):
     self._show_ribbon()
 
   def _handle_add_measure(self):
     self._add_measure()
+  
+  def _handle_add_note(self, measure_index, length, pitch):
+    print("HANDLE NOTE", measure_index, length, pitch)
+    #self._add_note()
+  
+  def _handle_add_rest(self):
+    self._add_rest()
 
   def _set_selected_options_frame(self):
     if self._selected_options_frame:
@@ -33,15 +42,36 @@ class Ribbon:
 
   def _show_note_input(self):
     self._set_selected_options_frame()
-    label = tk.Label(master=self._selected_options_frame, text="note input")
-    label.grid(row=0, column=0)
     add_measure_button = tk.Button(
       master=self._selected_options_frame,
       text='Add measure',
       command=self._handle_add_measure
       )
-    add_measure_button.grid(row=0, column=1)
+    #Add note
+      #measure index
+    add_note_label = tk.Label(master=self._selected_options_frame, text='Add note:', bg=GRAY)
+    measure_index_label = tk.Label(master=self._selected_options_frame, text='Measure index', bg=GRAY)
+    measure_index_entry = tk.Entry(master=self._selected_options_frame)
+      #length
+    note_length_label = tk.Label(master=self._selected_options_frame, text='Note length', bg=GRAY)
+    note_length_entry = tk.Entry(master=self._selected_options_frame)
+      #pitch
+    pitch_label = tk.Label(master=self._selected_options_frame, text='pitch', bg=GRAY)
+    pitch_entry = tk.Entry(master=self._selected_options_frame)
 
+    submit_note_button = tk.Button(master=self._selected_options_frame, text='Add new note', command=self._handle_add_note)
+    #Add break
+      #measure index
+      #length
+    add_measure_button.grid(row=0, column=0)
+    add_note_label.grid(row=0, column=1)
+    measure_index_label.grid(row=0, column=2)
+    measure_index_entry.grid(row=0, column=3)
+    note_length_label.grid(row=0, column=4)
+    note_length_entry.grid(row=0, column=5)
+    pitch_label.grid(row=0, column=6)
+    pitch_entry.grid(row=0, column=7)
+    submit_note_button.grid(row=0, column=8)
 
   def _show_signatures(self):
     self._set_selected_options_frame()

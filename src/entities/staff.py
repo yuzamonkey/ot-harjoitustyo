@@ -23,6 +23,12 @@ class Staff:
       )
     )
 
+  def add_note(self, measure_index, length, pitch):
+    self._measures[measure_index].add_note(length, pitch)
+
+  def add_rest(self, measure_index, length):
+    self._measures[measure_index].add_rest(length)
+
   def __str__(self):
     to_string = ""
     for measure in self._measures:

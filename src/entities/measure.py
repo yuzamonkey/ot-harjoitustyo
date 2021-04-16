@@ -1,8 +1,6 @@
 from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
-# from entities.note import Note
-# from entities.rest import Rest
 
 class Measure:
   def __init__(self, clef, key_signature, time_signature):
@@ -29,11 +27,11 @@ class Measure:
   def get_time_signature(self):
     return self._time_signature
 
-  def add_note(self):
-    pass
+  def add_note(self, length, pitch):
+    print("ADD NOTE len: ", length, "pitch: ", pitch)
 
-  def add_rest(self):
-    pass
+  def add_rest(self, length):
+    print("ADD REST len:", length)
 
   def __str__(self):
     to_string = f"""
