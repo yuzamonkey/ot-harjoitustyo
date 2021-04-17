@@ -7,6 +7,8 @@ Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
+[Arkkitehtuurikuvaus](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+
 [Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Sovelluksen tila ja tulevaisuus (12.4.2021)
