@@ -30,7 +30,6 @@ class Measure:
     return self._time_signature
 
   def add_note(self, length_index, pitch_index):
-    #print("ADD NOTE len: ", length, "pitch: ", pitch)
     self._notations.append(Note(length_index, pitch_index))
 
   def add_rest(self, length):

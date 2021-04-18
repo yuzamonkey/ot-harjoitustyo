@@ -11,12 +11,18 @@ class ScoreService:
   def set_score(self, score):
     self._score = score
 
+  def get_measure_numbers(self):
+    numbers = []
+    for i in range (len(self._score.get_staff().get_measures())):
+      numbers.append(i+1)
+    return numbers
+
   def add_measure(self):
     self._score.get_staff().add_measure()
   
-  def add_note(self, measure_index, length, pitch):
+  def add_note(self, measure, length, pitch):
     is_valid_input = True
-    measure_index = int(measure_index)
+    measure_index = int(measure)-1
     length = int(length)
 
     if measure_index < 0 or measure_index >= len(self._score.get_staff().get_measures()):

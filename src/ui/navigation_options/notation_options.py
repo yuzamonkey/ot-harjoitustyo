@@ -1,5 +1,6 @@
 import tkinter as tk
 from services.score_service import score_service
+from utils.constants import NOTATION_LENGTHS, PITCHES
 
 class NotationOptions:
   def __init__(self, frame, update_score_view):
@@ -22,30 +23,33 @@ class NotationOptions:
     self._update_score_view()
 
   def _show_add_note_entry_form(self):
-    measure_label = tk.Label(master=self._frame, text="Measure:")
-    length_label = tk.Label(master=self._frame, text="Length:")
-    pitch_label = tk.Label(master=self._frame, text="Pitch:")
+    measure_numbers = score_service.get_measure_numbers()
 
-    measure_entry = tk.Entry(master=self._frame)
-    length_entry = tk.Entry(master=self._frame)
-    pitch_entry = tk.Entry(master=self._frame)
+    measure_clicked = tk.StringVar()
+    measure_clicked.set("Select measure")
+    measure_drop = tk.OptionMenu(self._frame, measure_clicked, *measure_numbers )
 
+    length_clicked = tk.StringVar()
+    length_clicked.set("Select length")
+    length_drop = tk.OptionMenu(self._frame, length_clicked, *NOTATION_LENGTHS )
+    
+    pitch_clicked = tk.StringVar()
+    pitch_clicked.set("Select pitch")
+    pitch_drop = tk.OptionMenu(self._frame, pitch_clicked, *PITCHES )
+    
     add_button = tk.Button(
       master=self._frame, 
       text="Add", 
       command=lambda: self._handle_add_note(
-        measure_entry.get(),
-        length_entry.get(),
-        pitch_entry.get())
+        measure_clicked.get(),
+        length_clicked.get(),
+        pitch_clicked.get())
         )
-
-    measure_label.grid(row=0, column=3)
-    measure_entry.grid(row=0, column=4)
-    length_label.grid(row=0, column=5)
-    length_entry.grid(row=0, column=6)
-    pitch_label.grid(row=0, column=7)
-    pitch_entry.grid(row=0, column=8)
-    add_button.grid(row=0, column=9)
+  
+    measure_drop.grid(row=0, column=3)
+    length_drop.grid(row=0, column=4)
+    pitch_drop.grid(row=0, column=5)
+    add_button.grid(row=0, column=6)
 
   def _show_note_input_options(self):
     label = tk.Label(master=self._frame, text="SHOW NOTATION OPTIONS")
