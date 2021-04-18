@@ -37,9 +37,9 @@ class Measure:
 
   def __str__(self):
     to_string = f"""
-      {self._clef}
-      {self._key_signature}
-      {self._time_signature}
+      Clef: {self._clef}
+      Key: {self._key_signature}
+      Time: {self._time_signature}
     """
     notations_to_string = 'Notations: [\n'
     for notation in self._notations:

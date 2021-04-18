@@ -11,9 +11,12 @@ class ScoreService:
   def set_score(self, score):
     self._score = score
 
+  def get_length(self):
+    return len(self._score.get_staff().get_measures())
+
   def get_measure_numbers(self):
     numbers = []
-    for i in range (len(self._score.get_staff().get_measures())):
+    for i in range(self.get_length()):
       numbers.append(i+1)
     return numbers
 
