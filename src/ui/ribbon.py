@@ -1,7 +1,7 @@
 import tkinter as tk
 from utils.colors import DARK_BLUE, GRAY
 from ui.navigation import Navigation
-from ui.options import Options
+from ui.navigation_options.options import Options
 
 class Ribbon:
   def __init__(self, parent_frame, add_measure, add_note, add_rest):

@@ -1,7 +1,7 @@
 import tkinter as tk
-from ui.note_input_options import NoteInputOptions
-from ui.signatures_options import SignaturesOptions
-from ui.tools_options import ToolsOptions
+from ui.navigation_options.note_input_options import NoteInputOptions
+from ui.navigation_options.signatures_options import SignaturesOptions
+from ui.navigation_options.tools_options import ToolsOptions
 
 class Options:
   def __init__(self, options_frame):
