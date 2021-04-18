@@ -1,6 +1,7 @@
 import tkinter as tk
 from utils.colors import DARK_BLUE, GRAY
 from ui.navigation import Navigation
+from ui.options import Options
 
 class Ribbon:
   def __init__(self, parent_frame, add_measure, add_note, add_rest):
@@ -15,8 +16,7 @@ class Ribbon:
     self._navigation_frame.grid_propagate(False)
     self._options_frame.grid_propagate(False)
 
-    self._selected_options_frame = None
-    self._show_note_input()
+    self._options = Options(self._options_frame)
 
     self._add_measure = add_measure
     self._add_note = add_note
@@ -35,54 +35,14 @@ class Ribbon:
   def _handle_add_rest(self):
     self._add_rest()
 
-  def _set_selected_options_frame(self):
-    if self._selected_options_frame:
-      self._selected_options_frame.destroy()
-    self._selected_options_frame = tk.Frame(master=self._options_frame)
-    self._selected_options_frame.grid()
-
   def _show_note_input(self):
-    self._set_selected_options_frame()
-    add_measure_button = tk.Button(
-      master=self._selected_options_frame,
-      text='Add measure',
-      command=self._handle_add_measure
-      )
-    #Add note
-      #measure index
-    add_note_label = tk.Label(master=self._selected_options_frame, text='Add note:', bg=GRAY)
-    measure_index_label = tk.Label(master=self._selected_options_frame, text='Measure index', bg=GRAY)
-    measure_index_entry = tk.Entry(master=self._selected_options_frame)
-      #length
-    note_length_label = tk.Label(master=self._selected_options_frame, text='Note length', bg=GRAY)
-    note_length_entry = tk.Entry(master=self._selected_options_frame)
-      #pitch
-    pitch_label = tk.Label(master=self._selected_options_frame, text='pitch', bg=GRAY)
-    pitch_entry = tk.Entry(master=self._selected_options_frame)
-
-    submit_note_button = tk.Button(master=self._selected_options_frame, text='Add new note', command=self._handle_add_note)
-    #Add break
-      #measure index
-      #length
-    add_measure_button.grid(row=0, column=0)
-    add_note_label.grid(row=0, column=1)
-    measure_index_label.grid(row=0, column=2)
-    measure_index_entry.grid(row=0, column=3)
-    note_length_label.grid(row=0, column=4)
-    note_length_entry.grid(row=0, column=5)
-    pitch_label.grid(row=0, column=6)
-    pitch_entry.grid(row=0, column=7)
-    submit_note_button.grid(row=0, column=8)
+    self._options.show_note_input()
 
   def _show_signatures(self):
-    self._set_selected_options_frame()
-    label = tk.Label(master=self._selected_options_frame, text="signatures")
-    label.grid(row=0, column=0)
+    self._options.show_signatures()
 
   def _show_tools(self):
-    self._set_selected_options_frame()
-    label = tk.Label(master=self._selected_options_frame, text="tools")
-    label.grid(row=0, column=0)
+    self._options.show_tools()
 
   def _show_ribbon(self):
     navigation = Navigation(
@@ -92,21 +52,4 @@ class Ribbon:
       self._show_tools
       )
     navigation.show()
-    # note_input_button = tk.Button(
-    #   master=self._navigation_frame,
-    #   text='Notes',
-    #   command=self._show_note_input
-    #   )
-    # signatures_button = tk.Button(
-    #   master=self._navigation_frame,
-    #   text='Signatures',
-    #   command=self._show_signatures
-    #   )
-    # tools_button = tk.Button(
-    #   master=self._navigation_frame,
-    #   text='Tools',
-    #   command=self._show_tools
-    #   )
-    # note_input_button.grid(row=0, column=0)
-    # signatures_button.grid(row=0, column=1)
-    # tools_button.grid(row=0, column=2)
+    self._options.show_note_input()
