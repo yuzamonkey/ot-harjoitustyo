@@ -9,7 +9,6 @@ class FileService:
       Args:
         title: The title of the score
     """
-    print("Create new score")
     new_score = Score('Untitled')
     return new_score
 

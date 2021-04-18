@@ -2,6 +2,7 @@ import tkinter as tk
 from ui.ribbon import Ribbon
 from ui.startup_options import StartupOptions
 from ui.score_view import ScoreView
+from services.score_service import score_service
 
 class UI:
   def __init__(self, root):
@@ -31,15 +32,15 @@ class UI:
     self._update_score_view()
 
   def _add_measure(self):
-    self._score.get_staff().add_measure()
+    score_service.add_measure(self._score)
     self._update_score_view()
 
   def _add_note(self, measure_index, pitch, length):
-    self._score.get_staff()._add_note(measure_index, length, pitch)
+    score_service.add_note()
     self._update_score_view()
   
   def _add_rest(self, measure_index,length):
-    self._score.get_staff()._add_rest(measure_index, length)
+    score_service.add_rest()
     self._update_score_view()
 
   def _show_startup_options(self):
