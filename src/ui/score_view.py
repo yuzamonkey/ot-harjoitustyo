@@ -1,11 +1,12 @@
 import tkinter as tk
 from utils.colors import LIGHT_GRAY
+from services.score_service import score_service
 
 class ScoreView:
-  def __init__(self, parent_frame, score_to_edit):
+  def __init__(self, parent_frame):
     self._frame = tk.Frame(master=parent_frame, bg=LIGHT_GRAY)
     self._frame.pack(fill=tk.BOTH, expand=True)
-    self._score = score_to_edit
+    self._score = score_service.get_score()
 
   def show(self):
     self._show_score_view()

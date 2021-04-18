@@ -1,9 +1,10 @@
 import tkinter as tk
 from utils.colors import LIGHT_GRAY, GRAY, DARK_GREY
 from services.file_service import file_service
+from services.score_service import score_service
 
 class StartupOptions:
-  def __init__(self, parent_frame, show_layout, set_score):
+  def __init__(self, parent_frame, show_layout):
     self._frame = tk.Frame(master=parent_frame, bg=LIGHT_GRAY)
     self._frame.pack(fill=tk.BOTH, expand=True)
     self._frame.columnconfigure([0,1,2], weight=1)
@@ -23,7 +24,6 @@ class StartupOptions:
     self._startup_options_frame.rowconfigure([0], weight=1)
 
     self._show_layout = show_layout
-    self._set_score_to_edit = set_score
 
   def show(self):
     self._show_startup_options()
@@ -32,11 +32,11 @@ class StartupOptions:
     self._frame.destroy()
 
   def _handle_create_new_score(self):
-    self._set_score_to_edit(file_service.create_new_score())
+    score_service.set_score(file_service.create_new_score())
     self._show_layout()
 
   def _handle_open_existing_score(self):
-    file_service.open_existing_score()
+    pass
 
   def _show_startup_options(self):
     new_score_button = tk.Button(
