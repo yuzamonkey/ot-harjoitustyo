@@ -12,7 +12,7 @@ class ScoreView:
 
   def destroy(self):
     self._frame.destroy()
-  
+
   def _show_score_view(self):
     score_title = tk.Label(master=self._frame, text=self._score.get_title())
     score_title.grid(row=0, column=0)

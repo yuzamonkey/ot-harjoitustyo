@@ -3,7 +3,7 @@ from utils.colors import LIGHT_GRAY, GRAY, DARK_GREY
 from services.file_service import file_service
 
 class StartupOptions:
-  def __init__(self, parent_frame, show_layout, set_score_to_edit):
+  def __init__(self, parent_frame, show_layout, set_score):
     self._frame = tk.Frame(master=parent_frame, bg=LIGHT_GRAY)
     self._frame.pack(fill=tk.BOTH, expand=True)
     self._frame.columnconfigure([0,1,2], weight=1)
@@ -23,7 +23,7 @@ class StartupOptions:
     self._startup_options_frame.rowconfigure([0], weight=1)
 
     self._show_layout = show_layout
-    self._set_score_to_edit = set_score_to_edit
+    self._set_score_to_edit = set_score
 
   def show(self):
     self._show_startup_options()

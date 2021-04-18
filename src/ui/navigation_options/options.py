@@ -22,8 +22,9 @@ class Options:
     self._set_options_frame()
     signatures_options = SignaturesOptions(self._frame)
     signatures_options.show()
-    
+
   def show_tools(self):
     self._set_options_frame()
     tools_options = ToolsOptions(self._frame)
     tools_options.show()
+    
