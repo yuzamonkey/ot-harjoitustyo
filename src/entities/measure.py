@@ -1,8 +1,9 @@
 from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
-from entities.note import Note
 from entities.notation import Notation
+from entities.note import Note
+from entities.rest import Rest
 
 class Measure:
   def __init__(self, clef, key_signature, time_signature):
@@ -32,8 +33,9 @@ class Measure:
   def add_note(self, length_index, pitch_index):
     self._notations.append(Note(length_index, pitch_index))
 
-  def add_rest(self, length):
-    print("ADD REST len:", length)
+  def add_rest(self, length_index):
+    print("ADD REST len:", length_index)
+    self._notations.append(Rest(length_index))
 
   def __str__(self):
     to_string = f"""
@@ -45,4 +47,4 @@ class Measure:
     for notation in self._notations:
       notations_to_string += f'{notation}\n'
     notations_to_string += "]"
-    return f'Measure: {to_string} {notations_to_string} \n______________'
+    return f'{to_string} {notations_to_string} \n______________'

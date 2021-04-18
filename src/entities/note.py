@@ -1,7 +1,6 @@
 from entities.notation import Notation
 from utils.constants import NOTATION_LENGTHS, PITCHES
 
-
 class Note(Notation):
   def __init__(self, length_index, pitch_index):
     super().__init__(length_index)

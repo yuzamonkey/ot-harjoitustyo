@@ -39,5 +39,5 @@ class ScoreView:
 
   def _show_score(self):
     for i in range (0, len(self._score.get_staff().get_measures())):
-      measure = tk.Label(master=self._score_frame, text=str(self._score.get_staff().get_measures()[i]))
+      measure = tk.Label(master=self._score_frame, text=f'Measure {i+1}:\n{str(self._score.get_staff().get_measures()[i])}')
       measure.grid(row=0, column=i)

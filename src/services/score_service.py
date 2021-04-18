@@ -28,15 +28,15 @@ class ScoreService:
     measure_index = int(measure)-1
     length = int(length)
 
-    if measure_index < 0 or measure_index >= len(self._score.get_staff().get_measures()):
+    if measure_index < 0 or measure_index >= self.get_length():
       print("BAD MEASURE INDEX")
       is_valid_input = False
 
-    if length not in NOTATION_LENGTHS: # 8,4,2
+    if length not in NOTATION_LENGTHS:
       print("BAD LENGTH INPUT")
       is_valid_input = False
 
-    if pitch not in PITCHES: #  'c4', 'd4', 'e4', 'f4', 'g4', 'a4', 'b4'
+    if pitch not in PITCHES:
       print("BAD PITCH INPUT")
       is_valid_input = False
 
@@ -48,5 +48,26 @@ class ScoreService:
         )
 
     return is_valid_input
+
+  def add_rest(self, measure, length):
+    is_valid_input = True
+    measure_index = int(measure)-1
+    length = int(length)
+    if measure_index < 0 or measure_index >= self.get_length():
+      print("BAD MEASURE INDEX")
+      is_valid_input = False
+
+    if length not in NOTATION_LENGTHS:
+      print("BAD LENGTH INPUT")
+      is_valid_input = False
+
+    if is_valid_input:
+      self._score.get_staff().add_rest(
+        measure_index,
+        NOTATION_LENGTHS.index(length)
+        )
+
+    return is_valid_input
+
 
 score_service = ScoreService()
