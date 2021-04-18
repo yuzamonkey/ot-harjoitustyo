@@ -1,5 +1,5 @@
 import tkinter as tk
-from ui.navigation_options.note_input_options import NoteInputOptions
+from ui.navigation_options.notation_options import NotationOptions
 from ui.navigation_options.signatures_options import SignaturesOptions
 from ui.navigation_options.tools_options import ToolsOptions
 
@@ -16,7 +16,7 @@ class Options:
 
   def show_note_input(self):
     self._set_options_frame()
-    note_input_options = NoteInputOptions(self._frame, self._update_score_view)
+    note_input_options = NotationOptions(self._frame, self._update_score_view)
     note_input_options.show()
 
   def show_signatures(self):

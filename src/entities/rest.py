@@ -1,6 +1,6 @@
 from entities.notation import Notation
 
-class Rest(Notation):
+class Rest():
   def __init__(self):
     super().__init__()
 

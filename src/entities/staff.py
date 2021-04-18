@@ -23,8 +23,9 @@ class Staff:
       )
     )
 
-  def add_note(self, measure_index, length, pitch):
-    self._measures[measure_index].add_note(length, pitch)
+  def add_note(self, measure_index, length_index, pitch_index):
+    print("ADD NOTE IN STAFF, m:", measure_index, "l:", length_index, "p:", pitch_index)
+    self._measures[measure_index].add_note(length_index, pitch_index)
 
   def add_rest(self, measure_index, length):
     self._measures[measure_index].add_rest(length)

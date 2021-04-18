@@ -23,9 +23,6 @@ class UI:
 
   def _update_score_view(self):
     self._score_view.update()
-    # self._score_view.destroy()
-    # self._score_view = ScoreView(self._scoreview_frame)
-    # self._score_view.show()
 
   def _show_startup_options(self):
     startup_options = StartupOptions(

@@ -1,8 +1,8 @@
 from utils.constants import NOTATION_LENGTHS
 
 class Notation:
-  def __init__(self):
-    self._length = None
+  def __init__(self, length_index):
+    self._length = NOTATION_LENGTHS[length_index]
 
   def set_length(self, index):
     self._length = NOTATION_LENGTHS[index]

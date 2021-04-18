@@ -1,16 +1,14 @@
 from entities.notation import Notation
+from utils.constants import NOTATION_LENGTHS, PITCHES
 
-pitches = [
-  'c4', 'd4', 'e4', 'f4', 'g4', 'a4', 'b4'
-]
 
 class Note(Notation):
-  def __init__(self):
-    super().__init__()
-    self._pitch = pitches[0]
+  def __init__(self, length_index, pitch_index):
+    super().__init__(length_index)
+    self._pitch = PITCHES[pitch_index]
 
   def set_pitch(self, index):
-    self._pitch = pitches[index]
+    self._pitch = PITCHES[index]
 
   def __str__(self):
     to_string = f"""

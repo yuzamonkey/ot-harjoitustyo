@@ -12,6 +12,6 @@
 | 13.4. | 2 | Luokkien attribuutteja, tkinter freimien parantelua |
 | 16.4. | 4 | Scoren muokkaamisen logiikkaa |
 | 17.4. | 0.5 | Arkkitehtuurin dokumentointi |
-| 18.4. | 2, 1215- | UI:n refaktorointia |
+| 18.4. | 2, 1215- | UI:n refaktorointia, tkinter turhautumista |
 | yht   | 30   | | 
 
