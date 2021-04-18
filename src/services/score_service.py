@@ -22,7 +22,7 @@ class ScoreService:
 
   def add_measure(self):
     self._score.get_staff().add_measure()
-  
+
   def add_note(self, measure, length, pitch):
     is_valid_input = True
     measure_index = int(measure)-1

@@ -25,13 +25,11 @@ class NotationOptions:
 
   def _handle_add_note(self, measure, length, pitch):
     is_success = score_service.add_note(measure, length, pitch)
-    print("ADD NOTE HANDLER RESULT:", is_success)
     if is_success:
       self._update_score_view()
 
   def _handle_add_rest(self, measure, length):
     is_success = score_service.add_rest(measure, length)
-    print("ADD REST HANDLER RESULT:", is_success)
     if is_success:
       self._update_score_view()
 
@@ -54,7 +52,7 @@ class NotationOptions:
       command=self._handle_add_measure
       )
     add_measure_button.grid(row=0, column=1)
-    
+
     add_rest_button = tk.Button(master=self._frame,
       text="Add note",
       command=self._show_add_note_options
@@ -87,21 +85,21 @@ class AddNoteOptions:
     length_clicked = tk.StringVar()
     length_clicked.set("Select length")
     length_drop = tk.OptionMenu(self._frame, length_clicked, *NOTATION_LENGTHS )
-    
+
     pitch_clicked = tk.StringVar()
     pitch_clicked.set("Select pitch")
     pitch_drop = tk.OptionMenu(self._frame, pitch_clicked, *PITCHES )
-    
+
     add_button = tk.Button(
-      master=self._frame, 
-      text="Add", 
+      master=self._frame,
+      text="Add",
       command=lambda: self._handle_add_note(
         measure_clicked.get(),
         length_clicked.get(),
         pitch_clicked.get()
         )
       )
-  
+
     measure_drop.grid(row=0, column=4)
     length_drop.grid(row=0, column=5)
     pitch_drop.grid(row=0, column=6)
@@ -126,17 +124,16 @@ class AddRestOptions:
     length_clicked = tk.StringVar()
     length_clicked.set("Select length")
     length_drop = tk.OptionMenu(self._frame, length_clicked, *NOTATION_LENGTHS )
-    
+
     add_button = tk.Button(
-      master=self._frame, 
-      text="Add", 
+      master=self._frame,
+      text="Add",
       command=lambda: self._handle_add_rest(
         measure_clicked.get(),
         length_clicked.get()
         )
       )
-  
+
     measure_drop.grid(row=0, column=4)
     length_drop.grid(row=0, column=5)
     add_button.grid(row=0, column=6)
-

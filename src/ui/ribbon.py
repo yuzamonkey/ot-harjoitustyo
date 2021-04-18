@@ -15,7 +15,7 @@ class Ribbon:
     self._options_frame.grid(row=1, column=0, sticky='esw')
     self._navigation_frame.grid_propagate(False)
     self._options_frame.grid_propagate(False)
-    
+
     self._options = Options(self._options_frame, update_score_view)
 
   def show(self):

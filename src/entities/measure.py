@@ -1,7 +1,6 @@
 from entities.clef import Clef
 from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
-from entities.notation import Notation
 from entities.note import Note
 from entities.rest import Rest
 
@@ -34,7 +33,6 @@ class Measure:
     self._notations.append(Note(length_index, pitch_index))
 
   def add_rest(self, length_index):
-    print("ADD REST len:", length_index)
     self._notations.append(Rest(length_index))
 
   def __str__(self):

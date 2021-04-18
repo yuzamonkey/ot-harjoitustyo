@@ -6,7 +6,6 @@ def start(ctx):
 
 @task
 def test(ctx):
-  print("Run tests here")
   ctx.run("pytest src")
 
 @task
@@ -15,7 +14,6 @@ def coverage(ctx):
 
 @task(coverage)
 def coverage_report(ctx):
-  print("Make coverage report")
   ctx.run("coverage html")
 
 @task

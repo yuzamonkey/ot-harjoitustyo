@@ -33,7 +33,7 @@ class UI:
 
   def _show_layout(self):
     self._startup_frame.destroy()
-    
+
     self._ribbon_frame.pack(fill=tk.X, side=tk.TOP)
     self._scoreview_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
 

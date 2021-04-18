@@ -45,4 +45,22 @@ class TestScoreService(unittest.TestCase):
     pitch = 'abcd'
     return_value = score_service.add_note(measure, length, pitch)
     self.assertEqual(return_value, False)
+
+  def test_add_rest_returns_true_with_valid_parameters(self):
+    measure = 2
+    length = 4
+    return_value = score_service.add_rest(measure, length)
+    self.assertEqual(return_value, True)
+
+  def test_add_rest_returns_false_with_invalid_measure(self):
+    measure = -1
+    length = 4
+    return_value = score_service.add_rest(measure, length)
+    self.assertEqual(return_value, False)
+
+  def test_add_rest_returns_false_with_invalid_length(self):
+    measure = -1
+    length = 999
+    return_value = score_service.add_rest(measure, length)
+    self.assertEqual(return_value, False)
     
