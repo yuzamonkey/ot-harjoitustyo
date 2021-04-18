@@ -1,5 +1,6 @@
 import tkinter as tk
 from utils.colors import DARK_BLUE, GRAY
+from ui.navigation import Navigation
 
 class Ribbon:
   def __init__(self, parent_frame, add_measure, add_note, add_rest):
@@ -84,21 +85,28 @@ class Ribbon:
     label.grid(row=0, column=0)
 
   def _show_ribbon(self):
-    note_input_button = tk.Button(
-      master=self._navigation_frame,
-      text='Notes',
-      command=self._show_note_input
+    navigation = Navigation(
+      self._navigation_frame,
+      self._show_note_input,
+      self._show_signatures,
+      self._show_tools
       )
-    signatures_button = tk.Button(
-      master=self._navigation_frame,
-      text='Signatures',
-      command=self._show_signatures
-      )
-    tools_button = tk.Button(
-      master=self._navigation_frame,
-      text='Tools',
-      command=self._show_tools
-      )
-    note_input_button.grid(row=0, column=0)
-    signatures_button.grid(row=0, column=1)
-    tools_button.grid(row=0, column=2)
+    navigation.show()
+    # note_input_button = tk.Button(
+    #   master=self._navigation_frame,
+    #   text='Notes',
+    #   command=self._show_note_input
+    #   )
+    # signatures_button = tk.Button(
+    #   master=self._navigation_frame,
+    #   text='Signatures',
+    #   command=self._show_signatures
+    #   )
+    # tools_button = tk.Button(
+    #   master=self._navigation_frame,
+    #   text='Tools',
+    #   command=self._show_tools
+    #   )
+    # note_input_button.grid(row=0, column=0)
+    # signatures_button.grid(row=0, column=1)
+    # tools_button.grid(row=0, column=2)
