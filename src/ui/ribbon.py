@@ -4,7 +4,7 @@ from ui.navigation import Navigation
 from ui.navigation_options.options import Options
 
 class Ribbon:
-  def __init__(self, parent_frame):
+  def __init__(self, parent_frame, update_score_view):
     self._frame = parent_frame
     self._frame.columnconfigure(0, weight=1)
     self._frame.rowconfigure([0,1], weight=1)
@@ -15,8 +15,8 @@ class Ribbon:
     self._options_frame.grid(row=1, column=0, sticky='esw')
     self._navigation_frame.grid_propagate(False)
     self._options_frame.grid_propagate(False)
-
-    self._options = Options(self._options_frame)
+    
+    self._options = Options(self._options_frame, update_score_view)
 
   def show(self):
     self._show_ribbon()

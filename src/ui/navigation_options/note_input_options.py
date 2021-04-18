@@ -2,8 +2,9 @@ import tkinter as tk
 from services.score_service import score_service
 
 class NoteInputOptions:
-  def __init__(self, frame):
+  def __init__(self, frame, update_score_view):
     self._frame = frame
+    self._update_score_view = update_score_view
 
   def show(self):
     self._show_note_input_options()
@@ -13,7 +14,7 @@ class NoteInputOptions:
 
   def _handle_add_measure(self):
     score_service.add_measure()
-    # listener to score view??
+    self._update_score_view()
 
   def _show_note_input_options(self):
     label = tk.Label(master=self._frame, text="SHOW NOTE INPUT")

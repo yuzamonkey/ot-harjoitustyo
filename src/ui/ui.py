@@ -2,6 +2,7 @@ import tkinter as tk
 from ui.startup_options import StartupOptions
 from ui.ribbon import Ribbon
 from ui.score_view import ScoreView
+from utils.colors import LIGHT_GRAY
 
 class UI:
   def __init__(self, root):
@@ -13,7 +14,7 @@ class UI:
     self._startup_frame.pack(fill=tk.BOTH, expand=True)
 
     self._ribbon_frame = tk.Frame(master=self._frame)
-    self._scoreview_frame = tk.Frame(master=self._frame)
+    self._scoreview_frame = tk.Frame(master=self._frame, bg=LIGHT_GRAY)
     self._ribbon = None
     self._score_view = None
 
@@ -21,9 +22,10 @@ class UI:
     self._show_startup_options()
 
   def _update_score_view(self):
-    self._score_view.destroy()
-    self._score_view = ScoreView(self._scoreview_frame)
-    self._score_view.show()
+    self._score_view.update()
+    # self._score_view.destroy()
+    # self._score_view = ScoreView(self._scoreview_frame)
+    # self._score_view.show()
 
   def _show_startup_options(self):
     startup_options = StartupOptions(
@@ -34,11 +36,12 @@ class UI:
 
   def _show_layout(self):
     self._startup_frame.destroy()
-
-    self._ribbon = Ribbon(self._ribbon_frame)
-    self._score_view = ScoreView(self._scoreview_frame)
-
+    
     self._ribbon_frame.pack(fill=tk.X, side=tk.TOP)
     self._scoreview_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
+
+    self._ribbon = Ribbon(self._ribbon_frame, self._update_score_view)
+    self._score_view = ScoreView(self._scoreview_frame)
+
     self._ribbon.show()
     self._score_view.show()
