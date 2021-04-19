@@ -29,6 +29,11 @@ class SignaturesOptions:
     if is_success:
       self._update_score_view()
 
+  def _handle_time_change(self, time_signature):
+    is_success = score_service.change_time_signature(time_signature)
+    if is_success:
+      self._update_score_view()
+
   def _show_change_clef_options(self):
     self._destroy_selected_entry()
     self._selected_entry = ChangeClefOptions(self._frame, self._handle_clef_change)
@@ -37,6 +42,11 @@ class SignaturesOptions:
   def _show_change_key_options(self):
     self._destroy_selected_entry()
     self._selected_entry = ChangeKeySignatureOptions(self._frame, self._handle_key_change)
+    self._selected_entry.show()
+
+  def _show_change_time_options(self):
+    self._destroy_selected_entry()
+    self._selected_entry = ChangeTimeSignatureOptions(self._frame, self._handle_time_change)
     self._selected_entry.show()
 
   def _show_signatures_options(self):
@@ -54,7 +64,7 @@ class SignaturesOptions:
 
     change_time_signature_button = tk.Button(master=self._frame,
       text="Change time signature",
-      #command=self._show_add_rest_options
+      command=self._show_change_time_options
       )
     change_time_signature_button.grid(row=0, column=2)
 
@@ -109,6 +119,28 @@ class ChangeKeySignatureOptions:
     change_button.grid(row=0, column=4)
 
 class ChangeTimeSignatureOptions:
-  pass
+  def __init__(self, frame, handle_time_change):
+    self._frame = tk.Frame(master=frame)
+    self._frame.grid(row=0, column=3)
+
+    self._handle_time_change = handle_time_change
+
+  def destroy(self):
+    self._frame.destroy()
+
+  def show(self):
+    time_picked = tk.StringVar()
+    time_picked.set("Select time signature")
+    time_drop = tk.OptionMenu(self._frame, time_picked, *TIME_SIGNATURES )
+
+    change_button = tk.Button(
+      master=self._frame,
+      text="Change",
+      command=lambda: self._handle_time_change(
+        time_picked.get()
+        )
+      )
+    time_drop.grid(row=0, column=3)
+    change_button.grid(row=0, column=4)
 
     

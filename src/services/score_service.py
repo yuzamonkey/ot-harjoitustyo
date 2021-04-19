@@ -1,4 +1,4 @@
-from utils.constants import CLEFS, NOTATION_LENGTHS, KEY_SIGNATURES, PITCHES
+from utils.constants import CLEFS, NOTATION_LENGTHS, KEY_SIGNATURES, PITCHES, TIME_SIGNATURES
 
 class ScoreService:
   """Class for editing score"""
@@ -86,6 +86,16 @@ class ScoreService:
 
     if is_valid_input:
       self._score.get_staff().change_key(KEY_SIGNATURES.index(key))
+
+    return is_valid_input
+  
+  def change_time_signature(self, time):
+    is_valid_input = True
+    if time not in TIME_SIGNATURES:
+      is_valid_input = False
+
+    if is_valid_input:
+      self._score.get_staff().change_time_signature(TIME_SIGNATURES.index(time))
 
     return is_valid_input
 

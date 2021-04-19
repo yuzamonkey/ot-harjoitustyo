@@ -36,6 +36,10 @@ class Staff:
   def change_key(self, key_index):
     for measure in self._measures:
       measure.get_key_signature().set_key_signature(key_index)
+  
+  def change_time_signature(self, time_signature_index):
+    for measure in self._measures:
+      measure.get_time_signature().set_time_signature(time_signature_index)
 
   def __str__(self):
     to_string = ""
