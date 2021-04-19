@@ -18,6 +18,14 @@ class TestScoreService(unittest.TestCase):
   def test_measure_numbers_are_correct(self):
     self.assertEqual(score_service.get_measure_numbers(), [1, 2, 3])
 
+  def test_change_title_changes_title(self):
+    title_before = score_service.get_title()
+    score_service.set_title('ABCD')
+    title_after = score_service.get_title()
+    self.assertEqual(title_before, "TestScore")
+    self.assertEqual(title_after, "ABCD")
+    self.assertNotEqual(title_before, title_after)
+
   def test_add_note_returns_true_with_valid_parameters(self):
     measure = 2
     length = 4

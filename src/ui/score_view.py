@@ -27,6 +27,13 @@ class ScoreView:
 
   def update(self):
     self._score = score_service.get_score()
+
+    self._title_frame.destroy()
+    self._title_frame = tk.Frame(master=self._frame, height=50, bg=LIGHT_GRAY)
+    self._title_frame.grid(row=0, column=0, sticky='new')
+    self._title_frame.pack_propagate(0)
+    self._show_title()
+
     self._score_frame.destroy()
     self._score_frame = tk.Frame(master=self._frame)
     self._score_frame.grid(row=0, column=0)

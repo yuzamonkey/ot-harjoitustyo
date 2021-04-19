@@ -11,6 +11,12 @@ class ScoreService:
   def set_score(self, score):
     self._score = score
 
+  def get_title(self):
+    return self._score.get_title()
+
+  def set_title(self, title):
+    self._score.set_title(title)
+
   def get_length(self):
     return len(self._score.get_staff().get_measures())
 

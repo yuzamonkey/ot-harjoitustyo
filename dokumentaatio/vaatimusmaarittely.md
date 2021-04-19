@@ -8,18 +8,15 @@
   - Tallennetun tiedoston avaus aloitusnäkymästä
   - ✅ Käyttäjä voi lisätä nuotteja ja taukoja, sekä vaihtaa tahti- tai sävellajin. Oletusasetuksina avaimena on g-avain, sävellajina c-duuri/a-molli ja tahtilajina 4/4 
   - Tahteja, nuotteja ja taukoja voi poistaa
+  - ✅ Otsikon voi vaihtaa
   - Ohjelma pystyy soittamaan käyttäjän kirjoittaman viisun 
   - Kirjoitetun mestariteoksen pystyy tallentamaan tiedostoon ja tiedostoja voi avata editoitavaksi
   
 ### Käyttöliittymäluonnos
 ![luonnos käyttöliittymästä](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/GUI_sketch.jpeg?raw=true)
 
-PaintX-ohjelmalla luotu luonnos GUIsta:
-![paintx luonnos](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/gui_sketch.png?raw=true)
-
 ### Jatkokehitysideoita
-Seuraavista ideoista ainakin ensimmäinen olisi hyvä saada toteutettua kurssin aikataulun puitteissa:
-  - Nuottiavaimen, tahtilajin ja sävellajin voi vaihtaa keskellä sävellystä
+  - Nuottiavaimen, tahtilajin ja sävellajin voi vaihtaa keskelle sävellystä
   - Näppäinoikoteitä sovelluksen nopeampaa käyttöä varten
   - Automaattinen leveys tahdeille niissä olevien nuottien mukaan
   - Yhdistä automaattisesti nuotteja kaarilla ja varsilla

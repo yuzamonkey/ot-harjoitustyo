@@ -26,6 +26,6 @@ class Options:
 
   def show_tools(self):
     self._set_options_frame()
-    tools_options = ToolsOptions(self._frame)
+    tools_options = ToolsOptions(self._frame, self._update_score_view)
     tools_options.show()
     
