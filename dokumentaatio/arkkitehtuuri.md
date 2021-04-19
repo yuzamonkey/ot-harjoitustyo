@@ -12,7 +12,6 @@ Pakkaus Entities sisältää sovelluksen käyttämiä luokkia. Pakkaus Utils sis
 ![pakkauskaavio](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/package_diagram.svg?raw=true)
 
 #### Entities
-Pakkauksen entities luokkakaavio (Kaaviossa Bar on koodissa Measure, sillä pylint ei salli nimeä bar):
 
 ![luokkakaavio](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/class_diagram.svg?raw=true)
 
