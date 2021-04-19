@@ -6,7 +6,6 @@ class Score:
     self._title = title
     self._staff = Staff()
 
-
   def get_title(self):
     return self._title
 

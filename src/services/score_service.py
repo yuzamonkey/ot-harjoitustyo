@@ -20,6 +20,15 @@ class ScoreService:
       numbers.append(i+1)
     return numbers
 
+  def get_clef(self):
+    return self._score.get_staff().get_measures()[0].get_clef().get_clef()
+
+  def get_key_signature(self):
+    return self._score.get_staff().get_measures()[0].get_key_signature().get_key_signature()
+
+  def get_time_signature(self):
+    return self._score.get_staff().get_measures()[0].get_time_signature().get_time_signature()
+
   def add_measure(self):
     self._score.get_staff().add_measure()
 

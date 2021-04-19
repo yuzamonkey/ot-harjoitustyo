@@ -42,4 +42,4 @@ class Measure:
     for notation in self._notations:
       notations_to_string += f'{notation}\n'
     notations_to_string += "]"
-    return f'{to_string} {notations_to_string} \n______________'
+    return f'{to_string} {notations_to_string}'

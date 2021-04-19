@@ -63,4 +63,51 @@ class TestScoreService(unittest.TestCase):
     length = 999
     return_value = score_service.add_rest(measure, length)
     self.assertEqual(return_value, False)
-    
+
+  def test_change_clef_returns_true_with_valid_input(self):
+    new_clef = 'F'
+    return_value = score_service.change_clef(new_clef)
+    self.assertEqual(return_value, True)
+
+  def test_change_clef_returns_false_with_invalid_input(self):
+    new_clef = 'Q'
+    return_value = score_service.change_clef(new_clef)
+    self.assertEqual(return_value, False)
+
+  def test_change_clef_changes_clef(self):
+    clef_first = score_service.get_clef()
+    score_service.change_clef('F')
+    clef_after = score_service.get_clef()
+    self.assertNotEqual(clef_after, clef_first)
+
+  def test_change_key_returns_true_with_valid_input(self):
+    new_key = 'F/d'
+    return_value = score_service.change_key(new_key)
+    self.assertEqual(return_value, True)
+
+  def test_change_key_returns_false_with_invalid_input(self):
+    new_key = 'Q/i'
+    return_value = score_service.change_key(new_key)
+    self.assertEqual(return_value, False)
+
+  def test_change_key_changes_key(self):
+    key_first = score_service.get_key_signature()
+    score_service.change_key('G/e')
+    key_after = score_service.get_key_signature()
+    self.assertNotEqual(key_after, key_first)
+
+  def test_change_time_signature_returns_true_with_valid_input(self):
+    new_time_signature = '3/4'
+    return_value = score_service.change_time_signature(new_time_signature)
+    self.assertEqual(return_value, True)
+
+  def test_change_time_signature_returns_false_with_invalid_input(self):
+    new_time_signature = '9/3'
+    return_value = score_service.change_time_signature(new_time_signature)
+    self.assertEqual(return_value, False)    
+
+  def test_change_time_signature_changes_time_signature(self):
+    time_signature_first = score_service.get_time_signature()
+    score_service.change_time_signature('2/4')
+    time_signature_after = score_service.get_time_signature()
+    self.assertNotEqual(time_signature_after, time_signature_first)
