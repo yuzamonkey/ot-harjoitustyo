@@ -5,9 +5,9 @@ class Staff:
   """Class for handling the staff"""
   def __init__(self):
     self._measures = [
-      Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2]),
-      Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2]),
-      Measure(CLEFS[0], KEY_SIGNATURES[1], TIME_SIGNATURES[2])
+      Measure(0, 1, 2),
+      Measure(0, 1, 2),
+      Measure(0, 1, 2)
     ]
 
   def get_measures(self):
@@ -17,9 +17,9 @@ class Staff:
     last_index = len(self._measures)-1
     self._measures.append(
       Measure(
-        str(self._measures[last_index].get_clef()),
-        str(self._measures[last_index].get_key_signature()),
-        str(self._measures[last_index].get_time_signature()),
+        CLEFS.index(str(self._measures[last_index].get_clef())),
+        KEY_SIGNATURES.index(str(self._measures[last_index].get_key_signature())),
+        TIME_SIGNATURES.index(str(self._measures[last_index].get_time_signature())),
       )
     )
 
@@ -28,6 +28,10 @@ class Staff:
 
   def add_rest(self, measure_index, length_index):
     self._measures[measure_index].add_rest(length_index)
+
+  def change_clef(self, clef_index):
+    for measure in self._measures:
+      measure.get_clef().set_clef(clef_index)
 
   def __str__(self):
     to_string = ""

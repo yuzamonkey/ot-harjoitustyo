@@ -44,31 +44,28 @@ class NotationOptions:
     self._selected_entry.show()
 
   def _show_notation_options(self):
-    label = tk.Label(master=self._frame, text="SHOW NOTATION OPTIONS")
-    label.grid(row=0, column=0)
-
     add_measure_button = tk.Button(master=self._frame,
       text="Add measure",
       command=self._handle_add_measure
       )
-    add_measure_button.grid(row=0, column=1)
+    add_measure_button.grid(row=0, column=0)
 
     add_rest_button = tk.Button(master=self._frame,
       text="Add note",
       command=self._show_add_note_options
       )
-    add_rest_button.grid(row=0, column=2)
+    add_rest_button.grid(row=0, column=1)
 
     add_rest_button = tk.Button(master=self._frame,
       text="Add rest",
       command=self._show_add_rest_options
       )
-    add_rest_button.grid(row=0, column=3)
+    add_rest_button.grid(row=0, column=2)
 
 class AddNoteOptions:
   def __init__(self, frame, handle_add_note):
     self._frame = tk.Frame(master=frame)
-    self._frame.grid(row=0, column=4)
+    self._frame.grid(row=0, column=3)
 
     self._handle_add_note = handle_add_note
 
@@ -100,15 +97,15 @@ class AddNoteOptions:
         )
       )
 
-    measure_drop.grid(row=0, column=4)
-    length_drop.grid(row=0, column=5)
-    pitch_drop.grid(row=0, column=6)
-    add_button.grid(row=0, column=7)
+    measure_drop.grid(row=0, column=3)
+    length_drop.grid(row=0, column=4)
+    pitch_drop.grid(row=0, column=5)
+    add_button.grid(row=0, column=6)
 
 class AddRestOptions:
   def __init__(self, frame, handle_add_rest):
     self._frame = tk.Frame(master=frame)
-    self._frame.grid(row=0, column=4)
+    self._frame.grid(row=0, column=3)
     self._handle_add_rest = handle_add_rest
 
   def destroy(self):
@@ -134,6 +131,6 @@ class AddRestOptions:
         )
       )
 
-    measure_drop.grid(row=0, column=4)
-    length_drop.grid(row=0, column=5)
-    add_button.grid(row=0, column=6)
+    measure_drop.grid(row=0, column=3)
+    length_drop.grid(row=0, column=4)
+    add_button.grid(row=0, column=5)

@@ -1,6 +1,6 @@
 # Nuotinkirjoitusohjelma
 
-Nuotinkirjoitusohjelmalla voi nuotintaa ja toistaa sävelmiä. Projekti on harjoitustyö HY:n  kurssille Ohjelmistotekniikka.
+Nuotinkirjoitusohjelmalla voi kirjoittaa ja toistaa sävelmiä. Projekti on harjoitustyö HY:n kurssille Ohjelmistotekniikka.
 
 Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
 
@@ -11,7 +11,5 @@ Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
 
 [Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-## Sovelluksen tila ja tulevaisuus (12.4.2021)
-Sovelluksella on käyttöliittymä. Kun käyttöliittymään lisätään komponentti, tulisi komponenttia vastaava toiminnallisuus toteuttaa ennen uusia komponentteja.
-
-Sovelluslogiikan toteuttamista varten UI tulee olemaan yksinkertainen ja ehkä hieman epäintuitiivinen. Elementtien raahaus ja muut käyttöliittymään kohdistuvat "fancyt" toiminnot tulee mietintään sovelluslogiikan toteuttamisen jälkeen.
+## Sovelluksen tila ja tulevaisuus (19.4.2021)
+Sovelluksella on käyttöliittymä. Kun käyttöliittymään lisätään komponentti, tulisi komponenttia vastaava toiminnallisuus toteuttaa ennen uusia komponentteja. Sovelluksessa on hieman toisteista koodia, varsinkin käyttöliittymäluokissa, ja ulkoasukaan ei mikään mullistava ole, mutta en puutu näihin asioihin tarkemmin ennen kuin sovelluslogiikka on kunnossa.

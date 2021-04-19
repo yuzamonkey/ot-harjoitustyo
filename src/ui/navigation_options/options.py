@@ -21,7 +21,7 @@ class Options:
 
   def show_signatures(self):
     self._set_options_frame()
-    signatures_options = SignaturesOptions(self._frame)
+    signatures_options = SignaturesOptions(self._frame, self._update_score_view)
     signatures_options.show()
 
   def show_tools(self):

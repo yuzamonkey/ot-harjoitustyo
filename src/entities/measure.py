@@ -5,14 +5,11 @@ from entities.note import Note
 from entities.rest import Rest
 
 class Measure:
-  def __init__(self, clef, key_signature, time_signature):
-    self._clef = Clef(clef)
-    self._key_signature = KeySignature(key_signature)
-    self._time_signature = TimeSignature(time_signature)
+  def __init__(self, clef_index, key_signature_index, time_signature_index):
+    self._clef = Clef(clef_index)
+    self._key_signature = KeySignature(key_signature_index)
+    self._time_signature = TimeSignature(time_signature_index)
     self._notations = []
-
-  def set_clef(self, clef):
-    self._clef = Clef(clef)
 
   def get_clef(self):
     return self._clef
