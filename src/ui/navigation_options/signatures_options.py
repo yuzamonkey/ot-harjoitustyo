@@ -24,9 +24,19 @@ class SignaturesOptions:
     if is_success:
       self._update_score_view()
 
+  def _handle_key_change(self, key):
+    is_success = score_service.change_key(key)
+    if is_success:
+      self._update_score_view()
+
   def _show_change_clef_options(self):
-    self._destroy_selected_entry
+    self._destroy_selected_entry()
     self._selected_entry = ChangeClefOptions(self._frame, self._handle_clef_change)
+    self._selected_entry.show()
+
+  def _show_change_key_options(self):
+    self._destroy_selected_entry()
+    self._selected_entry = ChangeKeySignatureOptions(self._frame, self._handle_key_change)
     self._selected_entry.show()
 
   def _show_signatures_options(self):
@@ -38,7 +48,7 @@ class SignaturesOptions:
 
     change_key_button = tk.Button(master=self._frame,
       text="Change key signature",
-      #command=self._show_add_note_options
+      command=self._show_change_key_options
       )
     change_key_button.grid(row=0, column=1)
 
@@ -74,7 +84,29 @@ class ChangeClefOptions:
     change_button.grid(row=0, column=4)
 
 class ChangeKeySignatureOptions:
-  pass
+  def __init__(self, frame, handle_key_change):
+    self._frame = tk.Frame(master=frame)
+    self._frame.grid(row=0, column=3)
+
+    self._handle_key_change = handle_key_change
+
+  def destroy(self):
+    self._frame.destroy()
+
+  def show(self):
+    key_picked = tk.StringVar()
+    key_picked.set("Select key")
+    key_drop = tk.OptionMenu(self._frame, key_picked, *KEY_SIGNATURES )
+
+    change_button = tk.Button(
+      master=self._frame,
+      text="Change",
+      command=lambda: self._handle_key_change(
+        key_picked.get()
+        )
+      )
+    key_drop.grid(row=0, column=3)
+    change_button.grid(row=0, column=4)
 
 class ChangeTimeSignatureOptions:
   pass

@@ -33,6 +33,10 @@ class Staff:
     for measure in self._measures:
       measure.get_clef().set_clef(clef_index)
 
+  def change_key(self, key_index):
+    for measure in self._measures:
+      measure.get_key_signature().set_key_signature(key_index)
+
   def __str__(self):
     to_string = ""
     for measure in self._measures:

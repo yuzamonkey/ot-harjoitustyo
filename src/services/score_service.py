@@ -1,4 +1,4 @@
-from utils.constants import CLEFS, NOTATION_LENGTHS, PITCHES
+from utils.constants import CLEFS, NOTATION_LENGTHS, KEY_SIGNATURES, PITCHES
 
 class ScoreService:
   """Class for editing score"""
@@ -70,13 +70,22 @@ class ScoreService:
     return is_valid_input
 
   def change_clef(self, clef):
-    print("CHANGE CLEF CALLED IN SCORE SERVICE", clef)
     is_valid_input = True
     if clef not in CLEFS:
       is_valid_input = False
 
     if is_valid_input:
       self._score.get_staff().change_clef(CLEFS.index(clef))
+
+    return is_valid_input
+
+  def change_key(self, key):
+    is_valid_input = True
+    if key not in KEY_SIGNATURES:
+      is_valid_input = False
+
+    if is_valid_input:
+      self._score.get_staff().change_key(KEY_SIGNATURES.index(key))
 
     return is_valid_input
 
