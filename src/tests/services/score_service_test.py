@@ -83,6 +83,16 @@ class TestScoreService(unittest.TestCase):
     return_value = score_service.add_rest(measure, length)
     self.assertEqual(return_value, False)
 
+  def test_add_rest_returns_false_when_measure_is_full(self):
+    measure = 1
+    length = 2
+    return_value1 = score_service.add_rest(measure, length)
+    return_value2 = score_service.add_rest(measure, length)
+    return_value3 = score_service.add_rest(measure, length)
+    self.assertEqual(return_value1, True)
+    self.assertEqual(return_value2, True)
+    self.assertEqual(return_value3, False)
+
   def test_change_clef_returns_true_with_valid_input(self):
     new_clef = 'F'
     return_value = score_service.change_clef(new_clef)

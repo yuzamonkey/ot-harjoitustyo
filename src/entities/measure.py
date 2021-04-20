@@ -15,30 +15,39 @@ class Measure:
   def get_clef(self):
     return self._clef
 
-  def set_key_signature(self, key_signature):
-    self._key_signature = KeySignature(key_signature)
-
   def get_key_signature(self):
     return self._key_signature
 
-  def set_time_signature(self, time_signature):
-    self._time_signature = TimeSignature(time_signature)
+  def set_key_signature(self, key_signature):
+    self._key_signature = KeySignature(key_signature)
 
   def get_time_signature(self):
     return self._time_signature
 
-  def get_time_signature_beat(self):
-    return float(self.get_time_signature().get_time_signature()[-1:])
+  def set_time_signature(self, time_signature):
+    self._time_signature = TimeSignature(time_signature)
 
   def measure_has_space(self, input_length):
     space_taken = 0.0
-    time_signature_beat = self.get_time_signature_beat()
+    beats_per_measure = self._time_signature.get_beats_per_measure()
+    beat_unit = self._time_signature.get_beat_unit()
     for notation in self._notations:
       notation_length = float(notation.get_length())
-      space_taken += time_signature_beat / notation_length 
+      space_taken += beat_unit / notation_length 
     
-    sum = space_taken + (time_signature_beat / float(input_length))
-    return sum <= time_signature_beat
+    sum = space_taken + (beat_unit / float(input_length))
+    print("BEATS PER MEASURE", beats_per_measure, "INPUT LENGTH", input_length, "SUM", sum)
+    return sum <= beats_per_measure
+
+  def measure_is_full(self):
+    space_taken = 0.0
+    beats_per_measure = self._time_signature.get_beats_per_measure()
+    beat_unit = self._time_signature.get_beat_unit()
+    for notation in self._notations:
+      notation_length = float(notation.get_length())
+      space_taken += beat_unit / notation_length 
+  
+    return space_taken >= beats_per_measure
 
   def add_note(self, length_index, pitch_index):
     self._notations.append(Note(length_index, pitch_index))
@@ -56,4 +65,6 @@ class Measure:
     for notation in self._notations:
       notations_to_string += f'{notation}\n'
     notations_to_string += "]"
+    if self.measure_is_full():
+      return f'(full) {to_string} {notations_to_string}'
     return f'{to_string} {notations_to_string}'
