@@ -3,6 +3,7 @@ from entities.key_signature import KeySignature
 from entities.time_signature import TimeSignature
 from entities.note import Note
 from entities.rest import Rest
+from utils.constants import NOTATION_LENGTHS
 
 class Measure:
   def __init__(self, clef_index, key_signature_index, time_signature_index):
@@ -25,6 +26,19 @@ class Measure:
 
   def get_time_signature(self):
     return self._time_signature
+
+  def get_time_signature_beat(self):
+    return float(self.get_time_signature().get_time_signature()[-1:])
+
+  def measure_has_space(self, input_length):
+    space_taken = 0.0
+    time_signature_beat = self.get_time_signature_beat()
+    for notation in self._notations:
+      notation_length = float(notation.get_length())
+      space_taken += time_signature_beat / notation_length 
+    
+    sum = space_taken + (time_signature_beat / float(input_length))
+    return sum <= time_signature_beat
 
   def add_note(self, length_index, pitch_index):
     self._notations.append(Note(length_index, pitch_index))

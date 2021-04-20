@@ -54,6 +54,17 @@ class TestScoreService(unittest.TestCase):
     return_value = score_service.add_note(measure, length, pitch)
     self.assertEqual(return_value, False)
 
+  def test_add_note_returns_false_when_measure_is_full(self):
+    measure = 1
+    length = 2
+    pitch = 'c4'
+    return_value1 = score_service.add_note(measure, length, pitch)
+    return_value2 = score_service.add_note(measure, length, pitch)
+    return_value3 = score_service.add_note(measure, length, pitch)
+    self.assertEqual(return_value1, True)
+    self.assertEqual(return_value2, True)
+    self.assertEqual(return_value3, False)
+
   def test_add_rest_returns_true_with_valid_parameters(self):
     measure = 2
     length = 4

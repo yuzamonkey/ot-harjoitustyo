@@ -55,6 +55,10 @@ class ScoreService:
       print("BAD PITCH INPUT")
       is_valid_input = False
 
+    if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
+      print("MEASURE DOESN'T HAVE SPACE")
+      is_valid_input = False
+
     if is_valid_input:
       self._score.get_staff().add_note(
         measure_index,

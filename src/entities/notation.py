@@ -4,6 +4,9 @@ class Notation:
   def __init__(self, length_index):
     self._length = NOTATION_LENGTHS[length_index]
 
+  def get_length(self):
+    return self._length
+
   def set_length(self, index):
     self._length = NOTATION_LENGTHS[index]
 
