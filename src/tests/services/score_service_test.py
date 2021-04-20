@@ -67,7 +67,7 @@ class TestScoreService(unittest.TestCase):
     self.assertEqual(return_value, False)
 
   def test_add_rest_returns_false_with_invalid_length(self):
-    measure = -1
+    measure = 0
     length = 999
     return_value = score_service.add_rest(measure, length)
     self.assertEqual(return_value, False)

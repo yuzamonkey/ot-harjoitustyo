@@ -13,6 +13,7 @@
 | 16.4. | 4 | Scoren muokkaamisen logiikkaa |
 | 17.4. | 0.5 | Arkkitehtuurin dokumentointi |
 | 18.4. | 6.5 | UI:n refaktorointia, sovelluslogiikkaa |
-| 18.4. | 1.5 | Sovelluslogiikkaa |
+| 19.4. | 1.5 | Sovelluslogiikkaa |
+| 20.4. | 0900- |  |
 | yht   | 36   | | 
 

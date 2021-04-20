@@ -13,7 +13,7 @@ class Navigation:
   def _show_navigation(self):
     note_input_button = tk.Button(
       master=self._frame,
-      text='Notes',
+      text='Notation',
       command=self._show_note_input
       )
     signatures_button = tk.Button(
