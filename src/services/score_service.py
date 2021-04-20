@@ -17,12 +17,12 @@ class ScoreService:
   def set_title(self, title):
     self._score.set_title(title)
 
-  def get_length(self):
+  def get_staff_length(self):
     return len(self._score.get_staff().get_measures())
 
   def get_measure_numbers(self):
     numbers = []
-    for i in range(self.get_length()):
+    for i in range(self.get_staff_length()):
       numbers.append(i+1)
     return numbers
 
@@ -47,7 +47,7 @@ class ScoreService:
     measure_index = int(measure)-1
     length = int(length)
 
-    if measure_index < 0 or measure_index >= self.get_length():
+    if measure_index < 0 or measure_index >= self.get_staff_length():
       print("BAD MEASURE INDEX")
       is_valid_input = False
 
@@ -76,7 +76,7 @@ class ScoreService:
     is_valid_input = True
     measure_index = int(measure)-1
     length = int(length)
-    if measure_index < 0 or measure_index >= self.get_length():
+    if measure_index < 0 or measure_index >= self.get_staff_length():
       print("BAD MEASURE INDEX")
       is_valid_input = False
 

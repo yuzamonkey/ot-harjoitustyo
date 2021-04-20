@@ -36,7 +36,6 @@ class Measure:
       space_taken += beat_unit / notation_length 
     
     sum = space_taken + (beat_unit / float(input_length))
-    print("BEATS PER MEASURE", beats_per_measure, "INPUT LENGTH", input_length, "SUM", sum)
     return sum <= beats_per_measure
 
   def measure_is_full(self):

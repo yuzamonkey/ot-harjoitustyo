@@ -10,9 +10,9 @@ class TestScoreService(unittest.TestCase):
     self.assertNotEqual(score_service.get_score(), None)
 
   def test_add_measure_increases_length_of_measures(self):
-    staff_length_first = score_service.get_length()
+    staff_length_first = score_service.get_staff_length()
     score_service.add_measure()
-    staff_length_after = score_service.get_length()
+    staff_length_after = score_service.get_staff_length()
     self.assertEqual(staff_length_after, staff_length_first+1)
 
   def test_measure_numbers_are_correct(self):
@@ -25,6 +25,12 @@ class TestScoreService(unittest.TestCase):
     self.assertEqual(title_before, "TestScore")
     self.assertEqual(title_after, "ABCD")
     self.assertNotEqual(title_before, title_after)
+
+  def test_remove_last_measure_removes_last_measure(self):
+    length_before = score_service.get_staff_length()
+    score_service.remove_last_measure()
+    length_after = score_service.get_staff_length()
+    self.assertEqual(length_after, length_before-1)
 
   def test_add_note_returns_true_with_valid_parameters(self):
     measure = 2
