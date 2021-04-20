@@ -7,7 +7,7 @@
   - ✅ Uuden tiedoston luonti
   - Tallennetun tiedoston avaus aloitusnäkymästä
   - ✅ Käyttäjä voi lisätä nuotteja ja taukoja, sekä vaihtaa tahti- tai sävellajin. Oletusasetuksina avaimena on g-avain, sävellajina c-duuri/a-molli ja tahtilajina 4/4 
-  - Tahteja, nuotteja ja taukoja voi poistaa
+  - Tahteja (✅), nuotteja ja taukoja voi poistaa
   - ✅ Otsikon voi vaihtaa
   - Ohjelma pystyy soittamaan käyttäjän kirjoittaman viisun 
   - Kirjoitetun mestariteoksen pystyy tallentamaan tiedostoon ja tiedostoja voi avata editoitavaksi

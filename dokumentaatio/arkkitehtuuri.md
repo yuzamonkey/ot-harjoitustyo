@@ -7,18 +7,21 @@ Sovellus noudattaa kolmikerrosarkkitehtuuria:
 - Sovelluslogiikka (Services)
 - Tiedon talletus (Repositories)
 
-Pakkaus Entities sisältää sovelluksen käyttämiä luokkia. Pakkaus Utils sisältää mm. vakioita ja värejä, joita voi hyödyntää muissa pakkauksissa.
+Pakkaus Entities sisältää sovelluksen käyttämiä tietokohteita. Pakkaus Utils sisältää mm. vakioita ja värejä, joita muut pakkaukset hyödyntävät.
 
 ![pakkauskaavio](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/package_diagram.svg?raw=true)
 
-#### Entities
+### Sovelluslogiikka
 
+Sovelluksen tietokohteet sijaitsevat pakkauksessa Entities:
 ![luokkakaavio](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/class_diagram.svg?raw=true)
 
-## Käyttöliittymä
+Services pakkauksessa on tällä hetkellä kaksi luokkaa toiminnallisuuksia varten: FileService ja ScoreService. FileService vastaa tiedostojen luonnista, tallennuksesta ja tallennettujen tiedostojen hakemisesta. ScoreService vastaa nuotin muokkauksesta. Toistoa varten luodaan luokka PlaybackService.
 
-Sovellus avautuu näkymään, josta käyttäjä voi valita uuden tiedoston luomisen tai tallennetun avaamisen. Molemmista päädytään näkymään, jossa käyttäjä voi suorittaa navigaatiopalkissa esitettyjä toimintoja
+### Käyttöliittymä
 
-## Päätoiminnallisuudet
+Sovellus avautuu näkymään, josta käyttäjä voi valita uuden tiedoston luomisen tai tallennetun avaamisen. Molemmista päädytään näkymään, jossa käyttäjä voi suorittaa navigaatiopalkissa esitettyjä toimintoja.
 
-## Tiedostojen tallentaminen ja tallennettujen tiedostojen avaaminen
+### Päätoiminnallisuudet
+
+### Tiedostojen tallentaminen ja tallennettujen tiedostojen avaaminen
