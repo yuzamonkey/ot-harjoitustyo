@@ -115,7 +115,7 @@ class ScoreService:
       self._score.get_staff().change_key(KEY_SIGNATURES.index(key))
 
     return is_valid_input
-  
+
   def change_time_signature(self, time):
     is_valid_input = True
     if time not in TIME_SIGNATURES:

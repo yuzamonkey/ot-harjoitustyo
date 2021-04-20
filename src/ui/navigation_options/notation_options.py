@@ -53,7 +53,7 @@ class NotationOptions:
       command=self._handle_add_measure
       )
     add_measure_button.grid(row=0, column=0)
-    
+
     remove_last_measure_button = tk.Button(master=self._frame,
       text="Remove last measure",
       command=self._handle_remove_last_measure
@@ -77,7 +77,6 @@ class AddNoteOptions:
   def __init__(self, frame, handle_add_note):
     self._frame = tk.Frame(master=frame)
     self._frame.grid(row=0, column=4)
-
     self._handle_add_note = handle_add_note
 
   def destroy(self):

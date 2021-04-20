@@ -139,7 +139,7 @@ class TestScoreService(unittest.TestCase):
   def test_change_time_signature_returns_false_with_invalid_input(self):
     new_time_signature = '9/3'
     return_value = score_service.change_time_signature(new_time_signature)
-    self.assertEqual(return_value, False)    
+    self.assertEqual(return_value, False)
 
   def test_change_time_signature_changes_time_signature(self):
     time_signature_first = score_service.get_time_signature()

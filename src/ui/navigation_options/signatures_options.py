@@ -142,5 +142,3 @@ class ChangeTimeSignatureOptions:
       )
     time_drop.grid(row=0, column=3)
     change_button.grid(row=0, column=4)
-
-    

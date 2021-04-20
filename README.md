@@ -11,5 +11,5 @@ Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
 
 [Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-## Sovelluksen tila ja tulevaisuus (19.4.2021)
-Sovelluksella on käyttöliittymä. Kun käyttöliittymään lisätään komponentti, tulisi komponenttia vastaava toiminnallisuus toteuttaa ennen uusia komponentteja. Sovelluksessa on hieman toisteista koodia, ja sovelluslogiikassa olisi parempi käyttää luokkamuuttujia for-looppien sijaan. En puutu näihin asioihin tarkemmin ennen kuin sovelluslogiikka on kunnossa.
+## Sovelluksen tila ja tulevaisuus (20.4.2021)
+Sovelluksella on käyttöliittymä. Kun käyttöliittymään lisätään komponentti, tulisi komponenttia vastaava toiminnallisuus toteuttaa ennen uusia komponentteja. Sovelluksessa on hieman toisteista koodia, ja sovelluslogiikassa olisi parempi käyttää luokkamuuttujia for-looppien sijaan. En puutu näihin asioihin tarkemmin ennen kuin halutut toiminnallisuudet ovat valmiit.

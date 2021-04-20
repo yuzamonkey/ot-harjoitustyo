@@ -15,7 +15,7 @@ class Staff:
 
   def add_measure(self):
     last_index = len(self._measures)-1
-    if (last_index < 0):
+    if last_index < 0:
       self._measures.append(Measure(0, 1, 2))
     else:
       self._measures.append(
@@ -42,7 +42,7 @@ class Staff:
   def change_key(self, key_index):
     for measure in self._measures:
       measure.get_key_signature().set_key_signature(key_index)
-  
+
   def change_time_signature(self, time_signature_index):
     for measure in self._measures:
       measure.get_time_signature().set_time_signature(time_signature_index)
