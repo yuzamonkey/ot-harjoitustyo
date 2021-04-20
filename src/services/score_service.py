@@ -38,6 +38,10 @@ class ScoreService:
   def add_measure(self):
     self._score.get_staff().add_measure()
 
+  def remove_last_measure(self):
+    if self._score.get_staff().get_measures():
+      self._score.get_staff().remove_last_measure()
+
   def add_note(self, measure, length, pitch):
     is_valid_input = True
     measure_index = int(measure)-1

@@ -15,13 +15,19 @@ class Staff:
 
   def add_measure(self):
     last_index = len(self._measures)-1
-    self._measures.append(
-      Measure(
-        CLEFS.index(str(self._measures[last_index].get_clef())),
-        KEY_SIGNATURES.index(str(self._measures[last_index].get_key_signature())),
-        TIME_SIGNATURES.index(str(self._measures[last_index].get_time_signature())),
+    if (last_index < 0):
+      self._measures.append(Measure(0, 1, 2))
+    else:
+      self._measures.append(
+        Measure(
+          CLEFS.index(str(self._measures[last_index].get_clef())),
+          KEY_SIGNATURES.index(str(self._measures[last_index].get_key_signature())),
+          TIME_SIGNATURES.index(str(self._measures[last_index].get_time_signature())),
+        )
       )
-    )
+
+  def remove_last_measure(self):
+    self._measures.pop()
 
   def add_note(self, measure_index, length_index, pitch_index):
     self._measures[measure_index].add_note(length_index, pitch_index)
