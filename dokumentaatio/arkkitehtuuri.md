@@ -25,3 +25,5 @@ Sovellus avautuu näkymään, josta käyttäjä voi valita uuden tiedoston luomi
 ### Päätoiminnallisuudet
 
 ### Tiedostojen tallentaminen ja tallennettujen tiedostojen avaaminen
+
+Scoret tallennetaan luokkina käyttämällä pythonin pickle moduulia score_repository-luokassa. Tiedostot tallentuvat projektin data-hakemiston alle, joista niitä voi hakea myös editoitavaksi.

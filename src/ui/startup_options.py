@@ -37,6 +37,11 @@ class StartupOptions:
   def destroy(self):
     self._frame.destroy()
 
+  def _update_score_selection(self):
+    self._score_selection_frame.destroy()
+    self._score_selection_frame = None
+    self._show_score_selection()
+
   def _handle_create_new_score(self):
     score_service.set_score(file_service.create_new_score())
     self._show_layout()
@@ -46,16 +51,19 @@ class StartupOptions:
     score_service.set_score(score)
     self._show_layout()
 
+  def _handle_delete_score(self, score_title):
+    file_service.delete_score(score_title)
+    self._update_score_selection()
+
   def _handle_back(self):
     self._score_selection_frame.destroy()
     self._show_startup_options()
 
   def _show_score_selection(self):
     self._buttons_frame.destroy()
+    score_titles = file_service.get_score_names()
     
     self._score_selection_frame = tk.Frame(master=self._startup_options_frame, bg=GRAY)
-    score_titles = file_service.get_score_names()
-
     self._score_selection_frame.pack(fill=tk.BOTH, expand=1)
 
     back_button = tk.Button(master=self._score_selection_frame, text="Back", command=self._handle_back)
@@ -76,7 +84,7 @@ class StartupOptions:
     for i in range(len(score_titles)):
       name_label = tk.Label(master=canvas_frame, text=score_titles[i])
       open_button = tk.Button(master=canvas_frame, text=f"Open", command=lambda i=i: self._handle_open_score(score_titles[i]))
-      delete_button = tk.Button(master=canvas_frame, text=f"Delete (no functionality)")
+      delete_button = tk.Button(master=canvas_frame, text=f"Delete", command=lambda i=i: self._handle_delete_score(score_titles[i]))
       
       name_label.grid(row=i, column=0)
       open_button.grid(row=i, column=1)

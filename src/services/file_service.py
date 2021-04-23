@@ -22,6 +22,9 @@ class FileService:
     score = score_repository.get_file(name_of_file)
     return score
 
+  def delete_score(self, score_title):
+    score_repository.delete_file(f"{score_title}.obj")
+
   def save_file(self):
     score_to_save = score_service.get_score()
     score_repository.save_score(score_to_save)

@@ -14,6 +14,9 @@ class ScoreRepository:
     pickle.dump(score, file_object)
     file_object.close()
 
+  def delete_file(self, file_name):
+    os.remove(f"./data/scores/{file_name}")
+
   def get_file_names(self):
     list_of_names = []
     for root, dirs, files in os.walk("./data/scores"):
