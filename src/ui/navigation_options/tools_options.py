@@ -1,5 +1,6 @@
 import tkinter as tk
 from services.score_service import score_service
+from services.file_service import file_service
 
 class ToolsOptions:
   def __init__(self, frame, update_score_view):
@@ -16,6 +17,9 @@ class ToolsOptions:
     score_service.set_title(title)
     self._update_score_view()
 
+  def _handle_save(self):
+    file_service.save_file()
+
   def _show_tools_options(self):
     change_title_label = tk.Label(master=self._frame, text="Change title:")
     change_title_entry = tk.Entry(master=self._frame)
@@ -27,3 +31,11 @@ class ToolsOptions:
     change_title_label.grid(row=0, column=0)
     change_title_entry.grid(row=0, column=1)
     change_title_button.grid(row=0, column=2)
+
+    save_button = tk.Button(
+      master=self._frame,
+      text="Save file",
+      command=self._handle_save
+    )
+
+    save_button.grid(row=0, column=3)
