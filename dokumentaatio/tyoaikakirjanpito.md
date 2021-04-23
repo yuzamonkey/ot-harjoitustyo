@@ -15,6 +15,6 @@
 | 18.4. | 6.5 | UI:n refaktorointia, sovelluslogiikkaa |
 | 19.4. | 1.5 | Sovelluslogiikkaa |
 | 20.4. | 2 | Sovelluslogiikkaa |
-| 23.4. | 1 | Tiedoston tallennusvaihtoehtojen tutkimista |
-| yht   | 39   | | 
+| 23.4. | 2.5 1600-| Tiedoston tallennusvaihtoehtojen tutkimista |
+| yht   | 40.5   | | 
 
