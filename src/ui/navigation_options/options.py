@@ -4,10 +4,11 @@ from ui.navigation_options.signatures_options import SignaturesOptions
 from ui.navigation_options.tools_options import ToolsOptions
 
 class Options:
-  def __init__(self, options_frame, update_score_view):
+  def __init__(self, options_frame, update_score_view, show_startup_options):
     self._parent_frame = options_frame
     self._frame = tk.Frame(master=self._parent_frame)
     self._update_score_view = update_score_view
+    self._show_startup_options = show_startup_options
 
   def _set_options_frame(self):
     self._frame.destroy()
@@ -26,6 +27,6 @@ class Options:
 
   def show_tools(self):
     self._set_options_frame()
-    tools_options = ToolsOptions(self._frame, self._update_score_view)
+    tools_options = ToolsOptions(self._frame, self._update_score_view, self._show_startup_options)
     tools_options.show()
     

@@ -3,9 +3,10 @@ from services.score_service import score_service
 from services.file_service import file_service
 
 class ToolsOptions:
-  def __init__(self, frame, update_score_view):
+  def __init__(self, frame, update_score_view, show_startup_options):
     self._frame = frame
     self._update_score_view = update_score_view
+    self._show_startup_options = show_startup_options
 
   def show(self):
     self._show_tools_options()
@@ -17,8 +18,11 @@ class ToolsOptions:
     score_service.set_title(title)
     self._update_score_view()
 
-  def _handle_save(self):
+  def _handle_save_score(self):
     file_service.save_file()
+
+  def _handle_show_startup(self):
+    self._show_startup_options()
 
   def _show_tools_options(self):
     change_title_label = tk.Label(master=self._frame, text="Change title:")
@@ -34,8 +38,14 @@ class ToolsOptions:
 
     save_button = tk.Button(
       master=self._frame,
-      text="Save file",
-      command=self._handle_save
+      text="Save score",
+      command=self._handle_save_score
     )
-
     save_button.grid(row=0, column=3)
+
+    show_startup_button = tk.Button(
+      master=self._frame,
+      text="Show startup",
+      command=self._handle_show_startup
+    )
+    show_startup_button.grid(row=0, column=4)

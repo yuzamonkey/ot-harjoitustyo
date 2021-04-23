@@ -17,7 +17,6 @@ class FileService:
 
   def get_score_object(self, score_title):
     """Opens existing score to edit"""
-    print("Open existing score", score_title)
     name_of_file = f'{score_title}.obj'
     score = score_repository.get_file(name_of_file)
     return score

@@ -21,12 +21,6 @@ class StartupOptions:
     self._startup_options_frame.pack_propagate(0)
 
     self._buttons_frame = None
-    # self._buttons_frame.pack(fill=tk.BOTH, expand=1)
-    # self._buttons_frame.grid_propagate(False)
-
-    # self._buttons_frame.columnconfigure([0,1], weight=1)
-    # self._buttons_frame.rowconfigure([0], weight=1)
-
     self._score_selection_frame = None
 
     self._show_layout = show_layout
