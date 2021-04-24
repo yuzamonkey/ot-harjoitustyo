@@ -63,7 +63,7 @@ class StartupOptions:
     back_button = tk.Button(master=self._score_selection_frame, text="Back", command=self._handle_back)
     back_button.pack(side=tk.BOTTOM)
 
-    canvas = tk.Canvas(master=self._score_selection_frame, bg=GRAY)
+    canvas = tk.Canvas(master=self._score_selection_frame)
     canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
 
     scrollbar = tk.Scrollbar(master=self._score_selection_frame, orient=tk.VERTICAL, command=canvas.yview)
