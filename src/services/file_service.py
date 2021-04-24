@@ -26,11 +26,12 @@ class FileService:
     score_to_save = score_service.get_score()
     score_repository.save_score(score_to_save)
 
-  def get_score_names(self):
-    scores = score_repository.get_file_names()
+  def get_score_titles(self):
+    file_names = score_repository.get_file_names()
     score_names = []
-    for name in scores:
+    for name in file_names:
       score_names.append(name[:-4])
+    score_names.sort(key=lambda name: name.lower())
     return score_names
 
 file_service = FileService()

@@ -55,7 +55,7 @@ class StartupOptions:
 
   def _show_score_selection(self):
     self._buttons_frame.destroy()
-    score_titles = file_service.get_score_names()
+    score_titles = file_service.get_score_titles()
     
     self._score_selection_frame = tk.Frame(master=self._startup_options_frame, bg=GRAY)
     self._score_selection_frame.pack(fill=tk.BOTH, expand=1)
