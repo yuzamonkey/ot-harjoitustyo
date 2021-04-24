@@ -22,7 +22,10 @@ class ScoreRepository:
     os.remove(f"./data/scores/{file_name}")
 
   def get_file_names(self):
-    for root, dirs, files in os.walk("./data/scores"):
-      return files
+    if os.path.exists("./data/scores"):
+      for root, dirs, files in os.walk("./data/scores"):
+        return files
+    else:
+      return []
 
 score_repository = ScoreRepository()
