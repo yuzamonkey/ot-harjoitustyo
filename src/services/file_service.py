@@ -17,8 +17,7 @@ class FileService:
   def get_score_object(self, score_title):
     """Opens existing score to edit"""
     name_of_file = f'{score_title}.obj'
-    score = score_repository.get_file(name_of_file)
-    return score
+    return score_repository.get_file(name_of_file)
 
   def delete_score(self, score_title):
     score_repository.delete_file(f"{score_title}.obj")

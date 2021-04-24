@@ -17,14 +17,8 @@ class Measure:
   def get_key_signature(self):
     return self._key_signature
 
-  def set_key_signature(self, key_signature):
-    self._key_signature = KeySignature(key_signature)
-
   def get_time_signature(self):
     return self._time_signature
-
-  def set_time_signature(self, time_signature):
-    self._time_signature = TimeSignature(time_signature)
 
   def get_notations(self):
     return self._notations

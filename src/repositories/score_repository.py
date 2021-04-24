@@ -4,10 +4,14 @@ import os
 class ScoreRepository:
 
   def get_file(self, file_name):
-    file_object = open(f"data/scores/{file_name}", "rb")
-    score_object = pickle.load(file_object)
-    file_object.close()
-    return score_object
+    try:
+      file_object = open(f"data/scores/{file_name}", "rb")
+      score_object = pickle.load(file_object)
+      file_object.close()
+      return score_object
+    except NameError:
+      print("NO FILE CALLED", file_name)
+      return None
 
   def save_score(self, score):
     file_object = open(f"data/scores/{score.get_title()}.obj", "wb")
@@ -18,10 +22,7 @@ class ScoreRepository:
     os.remove(f"./data/scores/{file_name}")
 
   def get_file_names(self):
-    list_of_names = []
     for root, dirs, files in os.walk("./data/scores"):
-      for name in files:
-        list_of_names.append(name)
-    return list_of_names
+      return files
 
 score_repository = ScoreRepository()
