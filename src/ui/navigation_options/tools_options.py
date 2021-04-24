@@ -20,8 +20,10 @@ class ToolsOptions:
     self._update_score_view()
 
   def _handle_play(self):
-    print("QUEUE THE MUSIC")
     playback_service.play()
+
+  def _handle_stop(self):
+    playback_service.stop()
 
   def _handle_save_score(self):
     file_service.save_file()
@@ -48,17 +50,25 @@ class ToolsOptions:
     )
 
     play_button.grid(row=0, column=3)
+
+    stop_button = tk.Button(
+      master=self._frame,
+      text="Stop",
+      command=self._handle_stop
+    )
+
+    stop_button.grid(row=0, column=4)
     
     save_button = tk.Button(
       master=self._frame,
       text="Save score",
       command=self._handle_save_score
     )
-    save_button.grid(row=0, column=4)
+    save_button.grid(row=0, column=5)
 
     show_startup_button = tk.Button(
       master=self._frame,
       text="Show startup",
       command=self._handle_show_startup
     )
-    show_startup_button.grid(row=0, column=5)
+    show_startup_button.grid(row=0, column=6)
