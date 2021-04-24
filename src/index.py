@@ -1,8 +1,6 @@
 import tkinter as tk
 from ui.ui import UI
 
-import os
-
 def main():
   root = tk.Tk()
   root.title("Nuotinnussofta")

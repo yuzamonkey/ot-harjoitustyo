@@ -16,6 +16,6 @@
 | 19.4. | 1.5 | Sovelluslogiikkaa |
 | 20.4. | 2 | Sovelluslogiikkaa |
 | 23.4. | 3 | Tiedostojen tallennus ja avaaminen |
-| 24.4. | 845-930 950- |  |
-| yht   | 41   | | 
+| 24.4. | 2 | Playback |
+| yht   | 43   | | 
 

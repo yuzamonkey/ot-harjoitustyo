@@ -35,7 +35,7 @@ class ToolsOptions:
 
   def _handle_tempo_change(self, tempo_string):
     tempo = int(tempo_string)
-    playback_service.set_tempo(tempo)
+    score_service.get_score().set_tempo(tempo)
     self._update_view()
 
   def _update_view(self):
@@ -45,16 +45,33 @@ class ToolsOptions:
     self._show_tools_options()
 
   def _show_tools_options(self):
+    tempo_label = tk.Label(
+      master=self._frame,
+      text=f"Tempo: {score_service.get_score().get_tempo()}"
+    )
+    tempo_clicked = tk.StringVar()
+    tempo_clicked.set("Select tempo")
+    tempo_drop = tk.OptionMenu(self._frame, tempo_clicked, *[40, 60, 80, 100, 120, 140, 160, 180, 200] )
+
+    change_tempo_button = tk.Button(
+      master=self._frame,
+      text="Set tempo",
+      command=lambda: self._handle_tempo_change(tempo_clicked.get())
+    )
+    tempo_label.grid(row=0, column=0)
+    tempo_drop.grid(row=0, column=1)
+    change_tempo_button.grid(row=0, column=2)
+
     change_title_label = tk.Label(master=self._frame, text="Change title:")
     change_title_entry = tk.Entry(master=self._frame)
     change_title_button = tk.Button(
       master=self._frame,
-      text="Change",
+      text="Set title",
       command=lambda: self._handle_title_change(change_title_entry.get())
       )
-    change_title_label.grid(row=0, column=0)
-    change_title_entry.grid(row=0, column=1)
-    change_title_button.grid(row=0, column=2)
+    change_title_label.grid(row=0, column=3)
+    change_title_entry.grid(row=0, column=4)
+    change_title_button.grid(row=0, column=5)
 
     play_button = tk.Button(
       master=self._frame,
@@ -62,7 +79,7 @@ class ToolsOptions:
       command=self._handle_play
     )
 
-    play_button.grid(row=0, column=3)
+    play_button.grid(row=0, column=6)
 
     stop_button = tk.Button(
       master=self._frame,
@@ -70,35 +87,18 @@ class ToolsOptions:
       command=self._handle_stop
     )
 
-    stop_button.grid(row=0, column=4)
+    stop_button.grid(row=0, column=7)
     
     save_button = tk.Button(
       master=self._frame,
       text="Save score",
       command=self._handle_save_score
     )
-    save_button.grid(row=0, column=5)
+    save_button.grid(row=0, column=8)
 
     show_startup_button = tk.Button(
       master=self._frame,
       text="Show startup",
       command=self._handle_show_startup
     )
-    show_startup_button.grid(row=0, column=6)
-
-    tempo_label = tk.Label(
-      master=self._frame,
-      text=f"Tempo: {playback_service.get_tempo()}"
-    )
-    tempo_clicked = tk.StringVar()
-    tempo_clicked.set("Select tempo")
-    tempo_drop = tk.OptionMenu(self._frame, tempo_clicked, *[40, 60, 80, 100, 120] )
-
-    change_tempo_button = tk.Button(
-      master=self._frame,
-      text="Change",
-      command=lambda: self._handle_tempo_change(tempo_clicked.get())
-    )
-    tempo_label.grid(row=0, column=7)
-    tempo_drop.grid(row=0, column=8)
-    change_tempo_button.grid(row=0, column=9)
+    show_startup_button.grid(row=0, column=9)
