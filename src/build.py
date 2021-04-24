@@ -18,16 +18,16 @@ def initialize_data_directories():
       os.mkdir(path)
 
       print("\n BUILD COMPLETED \n 'poetry run invoke start' to start the program \n")
-  except:
+  except FileExistsError:
     print(
     """
   BUILD FAILED
 
 Either build was already completed or a failure happened. Check that you don't have a diectory called 'data' already defined in the root of the project before running build.
 
-'poetry run invoke start' starts the program, but the program is unable to load or save files. 
+'poetry run invoke start' starts the program, but the program is unable to load or save files.
     """
     )
 
 if __name__ == '__main__':
-    initialize_data_directories()
+  initialize_data_directories()
