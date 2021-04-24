@@ -15,7 +15,10 @@ class ScoreService:
     return self._score.get_title()
 
   def set_title(self, title):
-    self._score.set_title(title)
+    if len(title) > 0 and len(title) <= 15:
+      self._score.set_title(title)
+    if len(title) > 15:
+      self._score.set_title(title[0:15])
 
   def get_staff_length(self):
     return len(self._score.get_staff().get_measures())

@@ -16,6 +16,6 @@
 | 19.4. | 1.5 | Sovelluslogiikkaa |
 | 20.4. | 2 | Sovelluslogiikkaa |
 | 23.4. | 3 | Tiedostojen tallennus ja avaaminen |
-| 24.4. | 2 1300- | Playback, testejä |
-| yht   | 43   | | 
+| 24.4. | 3.5 | Playback, testejä |
+| yht   | 44.5   | | 
 

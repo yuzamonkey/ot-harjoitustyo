@@ -78,7 +78,6 @@ class ToolsOptions:
       text="Play",
       command=self._handle_play
     )
-
     play_button.grid(row=0, column=6)
 
     stop_button = tk.Button(
@@ -86,7 +85,6 @@ class ToolsOptions:
       text="Stop",
       command=self._handle_stop
     )
-
     stop_button.grid(row=0, column=7)
     
     save_button = tk.Button(
