@@ -6,8 +6,14 @@ class Note(Notation):
     super().__init__(length_index)
     self._pitch = PITCHES[pitch_index]
 
+  def get_pitch(self):
+    return self._pitch
+
   def set_pitch(self, index):
     self._pitch = PITCHES[index]
+
+  def is_note(self):
+    return True
 
   def __str__(self):
     to_string = f"""

@@ -26,6 +26,9 @@ class Measure:
   def set_time_signature(self, time_signature):
     self._time_signature = TimeSignature(time_signature)
 
+  def get_notations(self):
+    return self._notations
+
   def measure_has_space(self, input_length):
     space_taken = 0.0
     beats_per_measure = self._time_signature.get_beats_per_measure()
