@@ -7,6 +7,9 @@ class PlaybackService():
     pygame.mixer.init()
     self._tempo = 100
 
+  def get_tempo(self):
+    return self._tempo
+
   def set_tempo(self, tempo):
     self._tempo = tempo
 

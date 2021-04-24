@@ -5,7 +5,9 @@ from services.playback_service import playback_service
 
 class ToolsOptions:
   def __init__(self, frame, update_score_view, show_startup_options):
-    self._frame = frame
+    self._parent_frame = frame
+    self._frame = tk.Frame(master=self._parent_frame)
+    self._frame.grid()
     self._update_score_view = update_score_view
     self._show_startup_options = show_startup_options
 
@@ -30,6 +32,17 @@ class ToolsOptions:
 
   def _handle_show_startup(self):
     self._show_startup_options()
+
+  def _handle_tempo_change(self, tempo_string):
+    tempo = int(tempo_string)
+    playback_service.set_tempo(tempo)
+    self._update_view()
+
+  def _update_view(self):
+    self._frame.destroy()
+    self._frame = tk.Frame(master=self._parent_frame)
+    self._frame.grid()
+    self._show_tools_options()
 
   def _show_tools_options(self):
     change_title_label = tk.Label(master=self._frame, text="Change title:")
@@ -72,3 +85,20 @@ class ToolsOptions:
       command=self._handle_show_startup
     )
     show_startup_button.grid(row=0, column=6)
+
+    tempo_label = tk.Label(
+      master=self._frame,
+      text=f"Tempo: {playback_service.get_tempo()}"
+    )
+    tempo_clicked = tk.StringVar()
+    tempo_clicked.set("Select tempo")
+    tempo_drop = tk.OptionMenu(self._frame, tempo_clicked, *[40, 60, 80, 100, 120] )
+
+    change_tempo_button = tk.Button(
+      master=self._frame,
+      text="Change",
+      command=lambda: self._handle_tempo_change(tempo_clicked.get())
+    )
+    tempo_label.grid(row=0, column=7)
+    tempo_drop.grid(row=0, column=8)
+    change_tempo_button.grid(row=0, column=9)
