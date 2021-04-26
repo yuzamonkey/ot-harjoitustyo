@@ -5,21 +5,27 @@ from services.score_service import score_service
 class PlaybackService():
   def __init__(self):
     pygame.mixer.init()
+    self._play = False
 
   def play(self):
     tempo = score_service.get_score().get_tempo()
     measures = score_service.get_score().get_staff().get_measures()
     beat_unit = measures[0].get_time_signature().get_beat_unit()
+    self._play = True
+
     for measure in measures:
       for i in range (len(measure.get_notations())):
+        if not self._play:
+          break
         notation = measure.get_notations()[i]
         if notation.is_note():
           pygame.mixer.music.load(f"./src/utils/sounds/{notation.get_pitch()}.mp3")
           pygame.mixer.music.play(loops=0)
-
         time.sleep((beat_unit/notation.get_length()) * (60 / tempo))
 
+    self._play = False
+
   def stop(self):
-    pygame.mixer.music.stop()
+    self._play = False
 
 playback_service = PlaybackService()

@@ -2,6 +2,7 @@ import tkinter as tk
 from services.score_service import score_service
 from services.file_service import file_service
 from services.playback_service import playback_service
+import threading
 
 class ToolsOptions:
   def __init__(self, frame, update_score_view, show_startup_options):
@@ -76,7 +77,7 @@ class ToolsOptions:
     play_button = tk.Button(
       master=self._frame,
       text="Play",
-      command=self._handle_play
+      command=lambda: threading.Thread(target=self._handle_play).start()
     )
     play_button.grid(row=0, column=6)
 
