@@ -17,6 +17,6 @@
 | 20.4. | 2 | Sovelluslogiikkaa |
 | 23.4. | 3 | Tiedostojen tallennus ja avaaminen |
 | 24.4. | 5.5 | Playback, testejä, build |
-| 26.4. | 0915- |  |
-| yht   | 46.5   | | 
+| 26.4. | 1 | Playback threading, release1 |
+| yht   | 47.5   | | 
 

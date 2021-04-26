@@ -19,7 +19,8 @@ class PlaybackService():
           break
         notation = measure.get_notations()[i]
         if notation.is_note():
-          pygame.mixer.music.load(f"./src/utils/sounds/{notation.get_pitch()}.mp3")
+          #pygame.mixer.music.load(f"./src/utils/mp3sounds/{notation.get_pitch()}.mp3")
+          pygame.mixer.music.load(f"./src/utils/wavsounds/{notation.get_pitch()}.wav")
           pygame.mixer.music.play(loops=0)
         time.sleep((beat_unit/notation.get_length()) * (60 / tempo))
 
