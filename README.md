@@ -2,14 +2,70 @@
 
 Nuotinkirjoitusohjelmalla voi kirjoittaa ja toistaa sävelmiä. Projekti on harjoitustyö HY:n kurssille Ohjelmistotekniikka.
 
-Ohjelmaa testattu virtuaalityöasemassa 11.4. onnistuneesti
+[Release 1 (viikko 5)](https://github.com/yuzamonkey/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Dokumentaatio
-[Vaatimusmäärittely](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
 
-[Työaikakirjanpito](https://github.com/yuzamonkey/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+[Työaikakirjanpito](./dokumentaatio/tyoaikakirjanpito.md)
+
+## Asennus
+
+1. Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+2. Suorita aloitustoimenpiteet komennolla:
+
+```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
+
+## Komentorivitoiminnot
+### Ohjelman suoritaminen
+
+```bash
+poetry run invoke start
+```
+
+### Tarvittavien hakemistojen luonti
+
+```bash
+poetry run invoke build
+```
+Projektin juuressa tulisi komennon jälkeen olla hakemisto _data_, jonka sisällä hakemisto _scores_
+
+### Testaus
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+```bash
+poetry run invoke coverage-report
+```
+
+Raportti generoituu _htmlcov_-hakemistoon.
+
+### Pylint
+
+Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
 
 ## Sovelluksen tila ja tulevaisuus (20.4.2021)
-Sovelluksella on käyttöliittymä. Kun käyttöliittymään lisätään komponentti, tulisi komponenttia vastaava toiminnallisuus toteuttaa ennen uusia komponentteja. Sovelluksessa on hieman toisteista koodia, ja sovelluslogiikassa olisi parempi käyttää luokkamuuttujia for-looppien sijaan. En puutu näihin asioihin tarkemmin ennen kuin halutut toiminnallisuudet ovat valmiit.
+Perustoiminnallisuudet ovat melkein valmiit. Eräs bugi tuli ilmi käyttäessäni virtuaalityöasemaa: mp3-muotoisten tiedostojen soittaminen ei onnistunut Linuxilla pygame kirjastoa käyttämällä.
