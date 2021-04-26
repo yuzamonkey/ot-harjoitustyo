@@ -68,4 +68,4 @@ poetry run invoke lint
 ```
 
 ## Sovelluksen tila ja tulevaisuus (20.4.2021)
-Perustoiminnallisuudet ovat melkein valmiit. Eräs bugi tuli ilmi käyttäessäni virtuaalityöasemaa: mp3-muotoisten tiedostojen soittaminen ei onnistunut Linuxilla pygame kirjastoa käyttämällä.
+Perustoiminnallisuudet ovat melkein valmiit. 
