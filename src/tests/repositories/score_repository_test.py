@@ -16,6 +16,8 @@ class TestScoreRepository(unittest.TestCase):
     self.assertEqual(score, None)
 
   def test_deleting_file_deletes_file(self):
+    score_before = score_repository.get_file('TestScore.obj')
     score_repository.delete_file('TestScore.obj')
-    score = score_repository.get_file('TestScore.obj')
-    self.assertEqual(score, None)
+    score_after = score_repository.get_file('TestScore.obj')
+    self.assertNotEqual(score_before, None)
+    self.assertEqual(score_after, None)
