@@ -8,9 +8,12 @@ class PlaybackService():
     self._play = False
 
   def play(self):
-    tempo = score_service.get_score().get_tempo()
-    measures = score_service.get_score().get_staff().get_measures()
+    score = score_service.get_score()
+
+    tempo = score.get_tempo()
+    measures = score.get_staff().get_measures()
     beat_unit = measures[0].get_time_signature().get_beat_unit()
+    
     self._play = True
 
     for measure in measures:
