@@ -13,7 +13,7 @@ class PlaybackService():
     tempo = score.get_tempo()
     measures = score.get_staff().get_measures()
     beat_unit = measures[0].get_time_signature().get_beat_unit()
-    
+
     self._play = True
 
     for measure in measures:

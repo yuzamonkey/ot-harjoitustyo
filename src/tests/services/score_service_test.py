@@ -103,6 +103,14 @@ class TestScoreService(unittest.TestCase):
     self.assertEqual(return_value2, True)
     self.assertEqual(return_value3, False)
 
+  def test_remove_notation_removes_notation(self):
+    score_service.add_note(1, 4, 'c4')
+    notations_length_first = len(score_service.get_notations())
+    score_service.remove_notation(0, 0)
+    notations_length_after = len(score_service.get_notations())
+    self.assertEqual(notations_length_first, 1)
+    self.assertEqual(notations_length_after, 0)
+
   def test_change_clef_returns_true_with_valid_input(self):
     new_clef = 'F'
     return_value = score_service.change_clef(new_clef)
