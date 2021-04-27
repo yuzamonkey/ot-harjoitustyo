@@ -18,5 +18,6 @@
 | 23.4. | 3 | Tiedostojen tallennus ja avaaminen |
 | 24.4. | 5.5 | Playback, testejä, build |
 | 26.4. | 3| Playback threading, mp3-tiedostot wav-muotoon linuxia varten, release1, dokumentaation lisäystä |
+| 27.4. | 0830- |  |
 | yht   | 49.5   | | 
 
