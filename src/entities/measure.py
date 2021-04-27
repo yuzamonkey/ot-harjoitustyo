@@ -50,6 +50,9 @@ class Measure:
   def add_rest(self, length_index):
     self._notations.append(Rest(length_index))
 
+  def remove_notation(self, notation_index):
+    self._notations.pop(notation_index)
+
   def __str__(self):
     to_string = f"""
       Clef: {self._clef}

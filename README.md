@@ -67,5 +67,5 @@ Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa k
 poetry run invoke lint
 ```
 
-## Sovelluksen tila ja tulevaisuus (26.4.2021)
-Lähes kaikki toiminnallisuudet ovat valmiit. Seuraavaksi koodin refaktorointia ja UI:n parantelua. 
+## Sovelluksen tila ja tulevaisuus (27.4.2021)
+Perustoiminnallisuudet ovat valmiit. Seuraavaksi koodin refaktorointia ja UI:n parantelua. 

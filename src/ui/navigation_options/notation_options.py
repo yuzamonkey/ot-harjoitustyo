@@ -37,6 +37,13 @@ class NotationOptions:
     if is_success:
       self._update_score_view()
 
+  def _handle_remove_notation(self, selected):
+    measure_index = int(selected[1:2])
+    notation_index = int(selected[5:6])
+    score_service.remove_notation(measure_index-1, notation_index-1)
+    self._selected_entry.update()
+    self._update_score_view()
+
   def _show_add_note_options(self):
     self._destroy_selected_entry()
     self._selected_entry = AddNoteOptions(self._frame, self._handle_add_note)
@@ -45,6 +52,11 @@ class NotationOptions:
   def _show_add_rest_options(self):
     self._destroy_selected_entry()
     self._selected_entry = AddRestOptions(self._frame, self._handle_add_rest)
+    self._selected_entry.show()
+
+  def _show_remove_notation_options(self):
+    self._destroy_selected_entry()
+    self._selected_entry = RemoveNotationOptions(self._frame, self._handle_remove_notation)
     self._selected_entry.show()
 
   def _show_notation_options(self):
@@ -72,11 +84,16 @@ class NotationOptions:
       )
     add_rest_button.grid(row=0, column=3)
 
+    remove_notation_button = tk.Button(master=self._frame,
+      text="Remove notation",
+      command=self._show_remove_notation_options
+      )
+    remove_notation_button.grid(row=0, column=4)
 
 class AddNoteOptions:
   def __init__(self, frame, handle_add_note):
     self._frame = tk.Frame(master=frame)
-    self._frame.grid(row=0, column=4)
+    self._frame.grid(row=0, column=5)
     self._handle_add_note = handle_add_note
 
   def destroy(self):
@@ -115,7 +132,7 @@ class AddNoteOptions:
 class AddRestOptions:
   def __init__(self, frame, handle_add_rest):
     self._frame = tk.Frame(master=frame)
-    self._frame.grid(row=0, column=4)
+    self._frame.grid(row=0, column=5)
     self._handle_add_rest = handle_add_rest
 
   def destroy(self):
@@ -144,3 +161,39 @@ class AddRestOptions:
     measure_drop.grid(row=0, column=0)
     length_drop.grid(row=0, column=1)
     add_button.grid(row=0, column=2)
+
+class RemoveNotationOptions:
+  def __init__(self, frame, handle_remove_notation):
+    self._parent_frame = frame
+    self._frame = tk.Frame(master=self._parent_frame)
+    self._frame.grid(row=0, column=5)
+    self._handle_remove_notation = handle_remove_notation
+
+  def destroy(self):
+    self._frame.destroy()
+
+  def update(self):
+    self.destroy()
+    self._frame = tk.Frame(master=self._parent_frame)
+    self._frame.grid(row=0, column=5)
+    self.show()
+
+  def show(self):
+    notations = score_service.get_notations()
+    if not notations:
+      notations = ['No options']
+    
+    notation_clicked = tk.StringVar()
+    notation_clicked.set("Select notation")
+    notation_drop = tk.OptionMenu(self._frame, notation_clicked, *notations )
+
+    remove_button = tk.Button(
+      master=self._frame,
+      text="Remove",
+      command=lambda: self._handle_remove_notation(
+        notation_clicked.get()
+        )
+    )
+
+    notation_drop.grid(row=0, column=0)
+    remove_button.grid(row=0, column=1)

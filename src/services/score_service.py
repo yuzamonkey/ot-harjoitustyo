@@ -29,6 +29,17 @@ class ScoreService:
       numbers.append(i+1)
     return numbers
 
+  def get_notations(self):
+    notations_array = []
+    measures = self._score.get_staff().get_measures()
+    for i in range (len(measures)):
+      notations = measures[i].get_notations()
+      for j in range (len(notations)):
+        text = f'M{i+1}, N{j+1}:  {str(notations[j])}'
+        notations_array.append(text)
+
+    return notations_array
+
   def get_clef(self):
     return self._score.get_staff().get_measures()[0].get_clef().get_clef()
 
@@ -98,6 +109,10 @@ class ScoreService:
         )
 
     return is_valid_input
+
+  def remove_notation(self, measure_index, notation_index):
+    measure = self._score.get_staff().get_measures()[measure_index]
+    measure.remove_notation(notation_index)
 
   def change_clef(self, clef):
     is_valid_input = True
