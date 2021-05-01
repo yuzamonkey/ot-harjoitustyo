@@ -3,11 +3,17 @@ import pygame
 from services.score_service import score_service
 
 class PlaybackService():
+  """Class for handling playback
+  """
   def __init__(self):
+    """Constructor for Playback class. Initializes pygame mixer and sets play variable to False
+    """
     pygame.mixer.init()
     self._play = False
 
   def play(self):
+    """Plays the score. The score is returned from score_service 
+    """
     score = score_service.get_score()
 
     tempo = score.get_tempo()
@@ -29,6 +35,8 @@ class PlaybackService():
     self._play = False
 
   def stop(self):
+    """Stops the playback
+    """
     self._play = False
 
 playback_service = PlaybackService()
