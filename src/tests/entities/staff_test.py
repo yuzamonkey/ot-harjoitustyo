@@ -19,14 +19,14 @@ class TestStaff(unittest.TestCase):
     self.staff.add_measure()
     last_index = len(self.staff.get_measures())-1
     self.assertEqual(
-      str(self.staff.get_measures()[last_index].get_clef().get_clef()),
-      str(self.staff.get_measures()[last_index-1].get_clef().get_clef()),
+      (self.staff.get_measures()[last_index].get_clef().get_clef()),
+      (self.staff.get_measures()[last_index-1].get_clef().get_clef()),
     )
     self.assertEqual(
-      str(self.staff.get_measures()[last_index].get_key_signature().get_key_signature()),
-      str(self.staff.get_measures()[last_index-1].get_key_signature().get_key_signature()),
+      self.staff.get_measures()[last_index].get_key_signature().get_key_signature(),
+      self.staff.get_measures()[last_index-1].get_key_signature().get_key_signature(),
     )
     self.assertEqual(
-      str(self.staff.get_measures()[last_index].get_time_signature().get_time_signature()),
-      str(self.staff.get_measures()[last_index-1].get_time_signature().get_time_signature()),
+      self.staff.get_measures()[last_index].get_time_signature().get_time_signature(),
+      self.staff.get_measures()[last_index-1].get_time_signature().get_time_signature(),
     )

@@ -19,5 +19,6 @@
 | 24.4. | 5.5 | Playback, testejä, build |
 | 26.4. | 3| Playback threading, mp3-tiedostot wav-muotoon linuxia varten, release1, dokumentaation lisäystä |
 | 27.4. | 1.5 | Äänien poistamisen toiminnallisuus, testejä |
+| 1.5. | 1315- | Dokumentaation lisäystä |
 | yht   | 51   | | 
 
