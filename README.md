@@ -5,6 +5,9 @@ Nuotinkirjoitusohjelmalla voi kirjoittaa ja toistaa sävelmiä. Projekti on harj
 [Release 1 (viikko 5)](https://github.com/yuzamonkey/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Dokumentaatio
+
+[Käyttöohje](./dokumentaatio/kayttoohje.md)
+
 [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 
 [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)

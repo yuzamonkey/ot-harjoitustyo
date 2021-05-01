@@ -123,9 +123,9 @@ class Measure:
         str: Clef, key signature and time signature of the measure. Also the notations from the notations list.
     """
     to_string = f"""
-      Clef: {self._clef}
-      Key: {self._key_signature}
-      Time: {self._time_signature}
+      Clef: {self._clef.get_clef()}
+      Key: {self._key_signature.get_key_signature()}
+      Time: {self._time_signature.get_time_signature()}
     """
     notations_to_string = 'Notations: [\n'
     for notation in self._notations:
