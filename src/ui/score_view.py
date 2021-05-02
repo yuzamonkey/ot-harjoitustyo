@@ -11,9 +11,10 @@ class ScoreView:
     self._score_frame = None
 
     self._score = None
-    self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
+    self._clef = None
     self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((80,175)))
     self._half_note = ImageTk.PhotoImage(Image.open('./src/utils/images/half_note.gif').resize((90,120)))
+    self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((70,50)))
 
   def show(self):
     self.update()
@@ -23,6 +24,11 @@ class ScoreView:
 
   def update(self):
     self._score = score_service.get_score()
+    clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
+    if clef == 'G':
+      self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
+    else:
+      self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((110,200)))
 
     if self._title_frame:
       self._title_frame.destroy()
@@ -50,9 +56,9 @@ class ScoreView:
     measure_count = score_service.get_staff_length()
 
     # Clef
-    canvas.create_image(35, 105, image=self._clef, anchor=tk.constants.NW)
+    canvas.create_image(50, 105, image=self._clef, anchor=tk.constants.NW)
     # Time signature
-    canvas.create_image(130, 127, image=self._time_signature, anchor=tk.constants.NW)
+    canvas.create_image(150, 127, image=self._time_signature, anchor=tk.constants.NW)
 
     notation_position = 200
     notation_gap = 75
@@ -60,7 +66,9 @@ class ScoreView:
     for i in range (measure_count):
       measure = self._score.get_staff().get_measures()[i]
       for notation in measure.get_notations():
-        if (notation.is_note()):
+        length = notation.get_length()
+
+        if (notation.is_note()): #note
           pitch = notation.get_pitch()
           pitch_index = PITCHES.index(pitch)
           if (measure.get_clef().get_clef() == 'G'):
@@ -68,7 +76,11 @@ class ScoreView:
           elif (measure.get_clef().get_clef() == 'F'):
             note_position = PITCH_POSITIONS_IN_F_CLEF[pitch_index]
           canvas.create_image(notation_position, note_position, image=self._half_note, anchor=tk.constants.NW)
-          notation_position += notation_gap
+        
+        else: #rest
+          canvas.create_image(notation_position, 175, image=self._half_rest, anchor=tk.constants.NW)
+        
+        notation_position += notation_gap
       if i == measure_count-1:
         break
       canvas.create_line(notation_position+25, 150, notation_position+25, 270)
