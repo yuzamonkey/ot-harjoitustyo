@@ -10,7 +10,9 @@ class ScoreView:
     self._title_frame = None
     self._score_frame = None
 
-    self._g_clef = ImageTk.PhotoImage(Image.open('./src/utils/images/convertedClef.gif').resize((120,200)))
+    self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((120,200)))
+    self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((70,145)))
+    self._quartet_note = ImageTk.PhotoImage(Image.open('./src/utils/images/Quartet_note.gif').resize((70,145)))
 
   def show(self):
     self.update()
@@ -44,12 +46,15 @@ class ScoreView:
     score_title.pack()
 
   def _show_score(self):
-    endline = 1000
+    measure_count = score_service.get_staff_length()
+    endline = measure_count * 500
 
     canvas = tk.Canvas(master=self._score_frame, width=700, height=300, confine=True, cursor='circle')
     
     # Padding top
     canvas.create_rectangle(0, 0, endline, 50, outline='white')
+    # Padding end
+    canvas.create_rectangle(endline, 0, endline+50, 100, outline='white')
     # Staff
     canvas.create_line(50, 125, endline, 125, fill='black')
     canvas.create_line(50, 150, endline, 150, fill='black')
@@ -63,23 +68,28 @@ class ScoreView:
     canvas.create_rectangle(endline, 125, endline+10, 225, fill='black')
 
     # Clef
-    #g_clef = Image.open('./src/utils/images/GClef.png')
-    #foo = ImageTk.PhotoImage(g_clef)
-    canvas.create_image(35, 80, image=self._g_clef, anchor=tk.constants.NW)
+    canvas.create_image(35, 80, image=self._clef, anchor=tk.constants.NW)
+    # Time signature
+    canvas.create_image(120, 105, image=self._time_signature, anchor=tk.constants.NW)
+
+    # Bar lines
+    bar_line_position = 100 + endline / measure_count
+    bar_line_width = (endline - 100) / measure_count
+
+    for i in range (measure_count-1):
+      canvas.create_line(bar_line_position, 125, bar_line_position, 225)
+      bar_line_position += bar_line_width
 
 
 
-    canvas.grid(row=1, column=0, sticky='nesw', columnspan=3)
-    # Scroll     
+    # Horizontal scroll
     scroll_x = tk.Scrollbar(self._score_frame, orient="horizontal", command=canvas.xview)
     scroll_x.grid(row=1, column=0, sticky="ews", columnspan=3)
 
-    scroll_y = tk.Scrollbar(self._score_frame, orient="vertical", command=canvas.yview)
-    scroll_y.grid(row=1, column=2, sticky="nse")
-
-    canvas.configure(yscrollcommand=scroll_y.set, xscrollcommand=scroll_x.set)
+    canvas.configure(xscrollcommand=scroll_x.set)
     canvas.configure(scrollregion=canvas.bbox("all"))
 
+    canvas.grid(row=1, column=0, sticky='nesw', columnspan=3)
 
 
     
