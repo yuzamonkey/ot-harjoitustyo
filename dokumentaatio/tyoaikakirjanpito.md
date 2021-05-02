@@ -19,6 +19,7 @@
 | 24.4. | 5.5 | Playback, testejä, build |
 | 26.4. | 3| Playback threading, mp3-tiedostot wav-muotoon linuxia varten, release1, dokumentaation lisäystä |
 | 27.4. | 1.5 | Äänien poistamisen toiminnallisuus, testejä |
-| 1.5. | 2.5| Docstring, alustava käyttöohje|
-| yht   | 53.5   | | 
+| 1.5. | 3.5 | Docstring, alustava käyttöohje, tkinter canvas sandboxailua |
+| 2.5. | 0945- |  |
+| yht   | 54.5   | | 
 
