@@ -3,7 +3,7 @@ from ui.ui import UI
 
 def main():
   root = tk.Tk()
-  root.title("Nuotinnussofta")
+  root.title("Notation app")
   root.geometry("1200x800")
   root.minsize(600, 400)
   ui = UI(root)

@@ -20,6 +20,6 @@
 | 26.4. | 3| Playback threading, mp3-tiedostot wav-muotoon linuxia varten, release1, dokumentaation lisäystä |
 | 27.4. | 1.5 | Äänien poistamisen toiminnallisuus, testejä |
 | 1.5. | 3.5 | Docstring, alustava käyttöohje, tkinter canvas sandboxailua |
-| 2.5. | 3 , 1330- | Nuotin näyttäminen UI:ssa |
-| yht   | 57.5   | | 
+| 2.5. | 6 | Nuotin näyttäminen UI:ssa |
+| yht   | 60.5   | | 
 

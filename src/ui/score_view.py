@@ -11,12 +11,19 @@ class ScoreView:
     self._score_frame = None
 
     self._score = None
-    self._clef = None
     
-    self._time_signature = None #ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((70,150)))
+    self._clef = None
+    self._time_signature = None
 
+    self._sixteenth_note = ImageTk.PhotoImage(Image.open('./src/utils/images/sixteenth_note.gif').resize((90,120)))
+    self._eight_note = ImageTk.PhotoImage(Image.open('./src/utils/images/eight_note.gif').resize((90,120)))
+    self._quarter_note = ImageTk.PhotoImage(Image.open('./src/utils/images/quarter_note.gif').resize((90,120)))
     self._half_note = ImageTk.PhotoImage(Image.open('./src/utils/images/half_note.gif').resize((90,120)))
-    self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((70,50)))
+    
+    self._sixteenth_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/sixteenth_rest.gif').resize((50,100)))
+    self._eight_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/eight_rest.gif').resize((50,100)))
+    self._quarter_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/quarter_rest.gif').resize((50,100)))
+    self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((50,100)))
 
   def show(self):
     self.update()
@@ -29,7 +36,7 @@ class ScoreView:
     clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
     if clef == 'G':
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
-    else:
+    elif clef == 'F':
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((110,200)))
 
     time_signature = self._score.get_staff().get_measures()[0].get_time_signature().get_time_signature()
@@ -64,7 +71,7 @@ class ScoreView:
     score_title.pack()
 
   def _show_score(self):
-    canvas = tk.Canvas(master=self._score_frame, width=700, height=1000, confine=True, cursor='circle')
+    canvas = tk.Canvas(master=self._score_frame, width=700, height=1000, confine=True)
 
     measure_count = score_service.get_staff_length()
 
@@ -88,10 +95,24 @@ class ScoreView:
             note_position = PITCH_POSITIONS_IN_G_CLEF[pitch_index]
           elif (measure.get_clef().get_clef() == 'F'):
             note_position = PITCH_POSITIONS_IN_F_CLEF[pitch_index]
-          canvas.create_image(notation_position, note_position, image=self._half_note, anchor=tk.constants.NW)
+          if length == 2:
+            canvas.create_image(notation_position, note_position, image=self._half_note, anchor=tk.constants.NW)
+          elif length == 4:
+            canvas.create_image(notation_position, note_position, image=self._quarter_note, anchor=tk.constants.NW)
+          elif length == 8:
+            canvas.create_image(notation_position, note_position, image=self._eight_note, anchor=tk.constants.NW)
+          elif length == 16:
+            canvas.create_image(notation_position, note_position, image=self._sixteenth_note, anchor=tk.constants.NW)
         
         else: #rest
-          canvas.create_image(notation_position, 175, image=self._half_rest, anchor=tk.constants.NW)
+          if length == 2:
+            canvas.create_image(notation_position, 152, image=self._half_rest, anchor=tk.constants.NW)
+          elif length == 4:
+            canvas.create_image(notation_position, 152, image=self._quarter_rest, anchor=tk.constants.NW)
+          elif length == 8:
+            canvas.create_image(notation_position, 152, image=self._eight_rest, anchor=tk.constants.NW)
+          elif length == 16:
+            canvas.create_image(notation_position, 152, image=self._sixteenth_rest, anchor=tk.constants.NW)
         
         notation_position += notation_gap
       if i == measure_count-1:
