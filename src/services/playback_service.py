@@ -12,7 +12,7 @@ class PlaybackService():
     self._play = False
 
   def play(self):
-    """Plays the score. The score is returned from score_service 
+    """Plays the score. The score is returned from score_service
     """
     score = score_service.get_score()
 

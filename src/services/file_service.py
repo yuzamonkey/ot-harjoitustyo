@@ -16,7 +16,7 @@ class FileService:
 
   def get_score_object(self, score_title):
     """Opens an existing score to edit
-      
+
       Args:
         score_title (str): The title of the score to open
     """
@@ -25,7 +25,7 @@ class FileService:
 
   def delete_score(self, score_title):
     """Deletes an existing score
-      
+
       Args:
         score_title (str): The title of the score to delete
     """

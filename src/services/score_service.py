@@ -8,7 +8,7 @@ class ScoreService:
     self._score = None
 
   def get_score(self):
-    """Returns the current score 
+    """Returns the current score
 
     Returns:
         Score: Score that is currently being edited
