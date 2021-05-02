@@ -12,7 +12,9 @@ class ScoreView:
 
     self._score = None
     self._clef = None
-    self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((80,175)))
+    
+    self._time_signature = None #ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((70,150)))
+
     self._half_note = ImageTk.PhotoImage(Image.open('./src/utils/images/half_note.gif').resize((90,120)))
     self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((70,50)))
 
@@ -29,6 +31,17 @@ class ScoreView:
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
     else:
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((110,200)))
+
+    time_signature = self._score.get_staff().get_measures()[0].get_time_signature().get_time_signature()
+    if time_signature == '2/4':
+      self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/24.gif').resize((70,150)))
+    elif time_signature == '3/4':
+      self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/34.gif').resize((70,150)))
+    elif time_signature == '4/4':
+      self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/44.gif').resize((70,150)))
+    elif time_signature == '6/8':
+      self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/68.gif').resize((70,150)))
+
 
     if self._title_frame:
       self._title_frame.destroy()
@@ -58,7 +71,7 @@ class ScoreView:
     # Clef
     canvas.create_image(50, 105, image=self._clef, anchor=tk.constants.NW)
     # Time signature
-    canvas.create_image(150, 127, image=self._time_signature, anchor=tk.constants.NW)
+    canvas.create_image(150, 140, image=self._time_signature, anchor=tk.constants.NW)
 
     notation_position = 200
     notation_gap = 75
