@@ -109,7 +109,7 @@ class ScoreService:
   def remove_last_measure(self):
     """Removes the last measure in the score if the score has measures
     """
-    if self._score.get_staff().get_measures():
+    if len(self._score.get_staff().get_measures()) > 1:
       self._score.get_staff().remove_last_measure()
 
   def add_note(self, measure, length, pitch):

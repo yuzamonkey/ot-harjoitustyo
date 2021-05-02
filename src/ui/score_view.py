@@ -82,6 +82,7 @@ class ScoreView:
 
 
 
+
     # Horizontal scroll
     scroll_x = tk.Scrollbar(self._score_frame, orient="horizontal", command=canvas.xview)
     scroll_x.grid(row=1, column=0, sticky="ews", columnspan=3)
