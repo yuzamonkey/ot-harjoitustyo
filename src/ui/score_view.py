@@ -49,7 +49,6 @@ class ScoreView:
     elif time_signature == '6/8':
       self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/68.gif').resize((70,150)))
 
-
     if self._title_frame:
       self._title_frame.destroy()
     self._title_frame = tk.Frame(master=self._frame, height=50)
@@ -63,7 +62,6 @@ class ScoreView:
     self._score_frame.pack(fill=tk.BOTH, side=tk.TOP, expand=True)
     self._score_frame.columnconfigure([0,1,2], weight=2)
     self._score_frame.rowconfigure([0,1], weight=2)
-
     self._show_score()
 
   def _show_title(self):

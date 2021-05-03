@@ -32,15 +32,15 @@ class ScoreService:
     return self._score.get_title()
 
   def set_title(self, title):
-    """Sets the title of the current score. Minimum length of the title is 1 and maximum length is 15
+    """Sets the title of the current score. Minimum length of the title is 1 and maximum length is 25
 
     Args:
         title (str): New title of the score
     """
-    if len(title) > 0 and len(title) <= 15:
+    if len(title) > 0 and len(title) <= 25:
       self._score.set_title(title)
-    if len(title) > 15:
-      self._score.set_title(title[0:15])
+    if len(title) > 25:
+      self._score.set_title(title[0:25])
 
   def get_staff_length(self):
     """Returns the amount of measures in a staff
