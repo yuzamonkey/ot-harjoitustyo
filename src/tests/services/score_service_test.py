@@ -26,9 +26,9 @@ class TestScoreService(unittest.TestCase):
     self.assertEqual(title_after, "ABCD")
     self.assertNotEqual(title_before, title_after)
 
-  def test_long_title_limits_to_15_chars(self):
+  def test_long_title_limits_to_25_chars(self):
     score_service.set_title('abcdefghijklmnopqrstuvwxyz')
-    self.assertEqual(score_service.get_title(), 'abcdefghijklmno')
+    self.assertEqual(score_service.get_title(), 'abcdefghijklmnopqrstuvwxy')
 
   def test_remove_last_measure_removes_last_measure(self):
     length_before = score_service.get_staff_length()

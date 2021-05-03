@@ -2,7 +2,7 @@ import unittest
 from entities.measure import Measure
 from entities.score import Score
 
-class TestScore(unittest.TestCase):
+class TestMeasure(unittest.TestCase):
   def setUp(self):
     self.score = Score('TestScore')
     self.measure = self.score.get_staff().get_measures()[0]

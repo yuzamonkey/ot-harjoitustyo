@@ -2,7 +2,7 @@ import unittest
 from entities.note import Note
 from entities.rest import Rest
 
-class TestScore(unittest.TestCase):
+class TestNotation(unittest.TestCase):
   def setUp(self):
     self.note = Note(0, 0)
     self.rest = Rest(0)
@@ -10,8 +10,8 @@ class TestScore(unittest.TestCase):
   def test_note_is_note(self):
     self.assertEqual(self.note.is_note(), True)
   
-  def test_note_returns_pitch_c3(self):
-    self.assertEqual(self.note.get_pitch(), 'c3')
+  def test_note_returns_pitch_c2(self):
+    self.assertEqual(self.note.get_pitch(), 'c2')
 
   def test_note_returns_length_2(self):
     self.assertEqual(self.note.get_length(), 2)
@@ -20,8 +20,8 @@ class TestScore(unittest.TestCase):
     pitch_first = self.note.get_pitch()
     self.note.set_pitch(1)
     pitch_after = self.note.get_pitch()
-    self.assertEqual(pitch_first, 'c3')
-    self.assertEqual(pitch_after, 'd3')
+    self.assertEqual(pitch_first, 'c2')
+    self.assertEqual(pitch_after, 'd2')
 
   def test_change_length_on_note_changes_length(self):
     length_first = self.note.get_length()
