@@ -114,7 +114,6 @@ class ScoreView:
               canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
               ledger_line_position -= 30
 
-        
         else: #rest
           if length == 2:
             canvas.create_image(notation_position, 152, image=self._half_rest, anchor=tk.constants.NW)
@@ -145,7 +144,7 @@ class ScoreView:
     canvas.create_line(50, 150, 50, 270, fill='black')
     # Ending diagonal lines
     canvas.create_line(endline-10, 150, endline-10, 270, fill='black')
-    canvas.create_rectangle(endline, 150, endline +10, 270, fill='black')
+    canvas.create_rectangle(endline, 150, endline+10, 270, fill='black')
 
     # Horizontal scroll
     scroll_x = tk.Scrollbar(self._score_frame, orient="horizontal", command=canvas.xview)
