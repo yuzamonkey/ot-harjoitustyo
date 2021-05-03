@@ -32,16 +32,13 @@ class Staff:
     Args:
     """
     last_index = len(self._measures)-1
-    if last_index < 0:
-      self._measures.append(Measure(0, 1, 2))
-    else:
-      self._measures.append(
-        Measure(
-          CLEFS.index(self._measures[last_index].get_clef().get_clef()),
-          KEY_SIGNATURES.index(self._measures[last_index].get_key_signature().get_key_signature()),
-          TIME_SIGNATURES.index(self._measures[last_index].get_time_signature().get_time_signature()),
-        )
+    self._measures.append(
+      Measure(
+        CLEFS.index(self._measures[last_index].get_clef().get_clef()),
+        KEY_SIGNATURES.index(self._measures[last_index].get_key_signature().get_key_signature()),
+        TIME_SIGNATURES.index(self._measures[last_index].get_time_signature().get_time_signature()),
       )
+    )
 
   def remove_last_measure(self):
     """Removes the last measure in the measures list

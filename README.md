@@ -2,7 +2,7 @@
 
 Nuotinkirjoitusohjelmalla voi kirjoittaa ja toistaa sävelmiä. Projekti on harjoitustyö HY:n kurssille Ohjelmistotekniikka.
 
-[Release 1 (viikko 5)](https://github.com/yuzamonkey/ot-harjoitustyo/releases/tag/viikko5)
+[Release 2 (viikko 6)](https://github.com/yuzamonkey/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Dokumentaatio
 

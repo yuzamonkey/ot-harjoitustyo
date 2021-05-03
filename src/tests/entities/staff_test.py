@@ -30,3 +30,14 @@ class TestStaff(unittest.TestCase):
       self.staff.get_measures()[last_index].get_time_signature().get_time_signature(),
       self.staff.get_measures()[last_index-1].get_time_signature().get_time_signature(),
     )
+  
+  def test_overflown_notations_are_removed_after_time_signature_change(self):
+    measure = self.staff.get_measures()[0]
+    self.assertEqual(measure.get_time_signature().get_time_signature(), '4/4')
+    measure.add_note(1, 0)
+    measure.add_note(0, 0)
+    measure.add_note(1, 0)
+    self.assertEqual(measure.measure_is_full(), True)
+    self.staff.change_time_signature(0)
+    self.assertEqual(measure.get_time_signature().get_time_signature(), '2/4')
+    self.assertEqual(measure.measure_is_full(), False)

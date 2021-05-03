@@ -21,6 +21,6 @@
 | 27.4. | 1.5 | Äänien poistamisen toiminnallisuus, testejä |
 | 1.5. | 3.5 | Docstring, alustava käyttöohje, tkinter canvas sandboxailua |
 | 2.5. | 6 | Nuotin näyttäminen UI:ssa |
-| 3.5. | 1 | Käyttöohjeen täydennystä |
-| yht   | 61.5   | | 
+| 3.5. | 2.5 | Käyttöohjeen täydennystä, sovelluslogiikkaa, testejä |
+| yht   | 63   | | 
 
