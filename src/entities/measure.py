@@ -57,6 +57,19 @@ class Measure:
     """
     return self._notations
 
+  def _space_taken(self):
+    """Returns how much space is taken by the notations in the measure
+
+    Returns:
+        float: space taken relative to beat unit
+    """
+    space_taken = 0.0
+    beat_unit = self._time_signature.get_beat_unit()
+    for notation in self._notations:
+      notation_length = float(notation.get_length())
+      space_taken += beat_unit / notation_length
+    return space_taken
+
   def measure_has_space(self, input_length):
     """Returns true if a measure has space for a notation
 
@@ -66,12 +79,9 @@ class Measure:
     Returns:
         bool: returns true if the measure can fit a notation
     """
-    space_taken = 0.0
+    space_taken = self._space_taken()
     beats_per_measure = self._time_signature.get_beats_per_measure()
     beat_unit = self._time_signature.get_beat_unit()
-    for notation in self._notations:
-      notation_length = float(notation.get_length())
-      space_taken += beat_unit / notation_length
 
     takes_space = space_taken + (beat_unit / float(input_length))
     return takes_space <= beats_per_measure
@@ -82,14 +92,22 @@ class Measure:
     Returns:
         bool: returns true if measure has no more space for notations
     """
-    space_taken = 0.0
+    space_taken = self._space_taken()
     beats_per_measure = self._time_signature.get_beats_per_measure()
     beat_unit = self._time_signature.get_beat_unit()
-    for notation in self._notations:
-      notation_length = float(notation.get_length())
-      space_taken += beat_unit / notation_length
 
     return space_taken >= beats_per_measure
+
+  def remove_overflown_notations(self):
+    """Removes notations from the end while measure has space or has exact amount of notations
+    """
+    space_taken = self._space_taken()
+    beats_per_measure = self._time_signature.get_beats_per_measure()
+    beat_unit = self._time_signature.get_beat_unit()
+
+    while space_taken > beats_per_measure:
+      self.remove_notation(len(self._notations) - 1)
+      space_taken = self._space_taken()
 
   def add_note(self, length_index, pitch_index):
     """Adds a note to the list of notations

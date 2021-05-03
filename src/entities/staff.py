@@ -95,6 +95,7 @@ class Staff:
     """
     for measure in self._measures:
       measure.get_time_signature().set_time_signature(time_signature_index)
+      measure.remove_overflown_notations()
 
   def __str__(self):
     """Returns a string representation of the Staff class
