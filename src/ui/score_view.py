@@ -101,6 +101,19 @@ class ScoreView:
             canvas.create_image(notation_position, note_position, image=self._eight_note, anchor=tk.constants.NW)
           elif length == 16:
             canvas.create_image(notation_position, note_position, image=self._sixteenth_note, anchor=tk.constants.NW)
+
+          if note_position >= 200: # add bottom ledger lines
+            ledger_line_position = 300
+            while (ledger_line_position - 100 <= note_position):
+              canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
+              ledger_line_position += 30
+
+          if note_position <= 20: # add top ledger lines
+            ledger_line_position = 120
+            while (ledger_line_position - 100 >= note_position):
+              canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
+              ledger_line_position -= 30
+
         
         else: #rest
           if length == 2:
