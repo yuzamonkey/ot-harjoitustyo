@@ -131,9 +131,7 @@ class ScoreView:
       notation_position += 25
 
     endline = notation_position + 50
-    
-    # Padding end
-    canvas.create_rectangle(endline, 0, endline+50, 100, outline='white')
+
     # Staff
     canvas.create_line(50, 150, endline, 150, fill='black')
     canvas.create_line(50, 180, endline, 180, fill='black')
@@ -153,10 +151,4 @@ class ScoreView:
     canvas.configure(xscrollcommand=scroll_x.set)
     canvas.configure(scrollregion=canvas.bbox("all"))
 
-    canvas.grid(row=1, column=0, sticky='esw', columnspan=3)
-
-    # for i in range (0, len(self._score.get_staff().get_measures())):
-    #   measure = tk.Label(
-    #     master=self._score_frame,
-    #     text=f'Measure {i+1}:\n{str(self._score.get_staff().get_measures()[i])}')
-    #   measure.grid(row=0, column=i)
+    canvas.grid(row=1, column=0, sticky='esw', columnspan=3, padx=25)

@@ -58,7 +58,7 @@ class Measure:
     return self._notations
 
   def _space_taken(self):
-    """Returns how much space is taken by the notations in the measure
+    """Returns how much space is taken by the notations in a measure
 
     Returns:
         float: space taken relative to beat unit
@@ -94,7 +94,6 @@ class Measure:
     """
     space_taken = self._space_taken()
     beats_per_measure = self._time_signature.get_beats_per_measure()
-    beat_unit = self._time_signature.get_beat_unit()
 
     return space_taken >= beats_per_measure
 
@@ -103,7 +102,6 @@ class Measure:
     """
     space_taken = self._space_taken()
     beats_per_measure = self._time_signature.get_beats_per_measure()
-    beat_unit = self._time_signature.get_beat_unit()
 
     while space_taken > beats_per_measure:
       self.remove_notation(len(self._notations) - 1)
@@ -138,7 +136,7 @@ class Measure:
     """Returns a string representation of the Measure class
 
     Returns:
-        str: Clef, key signature and time signature of the measure. Also the notations from the notations list.
+        str: Clef, key signature and time signature of the measure, and the notations from the notations list.
     """
     to_string = f"""
       Clef: {self._clef.get_clef()}

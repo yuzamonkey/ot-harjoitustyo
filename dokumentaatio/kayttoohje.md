@@ -65,7 +65,7 @@ Tahteja voi lisätä loppuun ja poistaa lopusta _Add measure_ ja _Remove last me
 
 Valinnat nuottiavaimen, sävellajin ja tahtilajin vaihtoon löytyy _Signatures_ valinnan alta.
 
-Huomioi, että tahtilajin vaihtaminen saattaa poistaa notaatioita tahtien lopusta.
+Huomioi, että tahtilajin vaihtaminen poistaa notaatioita tahtien lopusta, jos notaatiota on tahdissa enemmän kuin uusi tahtilaji määrittää.
 
 ### Tempon muuttaminen
 
