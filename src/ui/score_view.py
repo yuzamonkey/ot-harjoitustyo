@@ -25,6 +25,8 @@ class ScoreView:
     self._quarter_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/quarter_rest.gif').resize((50,100)))
     self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((50,100)))
 
+    self._opened_first_time = True
+
   def show(self):
     self.update()
 
@@ -102,17 +104,17 @@ class ScoreView:
           elif length == 16:
             canvas.create_image(notation_position, note_position, image=self._sixteenth_note, anchor=tk.constants.NW)
 
-          if note_position >= 200: # add bottom ledger lines
-            ledger_line_position = 300
-            while (ledger_line_position - 100 <= note_position):
-              canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
-              ledger_line_position += 30
-
           if note_position <= 20: # add top ledger lines
             ledger_line_position = 120
             while (ledger_line_position - 100 >= note_position):
               canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
               ledger_line_position -= 30
+
+          if note_position >= 200: # add bottom ledger lines
+            ledger_line_position = 300
+            while (ledger_line_position - 100 <= note_position):
+              canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
+              ledger_line_position += 30
 
         else: #rest
           if length == 2:
@@ -150,5 +152,9 @@ class ScoreView:
 
     canvas.configure(xscrollcommand=scroll_x.set)
     canvas.configure(scrollregion=canvas.bbox("all"))
+    
+    if not self._opened_first_time:
+      canvas.xview_moveto(1) #position scroll to end
+    self._opened_first_time = False
 
     canvas.grid(row=1, column=0, sticky='esw', columnspan=3, padx=25)
