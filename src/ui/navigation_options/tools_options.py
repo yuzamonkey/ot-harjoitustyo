@@ -32,6 +32,7 @@ class ToolsOptions:
     file_service.save_file()
 
   def _handle_show_startup(self):
+    self._handle_stop()
     self._show_startup_options()
 
   def _handle_tempo_change(self, tempo_string):
