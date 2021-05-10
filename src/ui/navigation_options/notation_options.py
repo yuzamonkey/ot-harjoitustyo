@@ -28,21 +28,30 @@ class NotationOptions:
     self._update_score_view()
 
   def _handle_add_note(self, measure, length, pitch):
-    is_success = score_service.add_note(measure, length, pitch)
-    if is_success:
-      self._update_score_view()
+    try:
+      is_success = score_service.add_note(measure, length, pitch)
+      if is_success:
+        self._update_score_view()
+    except:
+      pass
 
   def _handle_add_rest(self, measure, length):
-    is_success = score_service.add_rest(measure, length)
-    if is_success:
-      self._update_score_view()
+    try:
+      is_success = score_service.add_rest(measure, length)
+      if is_success:
+        self._update_score_view()
+    except:
+      pass
 
   def _handle_remove_notation(self, selected):
-    measure_index = int(selected[1:2])
-    notation_index = int(selected[5:6])
-    score_service.remove_notation(measure_index-1, notation_index-1)
-    self._selected_entry.update()
-    self._update_score_view()
+    try:
+      measure_index = int(selected[1:2])
+      notation_index = int(selected[5:6])
+      score_service.remove_notation(measure_index-1, notation_index-1)
+      self._selected_entry.update()
+      self._update_score_view()
+    except:
+      pass
 
   def _show_add_note_options(self):
     self._destroy_selected_entry()

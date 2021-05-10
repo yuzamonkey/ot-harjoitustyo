@@ -36,9 +36,12 @@ class ToolsOptions:
     self._show_startup_options()
 
   def _handle_tempo_change(self, tempo_string):
-    tempo = int(tempo_string)
-    score_service.get_score().set_tempo(tempo)
-    self._update_view()
+    try:
+      tempo = int(tempo_string)
+      score_service.get_score().set_tempo(tempo)
+      self._update_view()
+    except:
+      pass
 
   def _update_view(self):
     self._frame.destroy()
