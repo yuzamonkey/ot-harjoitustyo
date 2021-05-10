@@ -12,6 +12,8 @@ Nuotinkirjoitusohjelmalla voi kirjoittaa ja toistaa sävelmiä. Projekti on harj
 
 [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentti](./dokumentaatio/testausdokumentti.md)
+
 [Työaikakirjanpito](./dokumentaatio/tyoaikakirjanpito.md)
 
 ## Asennus
