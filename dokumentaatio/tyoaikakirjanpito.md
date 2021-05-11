@@ -23,6 +23,6 @@
 | 2.5. | 6 | Nuotin näyttäminen UI:ssa |
 | 3.5. | 2.5 | Käyttöohjeen täydennystä, sovelluslogiikkaa, testejä |
 | 10.5. | 2 | Testausdokumentin alku, korjausten suunnittelua ja toteutusta |
-| 11.5. | 0800- |  |
+| 11.5. | 0.5 | Refaktorointia |
 | yht   | 65   | | 
 
