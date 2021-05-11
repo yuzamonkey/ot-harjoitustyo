@@ -22,6 +22,7 @@
 | 1.5. | 3.5 | Docstring, alustava käyttöohje, tkinter canvas sandboxailua |
 | 2.5. | 6 | Nuotin näyttäminen UI:ssa |
 | 3.5. | 2.5 | Käyttöohjeen täydennystä, sovelluslogiikkaa, testejä |
-| 10.5. | 1.5 | Toiminnallisuuden parantamista, testausdokumentin alku, exceptioneiden vähentämistä |
-| yht   | 64.5   | | 
+| 10.5. | 2 | Testausdokumentin alku, korjausten suunnittelua ja toteutusta |
+| 11.5. | 0800- |  |
+| yht   | 65   | | 
 

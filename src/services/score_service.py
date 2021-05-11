@@ -112,6 +112,32 @@ class ScoreService:
     if len(self._score.get_staff().get_measures()) > 1:
       self._score.get_staff().remove_last_measure()
 
+  def _validate_notation(self, measure, length):
+    """Validates a notations measure, length and space in the measure
+
+    Args:
+        measure (int): number of measure to validate
+        length (string): length of the notation
+
+    Returns:
+        boolean: returns True if measure, length and space in the measure are acceptable
+    """
+    measure_index = int(measure)-1
+    length = int(length)
+    if measure_index < 0 or measure_index >= self.get_staff_length():
+      print("BAD MEASURE INDEX")
+      return False
+
+    if length not in NOTATION_LENGTHS:
+      print("BAD LENGTH INPUT")
+      return False
+
+    if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
+      print("MEASURE DOESN'T HAVE SPACE")
+      return False
+
+    return True
+
   def add_note(self, measure, length, pitch):
     """Adds a note to the score. Input is validated.
 
@@ -123,26 +149,14 @@ class ScoreService:
     Returns:
         bool: Returns True if the input is valid and the note can be added
     """
-    is_valid_input = True
-    measure_index = int(measure)-1
-    length = int(length)
-
-    if measure_index < 0 or measure_index >= self.get_staff_length():
-      print("BAD MEASURE INDEX")
-      is_valid_input = False
-
-    if length not in NOTATION_LENGTHS:
-      print("BAD LENGTH INPUT")
-      is_valid_input = False
+    is_valid_input = self._validate_notation(measure, length)
 
     if pitch not in PITCHES:
       print("BAD PITCH INPUT")
       is_valid_input = False
 
-    if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
-      print("MEASURE DOESN'T HAVE SPACE")
-      is_valid_input = False
-
+    measure_index = int(measure)-1
+    length = int(length)
     if is_valid_input:
       self._score.get_staff().add_note(
         measure_index,
@@ -162,21 +176,10 @@ class ScoreService:
     Returns:
         bool: Returns True if the input is valid and the rest can be added
     """
-    is_valid_input = True
+    is_valid_input = self._validate_notation(measure, length)
+
     measure_index = int(measure)-1
     length = int(length)
-    if measure_index < 0 or measure_index >= self.get_staff_length():
-      print("BAD MEASURE INDEX")
-      is_valid_input = False
-
-    if length not in NOTATION_LENGTHS:
-      print("BAD LENGTH INPUT")
-      is_valid_input = False
-
-    if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
-      print("MEASURE DOESN'T HAVE SPACE")
-      is_valid_input = False
-
     if is_valid_input:
       self._score.get_staff().add_rest(
         measure_index,
