@@ -8,12 +8,19 @@ class NotationOptions:
     self._update_score_view = update_score_view
 
     self._selected_entry = None
+    self._error_label = None
+    self._update_error_label()
 
   def show(self):
     self._show_notation_options()
 
   def destroy(self):
     self._frame.destroy()
+
+  def _update_error_label(self):
+    if self._error_label:
+      self._error_label.destroy()
+    self._error_label = tk.Label(master=self._frame, text="Measure does not have space", fg='red')
 
   def _destroy_selected_entry(self):
     if self._selected_entry:
@@ -28,22 +35,29 @@ class NotationOptions:
     self._update_score_view(1.0)
 
   def _handle_add_note(self, measure, length, pitch):
+    self._update_error_label()
     try:
       is_success = score_service.add_note(measure, length, pitch)
       if is_success:
         self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
+      else:
+        self._error_label.grid(row=0, column=8)
     except:
       pass
 
   def _handle_add_rest(self, measure, length):
+    self._update_error_label()
     try:
       is_success = score_service.add_rest(measure, length)
       if is_success:
         self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
+      else:
+        self._error_label.grid(row=0, column=8)
     except:
       pass
 
   def _handle_remove_notation(self, selected):
+    self._update_error_label()
     try:
       measure_index = int(selected[1:2])
       notation_index = int(selected[5:6])
@@ -54,16 +68,19 @@ class NotationOptions:
       pass
 
   def _show_add_note_options(self):
+    self._update_error_label()
     self._destroy_selected_entry()
     self._selected_entry = AddNoteOptions(self._frame, self._handle_add_note)
     self._selected_entry.show()
 
   def _show_add_rest_options(self):
+    self._update_error_label()
     self._destroy_selected_entry()
     self._selected_entry = AddRestOptions(self._frame, self._handle_add_rest)
     self._selected_entry.show()
 
   def _show_remove_notation_options(self):
+    self._update_error_label()
     self._destroy_selected_entry()
     self._selected_entry = RemoveNotationOptions(self._frame, self._handle_remove_notation)
     self._selected_entry.show()

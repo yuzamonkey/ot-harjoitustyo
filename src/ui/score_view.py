@@ -79,8 +79,6 @@ class ScoreView:
   def _show_score(self):
     canvas = tk.Canvas(master=self._score_frame, width=700, height=1000, confine=True)
 
-    measure_count = score_service.get_staff_length()
-
     x_position = 50
     # Clef
     canvas.create_image(x_position, 105, image=self._clef, anchor=tk.constants.NW)
@@ -103,11 +101,15 @@ class ScoreView:
     # Time signature
     canvas.create_image(x_position, 140, image=self._time_signature, anchor=tk.constants.NW)
 
+    #Notations
     notation_position = x_position + 60
     notation_gap = 75
 
+    measure_count = score_service.get_staff_length()
+
     for i in range (measure_count):
       measure = self._score.get_staff().get_measures()[i]
+
       for notation in measure.get_notations():
         length = notation.get_length()
 
@@ -127,13 +129,13 @@ class ScoreView:
           elif length == 16:
             canvas.create_image(notation_position, note_position, image=self._sixteenth_note, anchor=tk.constants.NW)
 
-          if note_position <= 20: # add top ledger lines
+          if note_position <= 20: # top ledger lines
             ledger_line_position = 120
             while (ledger_line_position - 100 >= note_position):
               canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')
               ledger_line_position -= 30
 
-          if note_position >= 200: # add bottom ledger lines
+          if note_position >= 200: # bottom ledger lines
             ledger_line_position = 300
             while (ledger_line_position - 100 <= note_position):
               canvas.create_line(notation_position+10, ledger_line_position, notation_position+65, ledger_line_position, fill='black')

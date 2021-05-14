@@ -1,7 +1,6 @@
 import time
 import pygame
 from services.score_service import score_service
-from utils.constants import PITCHES
 
 class PlaybackService():
   """Class for handling playback

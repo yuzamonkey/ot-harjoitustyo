@@ -125,15 +125,12 @@ class ScoreService:
     measure_index = int(measure)-1
     length = int(length)
     if measure_index < 0 or measure_index >= self.get_staff_length():
-      print("BAD MEASURE INDEX")
       return False
 
     if length not in NOTATION_LENGTHS:
-      print("BAD LENGTH INPUT")
       return False
 
     if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
-      print("MEASURE DOESN'T HAVE SPACE")
       return False
 
     return True
@@ -152,7 +149,6 @@ class ScoreService:
     is_valid_input = self._validate_notation(measure, length)
 
     if pitch not in PITCHES:
-      print("BAD PITCH INPUT")
       is_valid_input = False
 
     measure_index = int(measure)-1
