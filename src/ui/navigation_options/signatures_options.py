@@ -22,17 +22,17 @@ class SignaturesOptions:
   def _handle_clef_change(self, clef):
     is_success = score_service.change_clef(clef)
     if is_success:
-      self._update_score_view()
+      self._update_score_view(0.00001)
 
   def _handle_key_change(self, key):
     is_success = score_service.change_key(key)
     if is_success:
-      self._update_score_view()
+      self._update_score_view(0.00001)
 
   def _handle_time_change(self, time_signature):
     is_success = score_service.change_time_signature(time_signature)
     if is_success:
-      self._update_score_view()
+      self._update_score_view(0.00001)
 
   def _show_change_clef_options(self):
     self._destroy_selected_entry()

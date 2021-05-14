@@ -34,8 +34,8 @@ class ScoreView:
     self._frame.destroy()
 
   def update(self, scroll_position = 0.0):
-    print("TÄÄLLÄ, updatessa, parametrina ", scroll_position)
     if scroll_position:
+      print("YES, parameter", scroll_position)
       self._scroll_position = scroll_position
 
     self._score = score_service.get_score()
