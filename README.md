@@ -71,6 +71,3 @@ Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa k
 ```bash
 poetry run invoke lint
 ```
-
-## Sovelluksen tila ja tulevaisuus (27.4.2021)
-Perustoiminnallisuudet ovat valmiit. Seuraavaksi koodin refaktorointia, validaatioita ja UI:n parantelua. 
