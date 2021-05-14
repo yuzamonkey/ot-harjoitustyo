@@ -26,6 +26,22 @@ class Note(Notation):
     """
     return self._pitch
 
+  def get_note(self):
+    """Return the note in string format
+
+    Returns:
+        str: note
+    """
+    return self._pitch[0:1]
+
+  def get_pitch_class(self):
+    """Return the pitch class in string format
+
+    Returns:
+        str: pitch class
+    """
+    return self._pitch[1:2]
+
   def set_pitch(self, index):
     """Sets the pitch with pitch_index
 
