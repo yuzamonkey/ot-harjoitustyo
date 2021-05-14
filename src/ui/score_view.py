@@ -25,6 +25,9 @@ class ScoreView:
     self._quarter_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/quarter_rest.gif').resize((50,100)))
     self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((50,100)))
 
+    self._flat = ImageTk.PhotoImage(Image.open('./src/utils/images/flat.gif').resize((40,80)))
+    self._sharp = ImageTk.PhotoImage(Image.open('./src/utils/images/sharp.gif').resize((50,100)))
+
     self._scroll_position = 0.0
 
   def show(self):
@@ -42,7 +45,7 @@ class ScoreView:
     if clef == 'G':
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
     elif clef == 'F':
-      self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((110,200)))
+      self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((100, 190)))
 
     time_signature = self._score.get_staff().get_measures()[0].get_time_signature().get_time_signature()
     if time_signature == '2/4':
@@ -78,12 +81,29 @@ class ScoreView:
 
     measure_count = score_service.get_staff_length()
 
+    x_position = 50
     # Clef
-    canvas.create_image(50, 105, image=self._clef, anchor=tk.constants.NW)
+    canvas.create_image(x_position, 105, image=self._clef, anchor=tk.constants.NW)
+    x_position += 100
+    # Key signature
+    key_signature = self._score.get_staff().get_measures()[0].get_key_signature().get_key_signature()
+    clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
+    if key_signature != 'C/a':
+      if clef == 'G':
+        if key_signature == 'F/d':
+          canvas.create_image(x_position, 150, image=self._flat, anchor=tk.constants.NW)
+        if key_signature == 'G/e':
+          canvas.create_image(x_position, 100, image=self._sharp, anchor=tk.constants.NW)
+      else:
+        if key_signature == 'F/d':
+          canvas.create_image(x_position, 180, image=self._flat, anchor=tk.constants.NW)
+        if key_signature == 'G/e':
+          canvas.create_image(x_position, 130, image=self._sharp, anchor=tk.constants.NW)
+      x_position += 40
     # Time signature
-    canvas.create_image(150, 140, image=self._time_signature, anchor=tk.constants.NW)
+    canvas.create_image(x_position, 140, image=self._time_signature, anchor=tk.constants.NW)
 
-    notation_position = 200
+    notation_position = x_position + 60
     notation_gap = 75
 
     for i in range (measure_count):

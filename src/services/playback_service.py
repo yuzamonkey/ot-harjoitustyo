@@ -13,7 +13,7 @@ class PlaybackService():
     self._play = False
 
   def play(self):
-    """Plays the score. The score is returned from score_service
+    """Plays the score.
     """
     if not self._play:
       score = score_service.get_score()
@@ -21,7 +21,6 @@ class PlaybackService():
       tempo = score.get_tempo()
       measures = score.get_staff().get_measures()
       beat_unit = measures[0].get_time_signature().get_beat_unit()
-
       key_signature = measures[0].get_key_signature().get_key_signature()
 
       self._play = True
