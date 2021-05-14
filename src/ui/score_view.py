@@ -25,7 +25,7 @@ class ScoreView:
     self._quarter_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/quarter_rest.gif').resize((50,100)))
     self._half_rest = ImageTk.PhotoImage(Image.open('./src/utils/images/half_rest.gif').resize((50,100)))
 
-    self._opened_first_time = True
+    self._scroll_position = 0.0
 
   def show(self):
     self.update()
@@ -33,7 +33,11 @@ class ScoreView:
   def destroy(self):
     self._frame.destroy()
 
-  def update(self):
+  def update(self, scroll_position = 0.0):
+    print("TÄÄLLÄ, updatessa, parametrina ", scroll_position)
+    if scroll_position:
+      self._scroll_position = scroll_position
+
     self._score = score_service.get_score()
     clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
     if clef == 'G':
@@ -88,7 +92,7 @@ class ScoreView:
       for notation in measure.get_notations():
         length = notation.get_length()
 
-        if (notation.is_note()): #note
+        if notation.is_note(): #note
           pitch = notation.get_pitch()
           pitch_index = PITCHES.index(pitch)
           if (measure.get_clef().get_clef() == 'G'):
@@ -152,9 +156,8 @@ class ScoreView:
 
     canvas.configure(xscrollcommand=scroll_x.set)
     canvas.configure(scrollregion=canvas.bbox("all"))
-    
-    if not self._opened_first_time:
-      canvas.xview_moveto(1) #position scroll to end
-    self._opened_first_time = False
+
+    print("SCROLL POSTITION IS GOING TO BE SET AT", self._scroll_position)
+    canvas.xview_moveto(self._scroll_position)
 
     canvas.grid(row=1, column=0, sticky='esw', columnspan=3, padx=25)

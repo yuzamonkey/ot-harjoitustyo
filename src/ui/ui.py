@@ -19,8 +19,8 @@ class UI:
   def show(self):
     self._show_startup_options()
 
-  def _update_score_view(self):
-    self._score_view.update()
+  def _update_score_view(self, scroll_position = 0.0):
+    self._score_view.update(scroll_position)
 
   def _show_startup_options(self):
     if self._ribbon_frame:

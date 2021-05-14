@@ -21,17 +21,17 @@ class NotationOptions:
 
   def _handle_add_measure(self):
     score_service.add_measure()
-    self._update_score_view()
+    self._update_score_view(1.0)
 
   def _handle_remove_last_measure(self):
     score_service.remove_last_measure()
-    self._update_score_view()
+    self._update_score_view(1.0)
 
   def _handle_add_note(self, measure, length, pitch):
     try:
       is_success = score_service.add_note(measure, length, pitch)
       if is_success:
-        self._update_score_view()
+        self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
     except:
       pass
 
@@ -39,7 +39,7 @@ class NotationOptions:
     try:
       is_success = score_service.add_rest(measure, length)
       if is_success:
-        self._update_score_view()
+        self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
     except:
       pass
 
@@ -47,9 +47,9 @@ class NotationOptions:
     try:
       measure_index = int(selected[1:2])
       notation_index = int(selected[5:6])
-      score_service.remove_notation(measure_index-1, notation_index-1)
+      score_service.remove_notation(measure_index - 1, notation_index - 1)
       self._selected_entry.update()
-      self._update_score_view()
+      self._update_score_view(measure_index / score_service.get_staff_length())
     except:
       pass
 

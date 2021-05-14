@@ -24,5 +24,6 @@
 | 3.5. | 2.5 | Käyttöohjeen täydennystä, sovelluslogiikkaa, testejä |
 | 10.5. | 2 | Testausdokumentin alku, korjausten suunnittelua ja toteutusta |
 | 11.5. | 0.5 | Refaktorointia |
+| 14.5. | 945 | Viimeistelyä |
 | yht   | 65   | | 
 
