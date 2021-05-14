@@ -13,6 +13,12 @@ class TestNotation(unittest.TestCase):
   def test_note_returns_pitch_c2(self):
     self.assertEqual(self.note.get_pitch(), 'c2')
 
+  def test_get_note_returns_note_c(self):
+    self.assertEqual(self.note.get_note(), 'c')
+
+  def test_get_pitch_class_returns_2(self):
+    self.assertEqual(self.note.get_pitch_class(), '2')
+
   def test_note_returns_length_2(self):
     self.assertEqual(self.note.get_length(), 2)
 

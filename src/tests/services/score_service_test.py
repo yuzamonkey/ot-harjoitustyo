@@ -36,6 +36,15 @@ class TestScoreService(unittest.TestCase):
     length_after = score_service.get_staff_length()
     self.assertEqual(length_after, length_before-1)
 
+  def test_remove_last_measure_does_not_removes_last_measure_if_one_measure(self):
+    score_service.remove_last_measure()
+    score_service.remove_last_measure()
+    length_before = score_service.get_staff_length()
+    score_service.remove_last_measure()
+    length_after = score_service.get_staff_length()
+    self.assertEqual(length_before, 1)
+    self.assertEqual(length_after, 1)
+
   def test_add_note_returns_true_with_valid_parameters(self):
     measure = 2
     length = 4
@@ -51,7 +60,7 @@ class TestScoreService(unittest.TestCase):
     self.assertEqual(return_value, False)
 
   def test_add_note_returns_false_with_invalid_length(self):
-    measure = -1
+    measure = 1
     length = 999
     pitch = 'c4'
     return_value = score_service.add_note(measure, length, pitch)

@@ -131,7 +131,6 @@ class ScoreService:
       return False
 
     if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
-      #return False
       return "No space"
 
     return True
