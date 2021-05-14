@@ -35,7 +35,6 @@ class ScoreView:
 
   def update(self, scroll_position = 0.0):
     if scroll_position:
-      print("YES, parameter", scroll_position)
       self._scroll_position = scroll_position
 
     self._score = score_service.get_score()
@@ -153,11 +152,9 @@ class ScoreView:
     # Horizontal scroll
     scroll_x = tk.Scrollbar(self._score_frame, orient="horizontal", command=canvas.xview)
     scroll_x.grid(row=1, column=0, sticky="ews", columnspan=3)
-
     canvas.configure(xscrollcommand=scroll_x.set)
     canvas.configure(scrollregion=canvas.bbox("all"))
 
-    print("SCROLL POSTITION IS GOING TO BE SET AT", self._scroll_position)
     canvas.xview_moveto(self._scroll_position)
 
     canvas.grid(row=1, column=0, sticky='esw', columnspan=3, padx=25)
