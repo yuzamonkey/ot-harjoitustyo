@@ -132,21 +132,21 @@ class Measure:
     """
     self._notations.pop(notation_index)
 
-  def __str__(self):
-    """Returns a string representation of the Measure class
+  # def __str__(self):
+  #   """Returns a string representation of the Measure class
 
-    Returns:
-        str: Clef, key signature and time signature of the measure, and the notations from the notations list.
-    """
-    to_string = f"""
-      Clef: {self._clef.get_clef()}
-      Key: {self._key_signature.get_key_signature()}
-      Time: {self._time_signature.get_time_signature()}
-    """
-    notations_to_string = 'Notations: [\n'
-    for notation in self._notations:
-      notations_to_string += f'{notation}\n'
-    notations_to_string += "]"
-    if self.measure_is_full():
-      return f'(full) {to_string} {notations_to_string}'
-    return f'{to_string} {notations_to_string}'
+  #   Returns:
+  #       str: Clef, key signature and time signature of the measure, and the notations from the notations list.
+  #   """
+  #   to_string = f"""
+  #     Clef: {self._clef.get_clef()}
+  #     Key: {self._key_signature.get_key_signature()}
+  #     Time: {self._time_signature.get_time_signature()}
+  #   """
+  #   notations_to_string = 'Notations: [\n'
+  #   for notation in self._notations:
+  #     notations_to_string += f'{notation}\n'
+  #   notations_to_string += "]"
+  #   if self.measure_is_full():
+  #     return f'(full) {to_string} {notations_to_string}'
+  #   return f'{to_string} {notations_to_string}'

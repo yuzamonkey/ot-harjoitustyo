@@ -24,5 +24,5 @@
 | 3.5. | 2.5 | Käyttöohjeen täydennystä, sovelluslogiikkaa, testejä |
 | 10.5. | 2 | Testausdokumentin alku, korjausten suunnittelua ja toteutusta |
 | 11.5. | 0.5 | Refaktorointia |
-| 14.5. | 2.5 | Scroll position, sävellajin huomiointi playbackissa ja score_viewssa, error viesti |
+| 14.5. | 2.5 1330- | Scroll position, sävellajin huomiointi playbackissa ja score_viewssa, error viesti |
 | yht   | 67.5   | | 

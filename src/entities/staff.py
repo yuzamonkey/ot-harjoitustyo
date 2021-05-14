@@ -94,14 +94,14 @@ class Staff:
       measure.get_time_signature().set_time_signature(time_signature_index)
       measure.remove_overflown_notations()
 
-  def __str__(self):
-    """Returns a string representation of the Staff class
+  # def __str__(self):
+  #   """Returns a string representation of the Staff class
 
-    Returns:
-        str: each measure of the staff
-    """
-    to_string = ""
-    for measure in self._measures:
-      to_string += f'{str(measure)} \n'
-    return to_string
+  #   Returns:
+  #       str: each measure of the staff
+  #   """
+  #   to_string = ""
+  #   for measure in self._measures:
+  #     to_string += f'{str(measure)} \n'
+  #   return to_string
     
