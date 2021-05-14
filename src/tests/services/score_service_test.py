@@ -64,7 +64,7 @@ class TestScoreService(unittest.TestCase):
     return_value = score_service.add_note(measure, length, pitch)
     self.assertEqual(return_value, False)
 
-  def test_add_note_returns_false_when_measure_is_full(self):
+  def test_add_note_returns_no_space_when_measure_is_full(self):
     measure = 1
     length = 2
     pitch = 'c4'
@@ -73,7 +73,7 @@ class TestScoreService(unittest.TestCase):
     return_value3 = score_service.add_note(measure, length, pitch)
     self.assertEqual(return_value1, True)
     self.assertEqual(return_value2, True)
-    self.assertEqual(return_value3, False)
+    self.assertEqual(return_value3, 'No space')
 
   def test_add_rest_returns_true_with_valid_parameters(self):
     measure = 2
@@ -93,7 +93,7 @@ class TestScoreService(unittest.TestCase):
     return_value = score_service.add_rest(measure, length)
     self.assertEqual(return_value, False)
 
-  def test_add_rest_returns_false_when_measure_is_full(self):
+  def test_add_rest_returns_no_space_when_measure_is_full(self):
     measure = 1
     length = 2
     return_value1 = score_service.add_rest(measure, length)
@@ -101,7 +101,7 @@ class TestScoreService(unittest.TestCase):
     return_value3 = score_service.add_rest(measure, length)
     self.assertEqual(return_value1, True)
     self.assertEqual(return_value2, True)
-    self.assertEqual(return_value3, False)
+    self.assertEqual(return_value3, "No space")
 
   def test_remove_notation_removes_notation(self):
     score_service.add_note(1, 4, 'c4')

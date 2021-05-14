@@ -131,7 +131,8 @@ class ScoreService:
       return False
 
     if not self._score.get_staff().get_measures()[measure_index].measure_has_space(length):
-      return False
+      #return False
+      return "No space"
 
     return True
 
@@ -147,6 +148,8 @@ class ScoreService:
         bool: Returns True if the input is valid and the note can be added
     """
     is_valid_input = self._validate_notation(measure, length)
+    if is_valid_input == "No space":
+      return "No space"
 
     if pitch not in PITCHES:
       is_valid_input = False

@@ -38,9 +38,9 @@ class NotationOptions:
     self._update_error_label()
     try:
       is_success = score_service.add_note(measure, length, pitch)
-      if is_success:
+      if is_success == True:
         self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
-      else:
+      elif is_success == 'No space':
         self._error_label.grid(row=0, column=8)
     except:
       pass
@@ -49,9 +49,9 @@ class NotationOptions:
     self._update_error_label()
     try:
       is_success = score_service.add_rest(measure, length)
-      if is_success:
+      if is_success == True:
         self._update_score_view((int(measure) - 1) / score_service.get_staff_length())
-      else:
+      elif is_success == 'No space':
         self._error_label.grid(row=0, column=8)
     except:
       pass
