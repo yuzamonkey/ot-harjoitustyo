@@ -38,7 +38,7 @@ class FileService:
     score_repository.save_score(current_score)
 
   def get_score_titles(self):
-    """Returns all the saved titles of the scores
+    """Returns all the saved titles of the scores in alphabetical order
 
     Returns:
         list: List of the titles of the saved scores

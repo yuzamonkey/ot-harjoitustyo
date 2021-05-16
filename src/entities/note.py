@@ -57,3 +57,16 @@ class Note(Notation):
         bool: returns True
     """
     return True
+
+  def __str__(self):
+    """Returns a string representation of Note class
+
+    Returns:
+      str: class name, length and pitch
+    """
+    to_string = f"""
+      Note
+      length: {self._length}
+      pitch: {self._pitch}
+    """
+    return to_string
