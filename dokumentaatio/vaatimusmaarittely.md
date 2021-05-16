@@ -19,11 +19,10 @@
 ### Jatkokehitysideoita
   - Nuottiavaimen, tahtilajin ja sävellajin voi vaihtaa keskelle sävellystä
   - Näppäinoikoteitä sovelluksen nopeampaa käyttöä varten
-  - Automaattinen leveys tahdeille niissä olevien nuottien mukaan
   - Yhdistä automaattisesti nuotteja kaarilla ja varsilla
   - Mahdollisuus monimutkaisempiin nuotinnuksiin. Muun muassa epäsymmetriset tahtilajit, dynamiikat ja nuottiarvojen laajentaminen (trioli, kvintoli, etuheleet...)
-  - Ohjelma pystyy lukemaan ja exporttamaan .xml-muotoisia tiedostoja
   - Mahdollisuus kirjoittaa useita ääniä samalle nuotille
+  - Ohjelma pystyy lukemaan ja exporttamaan .xml-muotoisia tiedostoja
   - Instrumenttien lisäys
   - Partituurin rakentaminen
   - Pdf exporttaus
