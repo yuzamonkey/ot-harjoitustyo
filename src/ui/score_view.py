@@ -41,13 +41,13 @@ class ScoreView:
       self._scroll_position = scroll_position
 
     self._score = score_service.get_score()
-    clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
+    clef = score_service.get_clef()
     if clef == 'G':
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/G-clef.gif').resize((140,230)))
     elif clef == 'F':
       self._clef = ImageTk.PhotoImage(Image.open('./src/utils/images/F-clef.gif').resize((100, 190)))
 
-    time_signature = self._score.get_staff().get_measures()[0].get_time_signature().get_time_signature()
+    time_signature = score_service.get_time_signature()
     if time_signature == '2/4':
       self._time_signature = ImageTk.PhotoImage(Image.open('./src/utils/images/24.gif').resize((70,150)))
     elif time_signature == '3/4':
@@ -84,8 +84,8 @@ class ScoreView:
     canvas.create_image(x_position, 105, image=self._clef, anchor=tk.constants.NW)
     x_position += 100
     # Key signature
-    key_signature = self._score.get_staff().get_measures()[0].get_key_signature().get_key_signature()
-    clef = self._score.get_staff().get_measures()[0].get_clef().get_clef()
+    key_signature = score_service.get_key_signature()
+    clef = score_service.get_clef()
     if key_signature != 'C/a':
       if clef == 'G':
         if key_signature == 'F/d':

@@ -78,7 +78,7 @@ class ScoreService:
     return notations_array
 
   def get_clef(self):
-    """Returns the clef as a string
+    """Returns the clef of the score as a string
 
     Returns:
         str: clef
@@ -86,7 +86,7 @@ class ScoreService:
     return self._score.get_staff().get_measures()[0].get_clef().get_clef()
 
   def get_key_signature(self):
-    """Returns the key signature as a string
+    """Returns the key signature of the score as a string
 
     Returns:
         str: key signature
@@ -94,7 +94,7 @@ class ScoreService:
     return self._score.get_staff().get_measures()[0].get_key_signature().get_key_signature()
 
   def get_time_signature(self):
-    """Returns the time signature as a string
+    """Returns the time signature of the score as a string
 
     Returns:
         str: time signature
