@@ -25,5 +25,5 @@
 | 10.5. | 2 | Testausdokumentin alku, korjausten suunnittelua ja toteutusta |
 | 11.5. | 0.5 | Refaktorointia |
 | 14.5. | 3.5 | Scroll position, sävellajin huomiointi playbackissa ja score_viewssa, error viesti, dokumentaatio |
-| 16.5. | 915- | Viimeistelyä |
-| yht   | 68.5   | | 
+| 16.5. | 1.5 | Viimeistelyä |
+| yht   | 70.5  | | 
