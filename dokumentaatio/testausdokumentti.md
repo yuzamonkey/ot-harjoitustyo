@@ -6,7 +6,7 @@ Yksikkö- ja integraatiotestit on toteutettu unittestilla ja manuaaliset testit 
 
 ### Sovelluslogiikka
 
-Sovelluslogiikan luokkia FileService ja ScoreService testataan TestFileService ja TestScoreService-testiluokilla. Testejä varten ei ole erillistä muistia, vaan testitiedostot tallentuvat samaan hakemistoon kuin muut tiedostot.
+Sovelluslogiikan luokkia FileService ja ScoreService testataan TestFileService ja TestScoreService-testiluokilla. Testejä varten ei ole erillistä muistipaikkaa, vaan testitiedostot tallentuvat samaan hakemistoon kuin muut tiedostot.
 
 ### Repositorio-luokat
 
@@ -18,7 +18,7 @@ Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakatta
 
 ![](./kuvat/coveragereport.png)
 
-Tiedostoa build.py ei ole testattu erikseen
+Tiedostoa build.py ei ole testattu erikseen. Rest ja Note luokkien `__str__`-metodeja ei ole erikseen testattu yksikkötesteissä.
 
 ## Järjestelmätestaus
 
@@ -28,7 +28,7 @@ Järjestelmätestaus on suoritettu manuaalisesti
 
 Sovellus on haettu ja sitä on testattu käyttöohjeen kuvaamalla tavalla macOS- ja Linux-ympäristöissä.
 
-Sovellusta on testattu ilman käyttöohjeessa mainittua `build` komentoa. Sovelluksen testaus aiheuttaa kuitenkin kyseisen komennon suorittamisen, jotta testit menevät läpi.
+Sovellusta on testattu ilman [käyttöohjeessa](./kayttoohje.md) mainittua `build` komentoa. Sovelluksen testaus aiheuttaa kuitenkin kyseisen komennon suorittamisen, jotta testit menevät läpi.
 
 ### Toiminnallisuudet
 
@@ -37,3 +37,5 @@ Kaikki [määrittelydokumentin](./vaatimusmaarittely.md) ja [käyttöohjeen](./k
 ## Sovellukseen jääneet laatuongelmat
 
 Nuotin muokkaaminen aiheuttaa usein vaakasuoran scrollin paikan vaihtumisen. Scrollin paikka ei kuitenkaan ole täydellisesti optimoitu, jolloin jotkin muutokset nuotissa voivat siirtää nuottikuvaa epäluontevaan paikkaan.
+
+Käyttäjä näkee error viestin vain jos tahtiin ei mahdu ääntä. Muita error viestejä ei ole, vaikka niitä voisi olla enemmän ohjaamassa sovelluksen käyttöä.
