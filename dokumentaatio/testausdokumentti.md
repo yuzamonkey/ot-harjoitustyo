@@ -14,7 +14,7 @@ Repositorio-luokkaa ScoreRepository testataan TestScoreRepository-luokassa
 
 ### Testauskattavuus
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 90%
+Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 91%
 
 ![](./kuvat/coveragereport.png)
 
