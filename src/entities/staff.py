@@ -27,7 +27,7 @@ class Staff:
     return self._measures
 
   def add_measure(self):
-    """Adds an empty measure in the measures list
+    """Adds an empty measure in the measures list. Clef, key signature and time signature are taken from previous measure
 
     Args:
     """
@@ -93,15 +93,3 @@ class Staff:
     for measure in self._measures:
       measure.get_time_signature().set_time_signature(time_signature_index)
       measure.remove_overflown_notations()
-
-  # def __str__(self):
-  #   """Returns a string representation of the Staff class
-
-  #   Returns:
-  #       str: each measure of the staff
-  #   """
-  #   to_string = ""
-  #   for measure in self._measures:
-  #     to_string += f'{str(measure)} \n'
-  #   return to_string
-    

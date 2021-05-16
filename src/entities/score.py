@@ -57,12 +57,3 @@ class Score:
         tempo (int): Set the tempo
     """
     self._tempo = tempo
-
-  # def __str__(self):
-  #   """Returns the string representation of the staff of the score
-
-  #   Returns:
-  #       str: returns the staff in string format
-  #   """
-  #   return str(self._staff)
-    
